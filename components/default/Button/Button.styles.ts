@@ -1,8 +1,9 @@
 import styled, { css, DefaultTheme } from 'styled-components';
 import { ButtonUnstyled } from '@mui/base';
-import { addTransition } from '@utils/functions';
+import { addTransition, mq } from '@utils/functions';
 import { ISharedButtonProps } from './Button.type';
 import { EFontWeight } from '../Text/Text.enum';
+import { EMediaQuery } from '@theme/theme.enum';
 
 const sharedStyle = (p: ISharedButtonProps) => {
 	const isSuccess = p.color === p.theme.colors.success;
@@ -13,7 +14,12 @@ const sharedStyle = (p: ISharedButtonProps) => {
 
 		cursor: pointer;
 
-		font-size: 1.5rem;
+		font-size: calc(1.5rem * 0.6);
+
+		${mq(EMediaQuery.sm, `font-size: calc(1.5rem * 0.7);`)}
+		${mq(EMediaQuery.md, `font-size: calc(1.5rem * 0.8);`)}
+		${mq(EMediaQuery.lg, `font-size: calc(1.5rem * 0.9);`)}
+		${mq(EMediaQuery.xl, `font-size: calc(1.5rem * 1.0);`)}
 
 		${addTransition()}
 
@@ -45,6 +51,10 @@ const sharedStyle = (p: ISharedButtonProps) => {
 				color: ${p.iconColor ? p.iconColor : p.color ? p.color : p.theme.colors.white};
 
 				${addTransition()}
+
+				transform: scale(0.7);
+				${mq(EMediaQuery.md, `transform: scale(0.8);`)}
+				${mq(EMediaQuery.xl, `transform: scale(1.0);`)}
 			}
 		}
 	`;

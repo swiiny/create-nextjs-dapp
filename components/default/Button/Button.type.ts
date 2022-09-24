@@ -7,6 +7,7 @@ interface IButton extends ButtonUnstyledProps {
 	children: ReactNode;
 	onClick?: () => void;
 	valueToCopy?: string;
+	noPaddingResponsive?: boolean;
 	icon?: ReactNode;
 	iconColor?: string;
 	gradientContainerProps?: BoxProps;

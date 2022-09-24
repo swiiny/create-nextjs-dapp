@@ -43,7 +43,7 @@ const cssContainer = {
 	justifyContent: 'center',
 	alignItems: 'center',
 	flexWrap: 'wrap',
-	gap: { xs: '50px', lg: '50px' },
+	gap: { xs: '30px', md: '40px', lg: '50px' },
 	'&:hover': {
 		'& > div': {
 			opacity: '0.5'

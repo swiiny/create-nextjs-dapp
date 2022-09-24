@@ -19,6 +19,7 @@ const HomePage: FC<IHomePage> = () => {
 			<Box
 				height='100vh'
 				paddingTop='30px'
+				paddingX={{ xs: '15px', md: '32px', lg: '64px' }}
 				sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-evenly' }}
 			>
 				<Technologies />

@@ -14,7 +14,15 @@ const CTA: FC<ICTA> = () => {
 	const theme = useTheme();
 
 	return (
-		<Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+		<Box
+			sx={{
+				display: 'flex',
+				flexDirection: 'column',
+				justifyContent: 'center',
+				alignItems: 'center',
+				transform: { xs: 'scale(0.9)', sm: 'unset' }
+			}}
+		>
 			<Text
 				type={ETextType.h2}
 				size={ESize.s}
@@ -25,7 +33,12 @@ const CTA: FC<ICTA> = () => {
 				Start coding is easy as
 			</Text>
 
-			<Button color={theme.colors.lightBlue} gradientContainerProps={{ marginTop: 4 }} valueToCopy={cloneCmd}>
+			<Button
+				color={theme.colors.lightBlue}
+				gradientContainerProps={{ marginTop: 4 }}
+				valueToCopy={cloneCmd}
+				noPaddingResponsive
+			>
 				{cloneCmd}
 			</Button>
 		</Box>

@@ -1,3 +1,13 @@
+import { EMediaQuery } from '@theme/theme.enum';
+import { FlattenSimpleInterpolation } from 'styled-components';
+
+// media queries
+export const mq = (mediaQuery: EMediaQuery, children: string | FlattenSimpleInterpolation, minOrMax = 'min') => {
+	return `@media only screen and (${minOrMax}-width: ${mediaQuery}) {
+		${children}
+	}`;
+};
+
 // add transition
 export const addTransition = (
 	target: string = 'all',

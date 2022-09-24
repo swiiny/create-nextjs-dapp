@@ -10,6 +10,7 @@ const Button: FC<IButton> = ({
 	children,
 	onClick,
 	href,
+	noPaddingResponsive = false,
 	valueToCopy,
 	color,
 	icon,
@@ -43,8 +44,8 @@ const Button: FC<IButton> = ({
 		return (
 			<GradientContainer
 				component='span'
-				paddingY='12px'
-				paddingX='36px'
+				paddingY={noPaddingResponsive ? '12px' : { xs: '6px', sm: '9px', md: '12px' }}
+				paddingX={noPaddingResponsive ? '36px' : { xs: '18px', sm: '27px', md: '36px' }}
 				display='flex'
 				sx={{ justifyContent: 'center', alignItems: 'center' }}
 				{...gradientContainerProps}
@@ -65,7 +66,7 @@ const Button: FC<IButton> = ({
 				)}
 			</GradientContainer>
 		);
-	}, [children, gradientContainerProps, icon, isCopying, valueToCopy]);
+	}, [children, gradientContainerProps, icon, isCopying, valueToCopy, noPaddingResponsive]);
 
 	if (href) {
 		return (
