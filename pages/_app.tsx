@@ -3,7 +3,7 @@ import Head from 'next/head';
 import { ThemeProvider } from 'styled-components';
 import GlobalStyle from '@theme/GlobalStyles';
 import { darkTheme } from '@theme/theme';
-import Navbar from '@components/common/Navbar';
+import Navbar from '@components/default/Navbar';
 
 const DappBoilerplate = ({ Component, pageProps }: AppProps) => {
 	return (

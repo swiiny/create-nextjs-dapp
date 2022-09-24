@@ -4,6 +4,7 @@ import { BoxProps } from '@mui/system';
 
 interface IButton extends ButtonUnstyledProps {
 	children: ReactNode;
+	onClick?: () => void;
 	icon?: ReactNode;
 	iconColor?: string;
 	gradientContainerProps?: BoxProps;

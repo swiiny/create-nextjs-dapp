@@ -20,7 +20,7 @@ const Navbar = () => {
 
 			<Box>
 				<Button icon={<FaStar size={28} />} iconColor='#e3b341'>
-					Star
+					Add a Star
 				</Button>
 
 				<Button icon={<FaGithub size={28} />}>Github</Button>

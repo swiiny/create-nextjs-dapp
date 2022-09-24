@@ -11,3 +11,21 @@ export const addTransition = (
 		}
 	`;
 };
+
+// copy value to clipboard
+export const copy = (value: string) => {
+	try {
+		const copyText = document.createElement('input');
+		copyText.setAttribute('value', value);
+
+		/* Select the text field */
+		copyText.select();
+		copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+		/* Copy the text inside the text field */
+		navigator.clipboard.writeText(copyText.value);
+		return true;
+	} catch {
+		return false;
+	}
+};
