@@ -2,24 +2,27 @@
 
 const util = require('util');
 const exec = util.promisify(require('child_process').exec);
-
+const readline = require('readline');
 const fs = require('fs');
 const request = require('request');
 
 const projectName = 'create-nextjs-dapp';
 const repoUrl = `https://github.com/JeremyTheintz/${projectName}/archive/refs/heads/main.zip`;
+
 // slice argv as we don't need the forst two elements (in this case)
 const args = process.argv.slice(2, process.argv.length);
 
-if (!args[0]) {
-	console.log('Please provide a project name');
-	process.exit(1);
+// project's name
+let dest;
+
+try {
+	dest = args[0];
+} catch {
+	// no projet name provided
 }
 
 async function downloadRepo() {
 	console.log('Starting some magic tricks...');
-
-	const dest = args[0];
 
 	request({ url: repoUrl, encoding: null }, async function (err, resp, body) {
 		if (err) throw err;
@@ -27,27 +30,27 @@ async function downloadRepo() {
 			console.log('Abra kadabra! 🪄');
 			console.log(dest + ' has appeared! ✨');
 
-			await exec('unzip ' + args[0] + '.zip');
+			await exec('unzip ' + dest + '.zip');
 
 			// chmod 777 all files inside projectName
 			await exec('chmod -R 777 ' + projectName + '-main');
 
 			// chmod 777 all files inside projectName
-			await exec('mv ' + projectName + '-main ' + args[0]);
+			await exec('mv ' + projectName + '-main ' + dest);
 
 			console.log('Cleaning up after myself 🧹');
 			// clean up
-			await exec('rm ' + args[0] + '.zip');
-			await exec('rm -rf ' + args[0] + '/.git');
-			await exec('rm -rf ' + args[0] + '/.github');
-			await exec('rm -rf ' + args[0] + '/bin');
+			await exec('rm ' + dest + '.zip');
+			await exec('rm -rf ' + dest + '/.git');
+			await exec('rm -rf ' + dest + '/.github');
+			await exec('rm -rf ' + dest + '/bin');
 
 			console.log('Installing dependencies 📦');
-			//await exec('cd ' + args[0] + ' && npm install');
-			await exec('cd ' + args[0] + ' && npm install');
+			//await exec('cd ' + dest + ' && npm install');
+			await exec('cd ' + dest + ' && npm install');
 
 			console.log('Starting the app 🚀');
-			await exec('cd ' + args[0] + ' && npm run dev');
+			await exec('cd ' + dest + ' && npm run dev');
 
 			process.exit(0);
 		});
@@ -60,6 +63,26 @@ async function downloadRepo() {
 // check if a directory with the name args[0] exists
 if (fs.existsSync(args[0])) {
 	console.log('directory already exists');
-} else {
+} else if (dest) {
 	downloadRepo();
+} else if (!dest) {
+	const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
+
+	const prompt = (query) => new Promise((resolve) => rl.question(query, resolve));
+
+	(async () => {
+		do {
+			try {
+				const name = await prompt("Enter your project's name: ");
+
+				dest = name;
+				rl.close();
+			} catch {
+				console.log("can't prompt");
+				break;
+			}
+		} while (dest === undefined);
+
+		await downloadRepo();
+	})();
 }

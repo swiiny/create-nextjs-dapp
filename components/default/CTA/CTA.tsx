@@ -8,7 +8,7 @@ import { ESize } from '@theme/theme.enum';
 import { ETextType, EFontWeight, ETextAlign } from '../Text/Text.enum';
 import Button from '../Button';
 
-const cloneCmd = 'git clone https://github.com/JeremyTheintz/nextjs-web3-boilerplate.git';
+const cloneCmd = 'npx create-nextjs-dapp';
 
 const CTA: FC<ICTA> = () => {
 	const theme = useTheme();
