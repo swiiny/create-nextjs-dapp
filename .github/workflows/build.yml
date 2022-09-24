@@ -1,4 +1,4 @@
-name: Run linter
+name: Build the Nextjs app
 
 on:
   pull_request:
