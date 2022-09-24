@@ -2,7 +2,10 @@ import Head from 'next/head';
 import React, { FC } from 'react';
 import { IHomePage } from './HomePage.type';
 import { Box } from '@mui/system';
-import Navbar from '@components/common/Navbar';
+import Technologies from '@components/default/Technologies';
+import { useTheme } from 'styled-components';
+import Tagline from '@components/default/Tagline';
+import CTA from '@components/default/CTA';
 
 const HomePage: FC<IHomePage> = () => {
 	return (
@@ -13,11 +16,13 @@ const HomePage: FC<IHomePage> = () => {
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
 
-			<Box
-				height='100vh'
-				paddingTop='125px'
-				sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}
-			></Box>
+			<Box height='100vh' sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-around' }}>
+				<Technologies />
+
+				<Tagline />
+
+				<CTA />
+			</Box>
 
 			<footer></footer>
 		</div>

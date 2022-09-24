@@ -16,10 +16,11 @@ export const StyledText = styled.div<IText>`
 			: `color: ${p.color || p.theme.colors.white};`}
 
 		${p.weight ? `font-weight: ${p.weight};` : ''}
+		${p.align ? `text-align: ${p.align};` : ''}
 
 		${() => {
 			let fontSize: number = 1;
-			switch (p.as) {
+			switch (p.component) {
 				case ETextType.h1:
 					fontSize = 3;
 					break;
@@ -42,8 +43,8 @@ export const StyledText = styled.div<IText>`
 					fontSize = 1;
 					break;
 				case ETextType.span:
-					fontSize = 1;
-					break;
+					// the span herit the font-size from the parent
+					return '';
 				default:
 					fontSize = 1;
 					break;

@@ -1,12 +1,14 @@
 import { ESize } from '@theme/theme.enum';
-import { DefaultTheme } from 'styled-components';
-import { EFontWeight, ETextType } from './Text.enum';
+import { ReactNode } from 'react';
+import { EFontWeight, ETextAlign, ETextType } from './Text.enum';
 
 interface IText {
-	as?: string;
-	children?: string;
+	as?: string | ETextType;
+	component?: ETextType;
+	children?: string | ReactNode;
 	type?: ETextType;
 	weight?: EFontWeight;
+	align?: ETextAlign;
 	size?: ESize.s | ESize.m | ESize.l;
 	color?: string;
 }

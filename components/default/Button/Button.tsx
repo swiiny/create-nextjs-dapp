@@ -2,7 +2,6 @@ import React, { FC } from 'react';
 import { IButton } from './Button.type';
 import { StyledButton } from './Button.styles';
 import GradientContainer from '../GradientContainer';
-import { Box } from '@mui/system';
 
 const Button: FC<IButton> = ({ children, icon, iconColor, gradientContainerProps }) => {
 	return (

@@ -12,7 +12,7 @@ const Navbar = () => {
 			paddingY={4}
 			paddingX={4}
 			width='100%'
-			sx={{ display: 'flex', justifyContent: 'space-between', position: 'fixed' }}
+			sx={{ display: 'flex', justifyContent: 'space-between', position: 'fixed', left: '0', right: '0' }}
 		>
 			<Text type={ETextType.h1} size={ESize.s}>
 				Nextjs Dapp template
