@@ -1,6 +1,5 @@
 import React, { FC } from 'react';
 import { ITagline } from './Tagline.type';
-import { StyledTagline } from './Tagline.styles';
 import { useTheme } from 'styled-components';
 import Text from '@components/default/Text';
 import { EFontWeight, ETextAlign, ETextType } from '@components/default/Text/Text.enum';

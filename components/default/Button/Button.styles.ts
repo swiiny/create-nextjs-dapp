@@ -1,34 +1,44 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { ButtonUnstyled } from '@mui/base';
 import { addTransition } from '@utils/functions';
 
 export const StyledButton = styled(ButtonUnstyled)<{ iconColor?: string }>`
-	position: relative;
-	border: none;
-	background-color: transparent;
+	${(p) => css`
+		position: relative;
+		border: none;
+		background-color: transparent;
 
-	cursor: pointer;
+		cursor: pointer;
 
-	font-size: 1.5rem;
+		font-size: 1.5rem;
 
-	color: ${(p) => p.theme.colors.white};
-
-	${addTransition()}
-
-	&:hover {
-		transform: scale(1.05);
-		color: ${(p) => p.theme.colors.gray};
-
-		& svg {
-			color: ${(p) => p.theme.colors.gray};
-		}
-	}
-
-	& svg {
-		margin-left: 16px;
-
-		color: ${(p) => (p.iconColor ? p.iconColor : p.theme.colors.white)};
+		//color: ${p.theme.colors.white};
 
 		${addTransition()}
-	}
+
+		${p.color?.includes('gradient')
+			? css`
+					background: ${p.color};
+					-webkit-background-clip: text;
+					-webkit-text-fill-color: transparent;
+			  `
+			: `color: ${p.color || p.theme.colors.white};`}
+
+	&:hover {
+			transform: scale(1.02);
+			color: ${p.theme.colors.gray};
+
+			& svg {
+				color: ${p.theme.colors.gray};
+			}
+		}
+
+		& svg {
+			margin-left: 16px;
+
+			color: ${p.iconColor ? p.iconColor : p.color ? p.color : p.theme.colors.white};
+
+			${addTransition()}
+		}
+	`}
 `;

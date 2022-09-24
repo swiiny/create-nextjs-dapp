@@ -3,9 +3,9 @@ import { IButton } from './Button.type';
 import { StyledButton } from './Button.styles';
 import GradientContainer from '../GradientContainer';
 
-const Button: FC<IButton> = ({ children, icon, iconColor, gradientContainerProps }) => {
+const Button: FC<IButton> = ({ children, color, icon, iconColor, gradientContainerProps }) => {
 	return (
-		<StyledButton iconColor={iconColor}>
+		<StyledButton color={color} iconColor={iconColor}>
 			<GradientContainer
 				paddingY='12px'
 				paddingX='36px'

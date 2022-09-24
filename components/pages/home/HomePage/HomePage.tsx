@@ -16,7 +16,7 @@ const HomePage: FC<IHomePage> = () => {
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
 
-			<Box height='100vh' sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-around' }}>
+			<Box height='100vh' sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-evenly' }}>
 				<Technologies />
 
 				<Tagline />

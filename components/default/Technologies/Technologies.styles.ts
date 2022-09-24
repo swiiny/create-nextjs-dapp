@@ -19,7 +19,6 @@ export const StyledLogoContainer = styled.div`
 			z-index: -1;
 
 			border-radius: inherit;
-
 			transition: inherit;
 
 			background-color: ${(p) => p.theme.colors.black};
