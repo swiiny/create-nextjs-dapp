@@ -1,16 +1,15 @@
 {
   "name": "create-nextjs-dapp",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "private": false,
   "bin": {
-    "create-nextjs-dapp": "node scripts/create-nextjs-dapp.js"
+    "create-nextjs-dapp": "bin/create-nextjs-dapp.js"
   },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "create-next-dapp": "node scripts/create-next-dapp.js"
+    "lint": "next lint"
   },
   "dependencies": {
     "@mui/base": "^5.0.0-alpha.98",
