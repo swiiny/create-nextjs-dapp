@@ -7,15 +7,6 @@ const nextConfig = withTM({
 		styledComponents: true, // ssr and displayName are configured by default
 		removeConsole: process.env.NODE_ENV === 'production', // remove all console.*
 		swcMinify: true // minify the bundle
-		/* baseUrl: '.',
-		paths: {
-			'@components': ['components/*'],
-			'@utils': ['utils/*'],
-			'@hooks': ['hooks/*'],
-			'@graphql': ['graphql/*'],
-			'@contexts': ['contexts/*'],
-			'@interfaces': ['interfaces/*']
-		} */
 	},
 	exclude: ['node_modules'],
 	images: {

@@ -24,6 +24,13 @@ declare module 'styled-components' {
 		};
 		colors: {
 			white: string;
+			black: string;
+			darkGray: string;
+			gray: string;
+			blue: string;
+			lightBlue: string;
+			blueGradient: string;
+			darkGradient: string;
 		};
 	}
 }

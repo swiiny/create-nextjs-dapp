@@ -223,7 +223,3 @@ MyComponent
 ```
 
 > if you are running on Windows then the command is "make win-component name=MyComponent"
-
-```
-
-```
