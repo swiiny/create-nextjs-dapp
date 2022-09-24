@@ -47,17 +47,19 @@ Clone the repo:
 git clone https://github.com/JeremyTheintz/create-nextjs-dapp.git
 ```
 
-To run the project using Make commands:
+Run the project using Make commands:
 
 ```
 # Install dependencies and run the project
 make init
 
+// or
+
 # Run the project
 make start
 ```
 
-To run the project without Make commands:
+Run the project without Make commands:
 
 ```
 npm install
