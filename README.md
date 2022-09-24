@@ -22,7 +22,6 @@ You can quickly start a new project with this start by using the following comma
 
 ```
 npx create-nextjs-dapp my-dapp
-
 ```
 
 ## Technologies
