@@ -22,19 +22,12 @@ export const StyledLogoContainer = styled.div`
 			transition: inherit;
 
 			background-color: ${(p) => p.theme.colors.black};
-			box-shadow: inset 0px -0px 60px -5px ${p.theme.colors.darkGray + '00'},
-				inset 0px -0px 3px ${p.theme.colors.gray + '00'}, inset -0px 0px 5px -4px ${p.theme.colors.darkGray + '00'};
 		}
 
 		&:hover {
 			opacity: 1 !important;
 
 			transform: scale(1.05);
-
-			&::before {
-				box-shadow: inset -8px -8px 60px -5px ${p.theme.colors.darkGray + '80'},
-					inset 4px -4px 3px ${p.theme.colors.gray + '20'}, inset -7px 7px 5px -4px ${p.theme.colors.darkGray};
-			}
 		}
 	`}
 `;
