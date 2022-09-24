@@ -10,7 +10,7 @@
 - [Technologies](#technologies)
 - [Setup](#setup)
 - [Remove Default UI Kit](#remove-default-ui-kit)
-- [Fast & Clean](#fast-clean)
+- [Fast & Clean Components builder](#fast--clean-components-builder)
 
 ## Introduction
 
