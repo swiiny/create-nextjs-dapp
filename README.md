@@ -3,14 +3,11 @@
 ![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat&logo=github)
 ![GitHub](https://img.shields.io/github/license/JeremyTheintz/nextjs-web3-boilerplate)
 
-This is a starter for building Dapps with Nextjs, React and ethers.
-
 ## Table of Contents
 
 - [Introduction](#introduction)
 - [Technologies](#technologies)
 - [Setup](#setup)
-- [Style](#style)
 
 ## Introduction
 
