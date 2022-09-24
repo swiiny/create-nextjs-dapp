@@ -1,7 +1,10 @@
 {
-  "name": "nextjs-web3-boilerplate",
-  "version": "0.1.0",
-  "private": true,
+  "name": "create-nextjs-dapp",
+  "version": "0.2.0",
+  "private": false,
+  "bin": {
+    "create-nextjs-dapp": "bin/create-nextjs-dapp.js"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -17,6 +20,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.4.0",
+    "request": "^2.88.2",
     "sharp": "^0.31.0",
     "styled-components": "^5.3.5"
   },
