@@ -1,26 +1,112 @@
-import styled from 'styled-components';
+import styled, { css, DefaultTheme } from 'styled-components';
 import { ButtonUnstyled } from '@mui/base';
-import { addTransition } from '@utils/functions';
+import { addTransition, mq } from '@utils/functions';
+import { ISharedButtonProps } from './Button.type';
+import { EFontWeight } from '../Text/Text.enum';
+import { EMediaQuery } from '@theme/theme.enum';
 
-export const StyledButton = styled(ButtonUnstyled)`
-	position: relative;
-	border: none;
-	background-color: transparent;
+const sharedStyle = (p: ISharedButtonProps) => {
+	const isSuccess = p.color === p.theme.colors.success;
+	return css`
+		position: relative;
+		border: none;
+		background-color: transparent;
 
-	cursor: pointer;
+		cursor: pointer;
 
-	font-size: 1.5rem;
+		font-size: calc(1.5rem * 0.6);
 
-	color: ${(p) => p.theme.colors.white};
+		${mq(EMediaQuery.sm, `font-size: calc(1.5rem * 0.7);`)}
+		${mq(EMediaQuery.md, `font-size: calc(1.5rem * 0.8);`)}
+		${mq(EMediaQuery.lg, `font-size: calc(1.5rem * 0.9);`)}
+		${mq(EMediaQuery.xl, `font-size: calc(1.5rem * 1.0);`)}
 
-	${addTransition()}
+		${addTransition()}
 
-	&:hover {
-		transform: scale(1.05);
-		color: ${(p) => p.theme.colors.gray};
-	}
+		& > span {
+			font-weight: ${EFontWeight.bold};
 
-	& svg {
+			transition: inherit;
+
+			${p.color?.includes('gradient')
+				? css`
+						background: ${p.color};
+						-webkit-background-clip: text;
+						-webkit-text-fill-color: transparent;
+				  `
+				: `color: ${p.color || p.theme.colors.white};`}
+
+			&:hover {
+				transform: scale(1.02);
+				color: ${isSuccess ? p.color : p.theme.colors.gray};
+
+				& svg {
+					color: ${isSuccess ? p.color : p.theme.colors.gray};
+				}
+			}
+
+			& svg {
+				margin-left: 16px;
+
+				color: ${p.iconColor ? p.iconColor : p.color ? p.color : p.theme.colors.white};
+
+				${addTransition()}
+
+				transform: scale(0.7);
+				${mq(EMediaQuery.md, `transform: scale(0.8);`)}
+				${mq(EMediaQuery.xl, `transform: scale(1.0);`)}
+			}
+		}
+	`;
+};
+
+export const StyledButton = styled(ButtonUnstyled)<ISharedButtonProps>`
+	${(p) => sharedStyle(p)}
+`;
+
+export const StyledLink = styled.a<ISharedButtonProps>`
+	display: inline-block;
+	${(p) => sharedStyle(p)}
+
+	& + a {
 		margin-left: 16px;
+	}
+`;
+
+export const StyledIconsContainer = styled.div<{ isActive: boolean }>`
+	position: relative;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	margin-left: 20px;
+
+	& > svg {
+		position: absolute;
+		${addTransition()}
+
+		${(p) =>
+			p.isActive
+				? css`
+						&:nth-child(1) {
+							opacity: 0;
+							transform: translateX(-50%) rotateX(90deg);
+						}
+						&:nth-child(2) {
+							opacity: 1;
+							transform: translateX(0) rotateX(0);
+						}
+				  `
+				: css`
+						&:nth-child(1) {
+							opacity: 1;
+							transform: translateX(0) rotateX(0);
+						}
+						&:nth-child(2) {
+							opacity: 0;
+							transform: translateX(50%) rotateX(-90deg);
+						}
+				  `}
 	}
 `;

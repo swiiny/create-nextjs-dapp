@@ -1,4 +1,5 @@
-import { ESize } from '@theme/theme.enum';
+import { EMediaQuery, ESize } from '@theme/theme.enum';
+import { mq } from '@utils/functions';
 import styled, { css } from 'styled-components';
 import { EFontWeight, ETextType } from './Text.enum';
 import { IText } from './Text.type';
@@ -16,10 +17,11 @@ export const StyledText = styled.div<IText>`
 			: `color: ${p.color || p.theme.colors.white};`}
 
 		${p.weight ? `font-weight: ${p.weight};` : ''}
+		${p.align ? `text-align: ${p.align};` : ''}
 
 		${() => {
 			let fontSize: number = 1;
-			switch (p.as) {
+			switch (p.component) {
 				case ETextType.h1:
 					fontSize = 3;
 					break;
@@ -42,8 +44,8 @@ export const StyledText = styled.div<IText>`
 					fontSize = 1;
 					break;
 				case ETextType.span:
-					fontSize = 1;
-					break;
+					// the span herit the font-size from the parent
+					return '';
 				default:
 					fontSize = 1;
 					break;
@@ -65,7 +67,12 @@ export const StyledText = styled.div<IText>`
 			}
 
 			return css`
-				font-size: ${fontSize}rem;
+				font-size: calc(${fontSize}rem * 0.6);
+
+				${mq(EMediaQuery.sm, `font-size: calc(${fontSize}rem * 0.7);`)}
+				${mq(EMediaQuery.md, `font-size: calc(${fontSize}rem * 0.8);`)}
+				${mq(EMediaQuery.lg, `font-size: calc(${fontSize}rem * 0.9);`)}
+				${mq(EMediaQuery.xl, `font-size: calc(${fontSize}rem * 1.0);`)}
 			`;
 		}}
 	`}

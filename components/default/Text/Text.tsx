@@ -3,9 +3,9 @@ import { IText } from './Text.type';
 import { StyledText } from './Text.styles';
 import { ETextType } from './Text.enum';
 
-const Text: FC<IText> = ({ children, type = ETextType.p, size, weight, color }) => {
+const Text: FC<IText> = ({ children, type = ETextType.p, component, size, weight, align, color }) => {
 	return (
-		<StyledText as={type} size={size} weight={weight} color={color}>
+		<StyledText as={component || type} component={type} size={size} weight={weight} align={align} color={color}>
 			{children}
 		</StyledText>
 	);

@@ -14,4 +14,10 @@ enum EFontWeight {
 	bold = 700
 }
 
-export { ETextType, EFontWeight };
+enum ETextAlign {
+	left = 'left',
+	center = 'center',
+	right = 'right'
+}
+
+export { ETextType, EFontWeight, ETextAlign };
