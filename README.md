@@ -53,7 +53,7 @@ Run the project using Make commands:
 # Install dependencies and run the project
 make init
 
-// or
+# or
 
 # Run the project
 make start
