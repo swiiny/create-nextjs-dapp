@@ -3,6 +3,7 @@ import React, { FC } from 'react';
 import { IHomePage } from './HomePage.type';
 import { MdOutlineContentCopy } from 'react-icons/md';
 import { Box } from '@mui/system';
+import GradientContainer from '@components/default/GradientContainer';
 
 const HomePage: FC<IHomePage> = () => {
 	return (
@@ -14,7 +15,9 @@ const HomePage: FC<IHomePage> = () => {
 			</Head>
 
 			<Box height='100vh' sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-				<MdOutlineContentCopy color='white' />
+				<GradientContainer paddingY='8px' paddingX='16px' width='500px' height='100px'>
+					<></>
+				</GradientContainer>
 			</Box>
 
 			<footer></footer>

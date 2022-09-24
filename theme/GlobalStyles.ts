@@ -18,7 +18,8 @@ body {
 		margin: 0 auto;
 		max-width: 1600px;
 
-    background-color: #000000;
+    background-color: ${(p) => p.theme.colors.black};
+    //background-color: ${(p) => p.theme.colors.white};
 }
 
 html {
