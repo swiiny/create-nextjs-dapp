@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "create-next-dapp": "node scripts/create-next-dapp.js"
   },
   "dependencies": {
     "@mui/base": "^5.0.0-alpha.98",
