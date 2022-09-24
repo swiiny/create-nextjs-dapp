@@ -1,6 +1,6 @@
 {
   "name": "create-nextjs-dapp",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "private": false,
   "bin": {
     "create-nextjs-dapp": "node scripts/create-nextjs-dapp.js"
