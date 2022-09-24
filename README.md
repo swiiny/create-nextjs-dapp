@@ -6,6 +6,7 @@
 ## Table of Contents
 
 - [Introduction](#introduction)
+- [Quick start](#quick-start)
 - [Technologies](#technologies)
 - [Setup](#setup)
 - [Remove Default UI Kit](#remove-default-ui-kit)
@@ -14,6 +15,15 @@
 ## Introduction
 
 This is a starter for building dapps with Nextjs, React and ethers.
+
+## Quick start
+
+You can quickly start a new project with this start by using the following command:
+
+```
+npx create-nextjs-dapp my-dapp
+
+```
 
 ## Technologies
 
