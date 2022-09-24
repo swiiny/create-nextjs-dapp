@@ -1,12 +1,9 @@
 import { ESize } from '@theme/theme.enum';
 import styled, { css } from 'styled-components';
-import { ETextType } from './Text.enum';
+import { EFontWeight, ETextType } from './Text.enum';
+import { IText } from './Text.type';
 
-export const StyledText = styled.div<{
-	as?: ETextType;
-	size?: ESize.s | ESize.m | ESize.l;
-	color?: string;
-}>`
+export const StyledText = styled.div<IText>`
 	${(p) => css`
 		position: relative;
 
@@ -17,6 +14,8 @@ export const StyledText = styled.div<{
 					-webkit-text-fill-color: transparent;
 			  `
 			: `color: ${p.color || p.theme.colors.white};`}
+
+		${p.weight ? `font-weight: ${p.weight};` : ''}
 
 		${() => {
 			let fontSize: number = 1;

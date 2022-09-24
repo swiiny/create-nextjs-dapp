@@ -9,4 +9,9 @@ enum ETextType {
 	span = 'span'
 }
 
-export { ETextType };
+enum EFontWeight {
+	regular = 400,
+	bold = 700
+}
+
+export { ETextType, EFontWeight };

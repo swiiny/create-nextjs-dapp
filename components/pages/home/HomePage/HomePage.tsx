@@ -5,7 +5,7 @@ import { Box } from '@mui/system';
 import Button from '@components/default/Button';
 import { FaGithub } from 'react-icons/fa';
 import Text from '@components/default/Text';
-import { ETextType } from '@components/default/Text/Text.enum';
+import { EFontWeight, ETextType } from '@components/default/Text/Text.enum';
 import { ESize } from '@theme/theme.enum';
 import { useTheme } from 'styled-components';
 
@@ -27,7 +27,9 @@ const HomePage: FC<IHomePage> = () => {
 				<Text type={ETextType.h2} color={theme.colors.blueGradient}>
 					Heading/h2
 				</Text>
-				<Text type={ETextType.h3}>Heading/h3</Text>
+				<Text type={ETextType.h3} weight={EFontWeight.regular}>
+					Heading/h3
+				</Text>
 				<Text type={ETextType.h4}>Heading/h4</Text>
 				<Text type={ETextType.p} size={ESize.l}>
 					Body/L
