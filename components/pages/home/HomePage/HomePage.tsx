@@ -2,15 +2,9 @@ import Head from 'next/head';
 import React, { FC } from 'react';
 import { IHomePage } from './HomePage.type';
 import { Box } from '@mui/system';
-import Text from '@components/default/Text';
-import { ETextType } from '@components/default/Text/Text.enum';
-import { ESize } from '@theme/theme.enum';
-import { useTheme } from 'styled-components';
-import Button from '@components/default/Button';
-import { FaGithub, FaStar } from 'react-icons/fa';
+import Navbar from '@components/common/Navbar';
 
 const HomePage: FC<IHomePage> = () => {
-	const theme = useTheme();
 	return (
 		<div>
 			<Head>
@@ -19,21 +13,11 @@ const HomePage: FC<IHomePage> = () => {
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
 
-			<Box height='100vh' sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-				<Box paddingY={4} paddingX={4} width='100%' sx={{ display: 'flex', justifyContent: 'space-between' }}>
-					<Text type={ETextType.h1} size={ESize.s}>
-						Nextjs Dapp template
-					</Text>
-
-					<Box>
-						<Button icon={<FaStar size={28} />} iconColor='#e3b341'>
-							Star
-						</Button>
-
-						<Button icon={<FaGithub size={28} />}>Github</Button>
-					</Box>
-				</Box>
-			</Box>
+			<Box
+				height='100vh'
+				paddingTop='125px'
+				sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}
+			></Box>
 
 			<footer></footer>
 		</div>

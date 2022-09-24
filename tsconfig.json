@@ -25,7 +25,7 @@
 			"@interfaces/*": ["interfaces/*"],
 			"@mui/styled-engine": ["./node_modules/@mui/styled-engine-sc"]
 		}
-	},
+	},types/next-types/next-env.d.ts
 	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
 	"exclude": ["node_modules"]
 }
