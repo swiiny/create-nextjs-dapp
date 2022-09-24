@@ -1,4 +1,4 @@
-# Dapp starter based on Nextjs, React and ethers
+![image]('doc/tagline.png')
 
 ![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat&logo=github)
 ![GitHub](https://img.shields.io/github/license/JeremyTheintz/nextjs-web3-boilerplate)

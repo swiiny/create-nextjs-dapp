@@ -11,7 +11,7 @@ const Tagline: FC<ITagline> = () => {
 	return (
 		<div>
 			<Text type={ETextType.h1} component={ETextType.h2} weight={EFontWeight.regular} align={ETextAlign.center}>
-				{`Starter for building `}
+				{`Starter to create `}
 				<Text type={ETextType.span} color={theme.colors.blueGradient}>
 					Dapps
 				</Text>
