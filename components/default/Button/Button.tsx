@@ -4,9 +4,9 @@ import { StyledButton } from './Button.styles';
 import GradientContainer from '../GradientContainer';
 import { Box } from '@mui/system';
 
-const Button: FC<IButton> = ({ children, icon, gradientContainerProps }) => {
+const Button: FC<IButton> = ({ children, icon, iconColor, gradientContainerProps }) => {
 	return (
-		<StyledButton>
+		<StyledButton iconColor={iconColor}>
 			<GradientContainer
 				paddingY='12px'
 				paddingX='36px'
