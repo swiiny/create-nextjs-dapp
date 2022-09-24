@@ -21,11 +21,10 @@ enum ESize {
 
 enum EMediaQuery {
 	xs = '0px',
-	sm = '660px',
+	sm = '600px',
 	md = '900px',
 	lg = '1200px',
-	xl = '1600px',
-	xxl = '1800px'
+	xl = '1536px'
 }
 
 export { ESize, EMediaQuery };
