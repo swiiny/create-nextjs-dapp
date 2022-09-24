@@ -1,7 +1,7 @@
 {
-  "name": "nextjs-web3-boilerplate",
-  "version": "0.1.0",
-  "private": true,
+  "name": "create-nextjs-dapp",
+  "version": "0.1.1",
+  "private": false,
   "scripts": {
     "dev": "next dev",
     "build": "next build",

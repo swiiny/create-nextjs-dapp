@@ -103,7 +103,7 @@ const scriptsPath = path.join(packagesDir, 'react-scripts', scriptsFileName);
 const args = process.argv.slice(2);
 
 // Now run the CRA command
-const craScriptPath = path.join(packagesDir, 'create-next-dapp', 'index.js');
+const craScriptPath = path.join(packagesDir, 'create-nextjs-dapp', 'index.js');
 cp.execSync(`node ${craScriptPath} ${args.join(' ')} --scripts-version="${scriptsPath}"`, {
 	cwd: rootDir,
 	stdio: 'inherit'
