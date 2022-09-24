@@ -22,7 +22,8 @@
 			"@graphql/*": ["graphql/*"],
 			"@contexts/*": ["contexts/*"],
 			"@theme/*": ["theme/*"],
-			"@interfaces/*": ["interfaces/*"]
+			"@interfaces/*": ["interfaces/*"],
+			"@mui/styled-engine": ["./node_modules/@mui/styled-engine-sc"]
 		}
 	},
 	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

@@ -17,6 +17,8 @@ const GlobalStyle = createGlobalStyle<{ theme: DefaultTheme }>`
 body {
 		margin: 0 auto;
 		max-width: 1600px;
+
+    background-color: #000000;
 }
 
 html {

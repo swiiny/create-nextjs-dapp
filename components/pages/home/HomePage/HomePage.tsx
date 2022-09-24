@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import React, { FC } from 'react';
 import { IHomePage } from './HomePage.type';
+import { MdOutlineContentCopy } from 'react-icons/md';
+import { Box } from '@mui/system';
 
 const HomePage: FC<IHomePage> = () => {
 	return (
@@ -11,7 +13,9 @@ const HomePage: FC<IHomePage> = () => {
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
 
-			<main></main>
+			<Box height='100vh' sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+				<MdOutlineContentCopy color='white' />
+			</Box>
 
 			<footer></footer>
 		</div>

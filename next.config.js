@@ -1,5 +1,7 @@
+const withTM = require('next-transpile-modules')(['@mui/system', '@mui/base', '@mui/styled-engine-sc']);
+
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+const nextConfig = withTM({
 	reactStrictMode: true,
 	compiler: {
 		styledComponents: true, // ssr and displayName are configured by default
@@ -23,7 +25,14 @@ const nextConfig = {
 	experimental: {
 		runtime: 'nodejs'
 	},
-	env: {}
-};
+	env: {},
+	webpack: (config) => {
+		config.resolve.alias = {
+			...config.resolve.alias,
+			'@mui/styled-engine': '@mui/styled-engine-sc'
+		};
+		return config;
+	}
+});
 
 module.exports = nextConfig;
