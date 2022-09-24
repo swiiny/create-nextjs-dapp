@@ -9,9 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@mui/base": "^5.0.0-alpha.98",
+    "@mui/styled-engine-sc": "^5.10.6",
+    "@mui/system": "^5.10.6",
     "next": "12.3.1",
+    "next-transpile-modules": "^9.0.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-icons": "^4.4.0",
     "sharp": "^0.31.0",
     "styled-components": "^5.3.5"
   },

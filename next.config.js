@@ -1,19 +1,12 @@
+const withTM = require('next-transpile-modules')(['@mui/system', '@mui/base', '@mui/styled-engine-sc']);
+
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+const nextConfig = withTM({
 	reactStrictMode: true,
 	compiler: {
 		styledComponents: true, // ssr and displayName are configured by default
 		removeConsole: process.env.NODE_ENV === 'production', // remove all console.*
 		swcMinify: true // minify the bundle
-		/* baseUrl: '.',
-		paths: {
-			'@components': ['components/*'],
-			'@utils': ['utils/*'],
-			'@hooks': ['hooks/*'],
-			'@graphql': ['graphql/*'],
-			'@contexts': ['contexts/*'],
-			'@interfaces': ['interfaces/*']
-		} */
 	},
 	exclude: ['node_modules'],
 	images: {
@@ -23,7 +16,14 @@ const nextConfig = {
 	experimental: {
 		runtime: 'nodejs'
 	},
-	env: {}
-};
+	env: {},
+	webpack: (config) => {
+		config.resolve.alias = {
+			...config.resolve.alias,
+			'@mui/styled-engine': '@mui/styled-engine-sc'
+		};
+		return config;
+	}
+});
 
 module.exports = nextConfig;

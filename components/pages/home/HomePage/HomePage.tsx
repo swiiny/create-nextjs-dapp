@@ -1,8 +1,16 @@
 import Head from 'next/head';
 import React, { FC } from 'react';
 import { IHomePage } from './HomePage.type';
+import { Box } from '@mui/system';
+import Button from '@components/default/Button';
+import { FaGithub } from 'react-icons/fa';
+import Text from '@components/default/Text';
+import { EFontWeight, ETextType } from '@components/default/Text/Text.enum';
+import { ESize } from '@theme/theme.enum';
+import { useTheme } from 'styled-components';
 
 const HomePage: FC<IHomePage> = () => {
+	const theme = useTheme();
 	return (
 		<div>
 			<Head>
@@ -11,7 +19,28 @@ const HomePage: FC<IHomePage> = () => {
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
 
-			<main></main>
+			<Box
+				height='100vh'
+				sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: '10px' }}
+			>
+				<Text type={ETextType.h1}>Heading/h1</Text>
+				<Text type={ETextType.h2} color={theme.colors.blueGradient}>
+					Heading/h2
+				</Text>
+				<Text type={ETextType.h3} weight={EFontWeight.regular}>
+					Heading/h3
+				</Text>
+				<Text type={ETextType.h4}>Heading/h4</Text>
+				<Text type={ETextType.p} size={ESize.l}>
+					Body/L
+				</Text>
+				<Text type={ETextType.p} size={ESize.m}>
+					Body/M
+				</Text>
+				<Text type={ETextType.p} size={ESize.s}>
+					Body/S
+				</Text>
+			</Box>
 
 			<footer></footer>
 		</div>

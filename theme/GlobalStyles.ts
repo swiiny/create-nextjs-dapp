@@ -17,6 +17,9 @@ const GlobalStyle = createGlobalStyle<{ theme: DefaultTheme }>`
 body {
 		margin: 0 auto;
 		max-width: 1600px;
+
+    background-color: ${(p) => p.theme.colors.black};
+    //background-color: ${(p) => p.theme.colors.white};
 }
 
 html {
@@ -48,7 +51,7 @@ h5,
 h6,
 button {
   // set font family
-  font-family: '', serif;
+  font-family: 'Nunito', sans-serif;
   font-weight: bold;
 }
 
@@ -58,7 +61,7 @@ span,
 input,
 textarea {
   // set font family
-  font-family: '', sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-weight: 400;
 }
 
