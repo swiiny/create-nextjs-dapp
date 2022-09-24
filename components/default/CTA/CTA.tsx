@@ -7,8 +7,6 @@ import { useTheme } from 'styled-components';
 import { ESize } from '@theme/theme.enum';
 import { ETextType, EFontWeight, ETextAlign } from '../Text/Text.enum';
 import Button from '../Button';
-import { MdOutlineContentCopy } from 'react-icons/md';
-import { copy } from '@utils/functions';
 
 const cloneCmd = 'git clone https://github.com/JeremyTheintz/nextjs-web3-boilerplate.git';
 
@@ -27,12 +25,7 @@ const CTA: FC<ICTA> = () => {
 				Start coding is easy as
 			</Text>
 
-			<Button
-				onClick={() => copy(cloneCmd)}
-				color={theme.colors.lightBlue}
-				gradientContainerProps={{ marginTop: 4 }}
-				icon={<MdOutlineContentCopy size={24} />}
-			>
+			<Button color={theme.colors.lightBlue} gradientContainerProps={{ marginTop: 4 }} valueToCopy={cloneCmd}>
 				{cloneCmd}
 			</Button>
 		</Box>

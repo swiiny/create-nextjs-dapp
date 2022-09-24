@@ -42,3 +42,41 @@ export const StyledButton = styled(ButtonUnstyled)<{ iconColor?: string }>`
 		}
 	`}
 `;
+
+export const StyledIconsContainer = styled.div<{ isActive: boolean }>`
+	position: relative;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	margin-left: 20px;
+
+	& > svg {
+		position: absolute;
+		${addTransition()}
+
+		${(p) =>
+			p.isActive
+				? css`
+						&:nth-child(1) {
+							opacity: 0;
+							transform: translateX(-50%) rotateX(90deg);
+						}
+						&:nth-child(2) {
+							opacity: 1;
+							transform: translateX(0) rotateX(0);
+						}
+				  `
+				: css`
+						&:nth-child(1) {
+							opacity: 1;
+							transform: translateX(0) rotateX(0);
+						}
+						&:nth-child(2) {
+							opacity: 0;
+							transform: translateX(50%) rotateX(-90deg);
+						}
+				  `}
+	}
+`;
