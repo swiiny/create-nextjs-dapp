@@ -69,7 +69,7 @@ npm run dev
 There are some default components used to build the home page in the `./components/default`:
 
 ```
-// run this command to delete the default components
+# run this command to delete the default components
 rm -rf ./components/default
 ```
 
