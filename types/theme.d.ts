@@ -31,6 +31,7 @@ declare module 'styled-components' {
 			lightBlue: string;
 			blueGradient: string;
 			darkGradient: string;
+			success: string;
 		};
 	}
 }

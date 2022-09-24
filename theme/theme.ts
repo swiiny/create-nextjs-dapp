@@ -34,6 +34,7 @@ export const darkTheme: DefaultTheme = {
 		gray: '#979797',
 		blue: '#2467DF',
 		lightBlue: '#00B1EA',
+		success: '#24DF9C',
 		blueGradient: 'linear-gradient(90deg, #2467DF 0%, #00B1EA 100%)',
 		darkGradient: 'linear-gradient(180deg, #232424 0%, #171717 100%)'
 	}
@@ -49,6 +50,7 @@ export const lightTheme: DefaultTheme = {
 		gray: '#979797',
 		blue: '#2467DF',
 		lightBlue: '#00B1EA',
+		success: '#24DF9C',
 		blueGradient: 'linear-gradient(90deg, #2467DF 43.62%, #00B1EA 53.09%), linear-gradient(0deg, #FFFFFF, #FFFFFF)',
 		darkGradient: 'linear-gradient(0deg, #1E1F20, #1E1F20), linear-gradient(180deg, #232424 0%, #171717 100%)'
 	}

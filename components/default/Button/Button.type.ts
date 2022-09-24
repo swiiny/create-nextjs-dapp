@@ -1,6 +1,7 @@
 import { ReactNode } from 'react';
 import { ButtonUnstyledProps } from '@mui/base/ButtonUnstyled';
 import { BoxProps } from '@mui/system';
+import { DefaultTheme } from 'styled-components';
 
 interface IButton extends ButtonUnstyledProps {
 	children: ReactNode;
@@ -11,4 +12,10 @@ interface IButton extends ButtonUnstyledProps {
 	gradientContainerProps?: BoxProps;
 }
 
-export type { IButton };
+interface ISharedButtonProps {
+	theme: DefaultTheme;
+	iconColor?: string;
+	color?: string;
+}
+
+export type { IButton, ISharedButtonProps };

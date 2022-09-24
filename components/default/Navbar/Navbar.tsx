@@ -5,6 +5,8 @@ import { Box } from '@mui/system';
 import { ESize } from '@theme/theme.enum';
 import { FaStar, FaGithub } from 'react-icons/fa';
 
+const repoUrl = 'https://github.com/JeremyTheintz/nextjs-web3-boilerplate';
+
 const Navbar = () => {
 	return (
 		<Box
@@ -19,11 +21,13 @@ const Navbar = () => {
 			</Text>
 
 			<Box>
-				<Button icon={<FaStar size={28} />} iconColor='#e3b341'>
+				<Button href={repoUrl} icon={<FaStar size={28} />} iconColor='#e3b341'>
 					Add a Star
 				</Button>
 
-				<Button icon={<FaGithub size={28} />}>Github</Button>
+				<Button href={repoUrl} icon={<FaGithub size={28} />}>
+					Github
+				</Button>
 			</Box>
 		</Box>
 	);

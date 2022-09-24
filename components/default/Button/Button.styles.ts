@@ -1,9 +1,12 @@
-import styled, { css } from 'styled-components';
+import styled, { css, DefaultTheme } from 'styled-components';
 import { ButtonUnstyled } from '@mui/base';
 import { addTransition } from '@utils/functions';
+import { ISharedButtonProps } from './Button.type';
+import { EFontWeight } from '../Text/Text.enum';
 
-export const StyledButton = styled(ButtonUnstyled)<{ iconColor?: string }>`
-	${(p) => css`
+const sharedStyle = (p: ISharedButtonProps) => {
+	const isSuccess = p.color === p.theme.colors.success;
+	return css`
 		position: relative;
 		border: none;
 		background-color: transparent;
@@ -12,35 +15,52 @@ export const StyledButton = styled(ButtonUnstyled)<{ iconColor?: string }>`
 
 		font-size: 1.5rem;
 
-		//color: ${p.theme.colors.white};
-
 		${addTransition()}
 
-		${p.color?.includes('gradient')
-			? css`
-					background: ${p.color};
-					-webkit-background-clip: text;
-					-webkit-text-fill-color: transparent;
-			  `
-			: `color: ${p.color || p.theme.colors.white};`}
+		& > span {
+			font-weight: ${EFontWeight.bold};
 
-	&:hover {
-			transform: scale(1.02);
-			color: ${p.theme.colors.gray};
+			transition: inherit;
+
+			${p.color?.includes('gradient')
+				? css`
+						background: ${p.color};
+						-webkit-background-clip: text;
+						-webkit-text-fill-color: transparent;
+				  `
+				: `color: ${p.color || p.theme.colors.white};`}
+
+			&:hover {
+				transform: scale(1.02);
+				color: ${isSuccess ? p.color : p.theme.colors.gray};
+
+				& svg {
+					color: ${isSuccess ? p.color : p.theme.colors.gray};
+				}
+			}
 
 			& svg {
-				color: ${p.theme.colors.gray};
+				margin-left: 16px;
+
+				color: ${p.iconColor ? p.iconColor : p.color ? p.color : p.theme.colors.white};
+
+				${addTransition()}
 			}
 		}
+	`;
+};
 
-		& svg {
-			margin-left: 16px;
+export const StyledButton = styled(ButtonUnstyled)<ISharedButtonProps>`
+	${(p) => sharedStyle(p)}
+`;
 
-			color: ${p.iconColor ? p.iconColor : p.color ? p.color : p.theme.colors.white};
+export const StyledLink = styled.a<ISharedButtonProps>`
+	display: inline-block;
+	${(p) => sharedStyle(p)}
 
-			${addTransition()}
-		}
-	`}
+	& + a {
+		margin-left: 16px;
+	}
 `;
 
 export const StyledIconsContainer = styled.div<{ isActive: boolean }>`
