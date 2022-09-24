@@ -1,9 +1,9 @@
 import Head from 'next/head';
 import React, { FC } from 'react';
 import { IHomePage } from './HomePage.type';
-import { MdOutlineContentCopy } from 'react-icons/md';
 import { Box } from '@mui/system';
-import GradientContainer from '@components/default/GradientContainer';
+import Button from '@components/default/Button';
+import { FaGithub } from 'react-icons/fa';
 
 const HomePage: FC<IHomePage> = () => {
 	return (
@@ -15,9 +15,7 @@ const HomePage: FC<IHomePage> = () => {
 			</Head>
 
 			<Box height='100vh' sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-				<GradientContainer paddingY='8px' paddingX='16px' width='500px' height='100px'>
-					<></>
-				</GradientContainer>
+				<Button icon={<FaGithub size={28} />}>Github</Button>
 			</Box>
 
 			<footer></footer>

@@ -5,6 +5,7 @@ export default function DappBoilerplateDocument() {
 	return (
 		<Html lang='en'>
 			<Head>
+				<link href='https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap' rel='stylesheet' />
 				<meta name='application-name' content='Node Guardians' />
 				<meta name='apple-mobile-web-app-capable' content='yes' />
 				<meta name='apple-mobile-web-app-status-bar-style' content='default' />
