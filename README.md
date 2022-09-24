@@ -8,6 +8,7 @@
 - [Introduction](#introduction)
 - [Technologies](#technologies)
 - [Setup](#setup)
+- [Fast & Clean](#fast-clean)
 
 ## Introduction
 
@@ -46,3 +47,29 @@ To run the project without Make commands:
 npm install
 npm run dev
 ```
+
+There are some default components used to build the home page in the `./components/default`:
+
+```
+// run this command to delete the default components
+rm -rf ./components/default
+```
+
+## Fast & Clean
+
+The Makefile is ready to use for fast and clean development.
+Creating all a component needs is as simple as:
+
+```
+// run this to create a component named "MyComponent"
+make component name=MyComponent
+
+// The commande will create the following files with minimum viable code to make the component work:
+MyComponent
+ |- index.ts
+ |- MyComponent.tsx
+ |- MyComponent.styles.ts
+ |- MyComponent.type.ts
+```
+
+> if you are running on Windows then the command is "make win-component name=MyComponent"
