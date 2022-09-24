@@ -18,7 +18,7 @@ This is a starter for building dapps with Nextjs, React and ethers.
 
 ## Quick start
 
-You can quickly start a new project with this start by using the following command:
+You can quickly start a new project with this starter by using the following command:
 
 ```
 npx create-nextjs-dapp my-dapp
@@ -40,6 +40,12 @@ Working configuration:
 - npm 8.11.0
 
 ## Setup
+
+Clone the repo:
+
+```
+git clone https://github.com/JeremyTheintz/create-nextjs-dapp.git
+```
 
 To run the project using Make commands:
 
