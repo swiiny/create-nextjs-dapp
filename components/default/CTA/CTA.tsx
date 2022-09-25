@@ -36,7 +36,7 @@ const CTA: FC<ICTA> = () => {
 			<Button
 				color={theme.colors.lightBlue}
 				gradientContainerProps={{ marginTop: 4 }}
-				valueToCopy={cloneCmd}
+				valueToCopy={cloneCmd + '@latest'}
 				noPaddingResponsive
 			>
 				{cloneCmd}
