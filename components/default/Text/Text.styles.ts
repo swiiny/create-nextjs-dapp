@@ -1,7 +1,7 @@
 import { EMediaQuery, ESize } from '@theme/theme.enum';
 import { mq } from '@utils/functions';
 import styled, { css } from 'styled-components';
-import { EFontWeight, ETextType } from './Text.enum';
+import { EFontWeight, ETextAlign, ETextType } from './Text.enum';
 import { IText } from './Text.type';
 
 export const StyledText = styled.div<IText>`
@@ -18,6 +18,7 @@ export const StyledText = styled.div<IText>`
 
 		${p.weight ? `font-weight: ${p.weight};` : ''}
 		${p.align ? `text-align: ${p.align};` : ''}
+		${p.align === ETextAlign.center ? `width: 100%;` : ''}
 
 		${() => {
 			let fontSize: number = 1;
@@ -67,7 +68,7 @@ export const StyledText = styled.div<IText>`
 			}
 
 			return css`
-				font-size: calc(${fontSize}rem * 0.6);
+				font-size: calc(${fontSize}rem * 0.7);
 
 				${mq(EMediaQuery.sm, `font-size: calc(${fontSize}rem * 0.7);`)}
 				${mq(EMediaQuery.md, `font-size: calc(${fontSize}rem * 0.8);`)}

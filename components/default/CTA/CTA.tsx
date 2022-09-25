@@ -1,6 +1,5 @@
 import React, { FC } from 'react';
 import { ICTA } from './CTA.type';
-import { StyledCTA } from './CTA.styles';
 import { Box } from '@mui/system';
 import Text from '../Text';
 import { useTheme } from 'styled-components';
@@ -36,7 +35,7 @@ const CTA: FC<ICTA> = () => {
 			<Button
 				color={theme.colors.lightBlue}
 				gradientContainerProps={{ marginTop: 4 }}
-				valueToCopy={cloneCmd}
+				valueToCopy={cloneCmd + '@latest'}
 				noPaddingResponsive
 			>
 				{cloneCmd}

@@ -4,11 +4,11 @@ import { IWallet } from '@interfaces/wallet';
 const WALLETS = {
 	metamask: {
 		name: 'MetaMask',
-		srcLogo: '/assets/wallets/metamask-fox.svg'
+		srcLogo: '/assets/logo-metamask-color.svg'
 	} as IWallet,
 	walletConnect: {
 		name: 'Wallet Connect',
-		srcLogo: '/assets/wallets/wallet-connect.svg'
+		srcLogo: '/assets/logo-wallet-connect-color.svg'
 	} as IWallet
 };
 

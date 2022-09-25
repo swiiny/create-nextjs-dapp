@@ -62,12 +62,18 @@ const sharedStyle = (p: ISharedButtonProps) => {
 
 export const StyledButton = styled(ButtonUnstyled)<ISharedButtonProps>`
 	${(p) => sharedStyle(p)}
+
+	& + button,
+	& + a {
+		margin-left: 16px;
+	}
 `;
 
 export const StyledLink = styled.a<ISharedButtonProps>`
 	display: inline-block;
 	${(p) => sharedStyle(p)}
 
+	& + button,
 	& + a {
 		margin-left: 16px;
 	}
