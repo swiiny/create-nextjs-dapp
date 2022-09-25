@@ -1,7 +1,7 @@
 ![image](https://github.com/JeremyTheintz/create-nextjs-dapp/raw/main/doc/tagline.png)
 
 ![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat&logo=github)
-![GitHub](https://img.shields.io/github/license/https://github.com/JeremyTheintz/create-nextjs-dapp)
+![GitHub](https://img.shields.io/github/license/JeremyTheintz/create-nextjs-dapp)
 
 ## Table of Contents
 
