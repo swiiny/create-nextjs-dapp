@@ -8,12 +8,12 @@ interface IWeb3 {
 	address: Address | undefined;
 	networkId: number | undefined;
 	isWalletConnected: boolean;
+	isWalletModalOpen: boolean;
 	walletName: string | undefined;
-	isConnectWalletModalOpen: boolean;
 	isConnectingWallet: boolean;
 	isValidNetwork: boolean;
-	setIsConnectWalletModalOpen: (newState: boolean) => void;
 	connectWallet: (wallet: IWallet) => void;
+	setIsWalletModalOpen: (newState: boolean) => void;
 	disconnectWallet: () => void;
 }
 

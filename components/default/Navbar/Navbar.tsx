@@ -4,7 +4,8 @@ import { ETextType } from '@components/default/Text/Text.enum';
 import useResponsive from '@hooks/useResponsive';
 import { Box } from '@mui/system';
 import { ESize } from '@theme/theme.enum';
-import { FaStar, FaGithub } from 'react-icons/fa';
+import { FaStar } from 'react-icons/fa';
+import WalletButton from '../WalletButton';
 
 const repoUrl = 'https://github.com/JeremyTheintz/create-nextjs-dapp';
 
@@ -25,14 +26,12 @@ const Navbar = () => {
 
 			<Box>
 				{isBiggerThanMd && (
-					<Button href={repoUrl} icon={<FaStar size={28} />} iconColor='#e3b341'>
-						Add a Star
+					<Button href={repoUrl} icon={<FaStar size={28} />} iconColor={'#e3b341'}>
+						Star on Github
 					</Button>
 				)}
 
-				<Button href={repoUrl} icon={<FaGithub size={28} />}>
-					Github
-				</Button>
+				<WalletButton />
 			</Box>
 		</Box>
 	);

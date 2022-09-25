@@ -12,16 +12,18 @@ const DappBoilerplate = ({ Component, pageProps }: AppProps) => {
 			<Head>
 				<meta name='viewport' content='width=device-width, initial-scale=1.0' />
 
-				<link rel='manifest' href='/manifest.json' />
 				<link rel='apple-touch-icon' href='/icon.png'></link>
 
-				<meta name='application-name' content='Dapp boilerplate' />
+				<meta name='application-name' content='Create Nextjs Dapp' />
 				<meta name='apple-mobile-web-app-capable' content='yes' />
 				<meta name='apple-mobile-web-app-status-bar-style' content='default' />
-				<meta name='apple-mobile-web-app-title' content='Dapp boilerplate' />
-				<meta name='description' content='Dapp boilerplate working with Next.js and ethers.js' />
+				<meta name='apple-mobile-web-app-title' content='Create Nextjs Dapp' />
+				<meta
+					name='description'
+					content='Starter to create Dapps with Next, React and Ethers. No longer waste valuable time building your project structure'
+				/>
 
-				<meta name='theme-color' content='#131923' />
+				<meta name='theme-color' content='#1E1F20' />
 			</Head>
 
 			<Web3Provider>
