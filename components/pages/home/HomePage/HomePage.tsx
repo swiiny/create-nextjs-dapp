@@ -16,6 +16,15 @@ const HomePage: FC<IHomePage> = () => {
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
 
+			{/* 	<Box
+				className='test-dots'
+				sx={{ position: 'fixed', top: '0', bottom: '0', left: '0', right: '0', display: 'grid', gap: '2px' }}
+			>
+				{Array.from({ length: 50 * 50 }).map((_, i) => (
+					<Box className='dot' key={i} />
+				))}
+			</Box>
+ */}
 			<Box
 				height='100vh'
 				paddingTop='30px'

@@ -106,8 +106,47 @@ textarea {
 //========================================================================================================
 // ANIMATIONS
 //========================================================================================================
+/* .test-dots {
+  
 
+  // put the dots in a square of 20 x 20 square
+  display: grid;
+  grid-template-columns: repeat(50, 1fr);
+  grid-template-rows: repeat(50, 1fr);
 
+  position: fixed;
+  z-index: -1;
+
+}
+
+.dot {
+  width: 5px;
+  height: 5px;
+  background-color: ${(p) => p.theme.colors.white + '20'};
+  border-radius: 50%;
+  --scaledelay: calc((
+  (@abs(@abs(@row - @size-row/2) + @abs(@col - @size-col/2) - @size-col) / @size-col) - 1) * -1.5s) ;
+  animation-name: scale;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
+  animation-delay: var(--scaledelay);
+  
+  transform: scale(0.2);
+
+  @keyframes scale {
+    0%{
+      transform: scale(0.2);
+    }
+    50%{
+      transform: scale(1);
+    }
+    100%{
+      transform: scale(0.2);
+    }
+  }
+}
+ */
 //========================================================================================================
 // FONTS
 //========================================================================================================
