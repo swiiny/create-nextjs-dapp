@@ -11,6 +11,9 @@ const Meta: FC<IMeta> = ({ title, description, children }) => (
 		<meta property='og:title' content={title} key='title' />
 		<meta property='og:description' content={description} />
 		<meta property='og:image' content='https://create-nextjs-d.app/thumbnail.png' />
+		<meta name='language' content='English' />
+		<meta name='robots' content='index, follow' />
+		<meta name='keywords' content={`Create-Nextjs-Dapp`} />
 
 		<meta name='twitter:card' content='summary' />
 		<meta name='twitter:site' content='@Swiiny_' />
