@@ -4,6 +4,7 @@ import { ThemeProvider } from 'styled-components';
 import GlobalStyle from '@theme/GlobalStyles';
 import { darkTheme } from '@theme/theme';
 import Navbar from '@components/default/Navbar';
+import Web3Provider from '@contexts/Web3Context';
 
 const DappBoilerplate = ({ Component, pageProps }: AppProps) => {
 	return (
@@ -23,11 +24,13 @@ const DappBoilerplate = ({ Component, pageProps }: AppProps) => {
 				<meta name='theme-color' content='#131923' />
 			</Head>
 
-			<ThemeProvider theme={darkTheme}>
-				<GlobalStyle />
-				<Navbar />
-				<Component {...pageProps} />
-			</ThemeProvider>
+			<Web3Provider>
+				<ThemeProvider theme={darkTheme}>
+					<GlobalStyle />
+					<Navbar />
+					<Component {...pageProps} />
+				</ThemeProvider>
+			</Web3Provider>
 		</>
 	);
 };

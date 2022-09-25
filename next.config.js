@@ -16,7 +16,10 @@ const nextConfig = withTM({
 	experimental: {
 		runtime: 'nodejs'
 	},
-	env: {},
+	env: {
+		RPC_ETHEREUM: process.env.RPC_ETHEREUM,
+		RPC_AVALANCHE: process.env.RPC_AVALANCHE
+	},
 	webpack: (config) => {
 		config.resolve.alias = {
 			...config.resolve.alias,
