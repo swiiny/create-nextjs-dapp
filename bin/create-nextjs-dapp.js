@@ -50,9 +50,10 @@ async function downloadRepo() {
 			//await exec('cd ' + dest + ' && npm install');
 			await exec('cd ' + dest + ' && npm install');
 
-			console.log('Starting the app 🚀');
-			await exec('cd ' + dest + ' && npm run dev');
+			console.log('Opening app directory 📁');
+			exec('open ' + dest);
 
+			console.log('Happy Hacking Anon 🚀');
 			process.exit(0);
 		});
 	}).on('error', function (err) {
