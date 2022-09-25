@@ -6,7 +6,7 @@ import { Box } from '@mui/system';
 import { ESize } from '@theme/theme.enum';
 import { FaStar, FaGithub } from 'react-icons/fa';
 
-const repoUrl = 'https://github.com/JeremyTheintz/nextjs-web3-boilerplate';
+const repoUrl = 'https://github.com/JeremyTheintz/create-nextjs-dapp';
 
 const Navbar = () => {
 	const { isBiggerThanSm, isBiggerThanMd } = useResponsive();
