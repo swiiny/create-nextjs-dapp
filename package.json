@@ -1,6 +1,6 @@
 {
   "name": "create-nextjs-dapp",
-  "version": "0.2.2",
+  "version": "0.4.0",
   "private": false,
   "bin": {
     "create-nextjs-dapp": "bin/create-nextjs-dapp.js"
@@ -15,6 +15,8 @@
     "@mui/base": "^5.0.0-alpha.98",
     "@mui/styled-engine-sc": "^5.10.6",
     "@mui/system": "^5.10.6",
+    "@walletconnect/web3-provider": "^1.8.0",
+    "ethers": "^5.7.1",
     "next": "12.3.1",
     "next-transpile-modules": "^9.0.0",
     "react": "18.2.0",
