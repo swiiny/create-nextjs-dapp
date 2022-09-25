@@ -20,7 +20,7 @@ const Navbar = () => {
 			sx={{ display: 'flex', justifyContent: 'space-between', position: 'fixed', left: '0', right: '0' }}
 		>
 			<Text type={ETextType.h1} size={ESize.s}>
-				{`${isBiggerThanSm ? 'Nextjs ' : ''}`}Dapp template
+				{`${isBiggerThanSm ? 'Create ' : ''}`}Nextjs Dapp
 			</Text>
 
 			<Box>
