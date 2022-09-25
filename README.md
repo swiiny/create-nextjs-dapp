@@ -1,7 +1,7 @@
 ![image](https://github.com/JeremyTheintz/create-nextjs-dapp/raw/main/doc/tagline.png)
 
 ![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat&logo=github)
-![GitHub](https://img.shields.io/github/license/JeremyTheintz/nextjs-web3-boilerplate)
+![GitHub](https://img.shields.io/github/license/https://github.com/JeremyTheintz/create-nextjs-dapp)
 
 ## Table of Contents
 
@@ -159,7 +159,7 @@ The default UI kit is built using `mui/base`, `mui/system` with `styled-componen
 - import GlobalStyle from '@theme/GlobalStyles';
 - import { darkTheme } from '@theme/theme';
 
-  const DappBoilerplate = ({ Component, pageProps }: AppProps) => {
+  const CreateNextjsDapp = ({ Component, pageProps }: AppProps) => {
 	  (
       ...
 -      <ThemeProvider theme={theme}>
@@ -180,7 +180,7 @@ The default UI kit is built using `mui/base`, `mui/system` with `styled-componen
 ...
 
 - // @ts-ignore
-- DappBoilerplateDocument.getInitialProps = async (ctx) => {
+- CreateNextjsDappDocument.getInitialProps = async (ctx) => {
 - 	const sheet = new ServerStyleSheet();
 - 	const originalRenderPage = ctx.renderPage;
 -

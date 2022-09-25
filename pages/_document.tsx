@@ -1,7 +1,7 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
 
-export default function DappBoilerplateDocument() {
+export default function CreateNextjsDappDocument() {
 	return (
 		<Html lang='en'>
 			<Head>
@@ -21,7 +21,7 @@ export default function DappBoilerplateDocument() {
 }
 
 // @ts-ignore
-DappBoilerplateDocument.getInitialProps = async (ctx) => {
+CreateNextjsDappDocument.getInitialProps = async (ctx) => {
 	const sheet = new ServerStyleSheet();
 	const originalRenderPage = ctx.renderPage;
 

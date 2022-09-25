@@ -6,7 +6,7 @@ import { darkTheme } from '@theme/theme';
 import Navbar from '@components/default/Navbar';
 import Web3Provider from '@contexts/Web3Context';
 
-const DappBoilerplate = ({ Component, pageProps }: AppProps) => {
+const CreateNextjsDapp = ({ Component, pageProps }: AppProps) => {
 	return (
 		<>
 			<Head>
@@ -37,4 +37,4 @@ const DappBoilerplate = ({ Component, pageProps }: AppProps) => {
 	);
 };
 
-export default DappBoilerplate;
+export default CreateNextjsDapp;
