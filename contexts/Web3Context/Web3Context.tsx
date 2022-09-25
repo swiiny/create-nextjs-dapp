@@ -1,4 +1,4 @@
-import React, { useState, useEffect, createContext, FC, useContext, useCallback } from 'react';
+import React, { useState, useEffect, createContext, FC, useContext, useCallback, ReactNode } from 'react';
 import { providers } from 'ethers';
 import WalletConnectProvider from '@walletconnect/web3-provider';
 import Address from '@models/Address';
@@ -14,13 +14,13 @@ const WalletLocalStorageKey = 'wallet';
 const Web3Context = createContext<IWeb3 | undefined>(undefined);
 
 const defaultProvider = { error: true };
-const Web3Provider: FC<{ children: any }> = ({ children }) => {
+const Web3Provider: FC<{ children: ReactNode }> = ({ children }) => {
 	const [provider, setProvider] = useState<IWeb3Provider>({ error: true });
 	const [address, setAddress] = useState<Address | undefined>(undefined);
 	const [networkId, setNetworkId] = useState<number | undefined>(undefined);
 	const [isWalletConnected, setIsWalletConnected] = useState<boolean>(false);
 	const [walletName, setWalletName] = useState<string | undefined>(undefined);
-	const [isConnectWalletModalOpen, setIsConnectWalletModalOpen] = useState<boolean>(false);
+	const [isWalletModalOpen, setIsWalletModalOpen] = useState<boolean>(false);
 	const [isConnectingWallet, setIsConnectingWallet] = useState<boolean>(false);
 	const [isValidNetwork, setIsValidNetwork] = useState<boolean>(false);
 
@@ -119,8 +119,9 @@ const Web3Provider: FC<{ children: any }> = ({ children }) => {
 
 				setLocalStorage(WalletLocalStorageKey, wallet.name);
 				setWalletName(wallet.name);
-				setIsConnectWalletModalOpen(false);
+				setIsWalletModalOpen(false);
 				setIsWalletConnected(true);
+				setIsConnectingWallet(false);
 			} catch (err) {
 				console.error("Couldn't connect to wallet", wallet.name, err);
 				setIsConnectingWallet(false);
@@ -199,10 +200,10 @@ const Web3Provider: FC<{ children: any }> = ({ children }) => {
 				connectWallet,
 				disconnectWallet,
 				walletName,
-				isConnectWalletModalOpen,
-				setIsConnectWalletModalOpen,
 				isConnectingWallet,
-				isValidNetwork
+				isValidNetwork,
+				isWalletModalOpen,
+				setIsWalletModalOpen
 			}}
 		>
 			{children}
