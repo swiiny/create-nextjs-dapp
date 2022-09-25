@@ -1,6 +1,6 @@
 {
   "name": "create-nextjs-dapp",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "private": false,
   "bin": {
     "create-nextjs-dapp": "bin/create-nextjs-dapp.js"

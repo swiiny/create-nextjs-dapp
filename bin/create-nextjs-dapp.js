@@ -44,6 +44,7 @@ async function downloadRepo() {
 			await exec('rm -rf ' + dest + '/.git');
 			await exec('rm -rf ' + dest + '/.github');
 			await exec('rm -rf ' + dest + '/bin');
+			await exec('rm -rf ' + dest + '/doc');
 
 			console.log('Installing dependencies 📦');
 			//await exec('cd ' + dest + ' && npm install');

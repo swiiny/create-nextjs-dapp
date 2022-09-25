@@ -1,4 +1,4 @@
-![image](/doc/tagline.png)
+![image](https://github.com/JeremyTheintz/create-nextjs-dapp/raw/main/doc/tagline.png)
 
 ![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat&logo=github)
 ![GitHub](https://img.shields.io/github/license/JeremyTheintz/nextjs-web3-boilerplate)
@@ -21,7 +21,7 @@ This is a starter for building dapps with Nextjs, React and ethers.
 You can quickly start a new project with this starter by using the following command:
 
 ```
-npx create-nextjs-dapp my-dapp
+npx create-nextjs-dapp
 ```
 
 ## Technologies
