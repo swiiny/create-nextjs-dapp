@@ -1,5 +1,5 @@
 import React, { useState, useEffect, createContext, FC, useContext, useCallback, ReactNode } from 'react';
-import { providers } from 'ethers';
+import { ethers, providers } from 'ethers';
 import WalletConnectProvider from '@walletconnect/web3-provider';
 import Address from '@models/Address';
 import { IWallet } from 'interfaces/wallet';
@@ -23,10 +23,12 @@ const Web3Provider: FC<{ children: ReactNode }> = ({ children }) => {
 	const [isWalletModalOpen, setIsWalletModalOpen] = useState<boolean>(false);
 	const [isConnectingWallet, setIsConnectingWallet] = useState<boolean>(false);
 	const [isValidNetwork, setIsValidNetwork] = useState<boolean>(false);
+	const [ens, setEns] = useState<string | undefined>(undefined);
 
 	const disconnectWallet = useCallback(() => {
 		setProvider(defaultProvider);
 		setAddress(undefined);
+		setEns(undefined);
 		setIsWalletConnected(false);
 		setWalletName(undefined);
 
@@ -39,6 +41,9 @@ const Web3Provider: FC<{ children: ReactNode }> = ({ children }) => {
 				try {
 					provider.on('chainChanged', (chainId: number): void => {
 						getNetworkId(chainId);
+
+						// reload page
+						window.location.reload();
 					});
 
 					provider.on('accountsChanged', async (accounts: string[]) => {
@@ -166,6 +171,28 @@ const Web3Provider: FC<{ children: ReactNode }> = ({ children }) => {
 		return 0;
 	}, [connectWallet]);
 
+	const checkIfUserHasEns = useCallback(
+		async (address: Address, web3Provider: ethers.providers.Web3Provider) => {
+			if (address && networkId) {
+				let ethereumProvider;
+
+				if (networkId === 1) {
+					ethereumProvider = web3Provider;
+				} else {
+					const ethereum = ethers.providers.getNetwork(1);
+					ethereumProvider = ethers.providers.getDefaultProvider(ethereum);
+				}
+
+				const resolver = await ethereumProvider?.lookupAddress(address.toString());
+
+				if (resolver) {
+					setEns(resolver);
+				}
+			}
+		},
+		[networkId]
+	);
+
 	useEffect(() => {
 		setIsValidNetwork(checkIfNetworkIsValid(networkId || 0));
 	}, [networkId]);
@@ -173,6 +200,12 @@ const Web3Provider: FC<{ children: ReactNode }> = ({ children }) => {
 	useEffect(() => {
 		checkIfWalletIsConnected();
 	}, [checkIfWalletIsConnected]);
+
+	useEffect(() => {
+		if (address && provider?.web3Provider) {
+			checkIfUserHasEns(address, provider.web3Provider);
+		}
+	}, [address, checkIfUserHasEns, provider?.web3Provider]);
 
 	useEffect(() => {
 		console.debug('address', address?.toString());
@@ -200,6 +233,7 @@ const Web3Provider: FC<{ children: ReactNode }> = ({ children }) => {
 				connectWallet,
 				disconnectWallet,
 				walletName,
+				ens,
 				isConnectingWallet,
 				isValidNetwork,
 				isWalletModalOpen,

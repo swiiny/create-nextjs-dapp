@@ -10,6 +10,7 @@ interface IWeb3 {
 	isWalletConnected: boolean;
 	isWalletModalOpen: boolean;
 	walletName: string | undefined;
+	ens: string | undefined;
 	isConnectingWallet: boolean;
 	isValidNetwork: boolean;
 	connectWallet: (wallet: IWallet) => void;

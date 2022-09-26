@@ -8,7 +8,7 @@ import WalletModal from '../WalletModal';
 import { useTheme } from 'styled-components';
 
 const WalletButton: FC<IWalletButton> = () => {
-	const { isWalletModalOpen, setIsWalletModalOpen, address, isWalletConnected } = useWeb3();
+	const { isWalletModalOpen, setIsWalletModalOpen, address, isWalletConnected, ens } = useWeb3();
 	const theme = useTheme();
 
 	return (
@@ -19,7 +19,7 @@ const WalletButton: FC<IWalletButton> = () => {
 				color={isWalletConnected ? theme.colors.lightBlue : theme.colors.white}
 				icon={<MdOutlineAccountBalanceWallet size={28} />}
 			>
-				{isWalletConnected ? address?.truncate() : 'Connect Wallet'}
+				{isWalletConnected ? ens || address?.truncate() : 'Connect Wallet'}
 			</Button>
 		</>
 	);
