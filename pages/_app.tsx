@@ -20,7 +20,7 @@ const CreateNextjsDapp = ({ Component, pageProps }: AppProps) => {
 				<meta name='apple-mobile-web-app-title' content='Create Nextjs Dapp' />
 				<meta
 					name='description'
-					content='Starter to create Dapps with Next, React and Ethers. No longer waste valuable time building your project structure. Start coding is as npx create-nextjs-dapp'
+					content='Starter to create Dapps with Next, React and Ethers. No longer waste valuable time building your project structure. Start coding is easy as npx create-nextjs-dapp'
 				/>
 
 				<meta name='theme-color' content='#1E1F20' />
