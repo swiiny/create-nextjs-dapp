@@ -35,7 +35,7 @@ async function downloadRepo() {
 			// chmod 777 all files inside projectName
 			await exec('chmod -R 777 ' + projectName + '-main');
 
-			// chmod 777 all files inside projectName
+			// move fetched files to destination direction choose by user
 			await exec('mv ' + projectName + '-main ' + dest);
 
 			console.log('Cleaning up after myself 🧹');
@@ -47,7 +47,6 @@ async function downloadRepo() {
 			await exec('rm -rf ' + dest + '/doc');
 
 			console.log('Installing dependencies 📦');
-			//await exec('cd ' + dest + ' && npm install');
 			await exec('cd ' + dest + ' && npm install');
 
 			console.log('Opening app directory 📁');
