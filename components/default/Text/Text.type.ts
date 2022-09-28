@@ -3,7 +3,6 @@ import { ReactNode } from 'react';
 import { EFontWeight, ETextAlign, ETextType } from './Text.enum';
 
 interface IText {
-	as?: string | ETextType;
 	component?: ETextType;
 	children?: string | ReactNode;
 	type?: ETextType;

@@ -1,7 +1,11 @@
 import styled from 'styled-components';
+import Text from '../Text';
 
-export const StyledSpan = styled.span`
-	position: absolute;
-	opacity: 0;
-	user-select: none;
+const TextEx = styled(Text)`
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 `;
+
+export { TextEx };

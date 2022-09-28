@@ -6,7 +6,7 @@ import { useTheme } from 'styled-components';
 import { ESize } from '@theme/theme.enum';
 import { ETextType, EFontWeight, ETextAlign } from '../Text/Text.enum';
 import Button from '../Button';
-import { StyledSpan } from './CTA.styles';
+import { TextEx } from './CTA.styles';
 
 const cloneCmd = 'npx create-nextjs-dapp';
 
@@ -23,7 +23,7 @@ const CTA: FC<ICTA> = () => {
 				transform: { xs: 'scale(0.9)', sm: 'unset' }
 			}}
 		>
-			<Text
+			<TextEx
 				type={ETextType.h2}
 				size={ESize.s}
 				color={theme.colors.gray}
@@ -31,17 +31,15 @@ const CTA: FC<ICTA> = () => {
 				align={ETextAlign.center}
 			>
 				Start coding is easy as
-				<StyledSpan>{cloneCmd}</StyledSpan>
-			</Text>
-
-			<Button
-				color={theme.colors.lightBlue}
-				gradientContainerProps={{ marginTop: 4 }}
-				valueToCopy={cloneCmd + '@latest'}
-				noPaddingResponsive
-			>
-				{cloneCmd}
-			</Button>
+				<Button
+					color={theme.colors.lightBlue}
+					gradientContainerProps={{ marginTop: 4 }}
+					valueToCopy={cloneCmd + '@latest'}
+					noPaddingResponsive
+				>
+					{cloneCmd}
+				</Button>
+			</TextEx>
 		</Box>
 	);
 };
