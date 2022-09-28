@@ -1,6 +1,7 @@
-
 import styled from 'styled-components';
 
-export const StyledCTA = styled.div`
-  position: relative;
+export const StyledSpan = styled.span`
+	position: absolute;
+	opacity: 0;
+	user-select: none;
 `;

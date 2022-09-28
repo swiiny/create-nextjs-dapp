@@ -6,6 +6,7 @@ import { useTheme } from 'styled-components';
 import { ESize } from '@theme/theme.enum';
 import { ETextType, EFontWeight, ETextAlign } from '../Text/Text.enum';
 import Button from '../Button';
+import { StyledSpan } from './CTA.styles';
 
 const cloneCmd = 'npx create-nextjs-dapp';
 
@@ -30,6 +31,7 @@ const CTA: FC<ICTA> = () => {
 				align={ETextAlign.center}
 			>
 				Start coding is easy as
+				<StyledSpan>{cloneCmd}</StyledSpan>
 			</Text>
 
 			<Button
