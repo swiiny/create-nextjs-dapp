@@ -47,3 +47,7 @@ push:
 	npm run lint
 	npm run build
 	git push
+
+cp-common:
+	cp -r ./common/* ./packages/mui
+	cp -r ./common/* ./packages/base
