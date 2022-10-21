@@ -1,0 +1,19 @@
+{
+  "name": "create-nextjs-dapp",
+  "version": "0.6.3",
+  "private": false,
+  "bin": {
+    "create-nextjs-dapp": "bin/create-nextjs-dapp.js"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "request": "^2.88.2"
+  },
+  "devDependencies": {
+  }
+}

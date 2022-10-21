@@ -1,9 +1,9 @@
 import styled, { css, DefaultTheme } from 'styled-components';
 import { ButtonUnstyled } from '@mui/base';
-import { addTransition, mq } from 'packages/mui/utils/functions';
+import { addTransition, mq } from 'utils/functions';
 import { ISharedButtonProps } from './Button.type';
 import { EFontWeight } from '../Text/Text.enum';
-import { EMediaQuery } from 'packages/mui/theme/theme.enum';
+import { EMediaQuery } from 'theme/theme.enum';
 
 const sharedStyle = (p: ISharedButtonProps) => {
 	const isSuccess = p.color === p.theme.colors.success;

@@ -1,5 +1,5 @@
-import { EMediaQuery, ESize } from 'packages/mui/theme/theme.enum';
-import { mq } from 'packages/mui/utils/functions';
+import { EMediaQuery, ESize } from 'theme/theme.enum';
+import { mq } from 'utils/functions';
 import styled, { css } from 'styled-components';
 import { EFontWeight, ETextAlign, ETextType } from './Text.enum';
 import { IText } from './Text.type';

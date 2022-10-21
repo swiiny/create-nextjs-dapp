@@ -49,5 +49,6 @@ push:
 	git push
 
 cp-common:
-	cp -r ./common/* ./packages/mui
-	cp -r ./common/* ./packages/base
+	cp -r .env ./common
+	cp -r ./common/ ./packages/mui
+	cp -r ./common/ ./packages/base
