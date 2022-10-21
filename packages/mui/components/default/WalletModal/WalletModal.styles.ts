@@ -1,4 +1,4 @@
-import { addTransition } from 'packages/mui/utils/functions';
+import { addTransition } from 'utils/functions';
 import styled, { css } from 'styled-components';
 
 export const StyledModalBackground = styled.button<{ isVisible: boolean }>`

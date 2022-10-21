@@ -8,7 +8,7 @@ import { useWeb3 } from '@contexts/Web3Context/Web3Context';
 import { WALLETS_ARRAY } from '@contexts/Web3Context/Web3Context.variables';
 import Image from 'next/future/image';
 import Text from '../Text';
-import { ESize } from 'packages/mui/theme/theme.enum';
+import { ESize } from 'theme/theme.enum';
 import { EFontWeight, ETextAlign } from '../Text/Text.enum';
 
 const WalletModal: FC<IWalletModal> = ({ isOpen = false, onClose = () => {} }) => {

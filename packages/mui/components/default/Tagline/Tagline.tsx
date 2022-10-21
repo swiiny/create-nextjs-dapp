@@ -3,7 +3,7 @@ import { ITagline } from './Tagline.type';
 import { useTheme } from 'styled-components';
 import Text from '@components/default/Text';
 import { EFontWeight, ETextAlign, ETextType } from '@components/default/Text/Text.enum';
-import { ESize } from 'packages/mui/theme/theme.enum';
+import { ESize } from 'theme/theme.enum';
 
 const Tagline: FC<ITagline> = () => {
 	const theme = useTheme();

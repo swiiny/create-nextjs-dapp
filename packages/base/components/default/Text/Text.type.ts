@@ -1,4 +1,4 @@
-import { ESize } from 'packages/mui/theme/theme.enum';
+import { ESize } from 'theme/theme.enum';
 import { ReactNode } from 'react';
 import { EFontWeight, ETextAlign, ETextType } from './Text.enum';
 

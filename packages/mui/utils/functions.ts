@@ -1,4 +1,4 @@
-import { EMediaQuery } from 'packages/mui/theme/theme.enum';
+import { EMediaQuery } from '@theme/theme.enum';
 import { FlattenSimpleInterpolation } from 'styled-components';
 
 // media queries

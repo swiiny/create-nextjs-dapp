@@ -3,7 +3,7 @@ import Text from '@components/default/Text';
 import { ETextType } from '@components/default/Text/Text.enum';
 import useResponsive from '@hooks/useResponsive';
 import { Box } from '@mui/system';
-import { ESize } from 'packages/mui/theme/theme.enum';
+import { ESize } from 'theme/theme.enum';
 import { FaStar } from 'react-icons/fa';
 import WalletButton from '../WalletButton';
 
