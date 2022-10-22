@@ -1,7 +1,9 @@
 #!/usr/bin/env node
 
-const util = require('util');
-const exec = util.promisify(require('child_process').exec);
+import util from 'util';
+import ChildProcess from 'child_process';
+
+const exec = util.promisify(ChildProcess.exec);
 
 // list all templates
 const templates = ['base', 'mui'];
