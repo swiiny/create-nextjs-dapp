@@ -1,13 +1,30 @@
 #!/usr/bin/env node
 
-const util = require('util');
-const exec = util.promisify(require('child_process').exec);
-const readline = require('readline');
-const fs = require('fs');
-const request = require('request');
+import util from 'util';
+import ChildProcess from 'child_process';
+import fs from 'fs';
+import request from 'request';
+import select from '@inquirer/select';
+import input from '@inquirer/input';
+
+const exec = util.promisify(ChildProcess.exec);
 
 const projectName = 'create-nextjs-dapp';
 const repoUrl = `https://github.com/JeremyTheintz/${projectName}/archive/refs/heads/main.zip`;
+
+// list all templates
+const templates = [
+	{
+		value: 'base',
+		name: 'base (no UI framework)'
+	},
+	{
+		value: 'mui',
+		name: 'MUI'
+	}
+];
+
+const templateValues = templates.map((template) => template.value);
 
 // slice argv as we don't need the forst two elements (in this case)
 const args = process.argv.slice(2, process.argv.length);
@@ -15,11 +32,8 @@ const args = process.argv.slice(2, process.argv.length);
 // project's name
 let dest;
 
-try {
-	dest = args[0];
-} catch {
-	// no projet name provided
-}
+// template's name
+let template;
 
 async function downloadRepo() {
 	console.log('Starting some magic tricks...');
@@ -61,29 +75,56 @@ async function downloadRepo() {
 	});
 }
 
-// check if a directory with the name args[0] exists
-if (fs.existsSync(args[0])) {
-	console.log('directory already exists');
-} else if (dest) {
-	downloadRepo();
-} else if (!dest) {
-	const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
+async function askForProjectName() {
+	const newProjectName = await input({ message: "Enter your project's name", validate: (value) => value.length > 0 });
 
-	const prompt = (query) => new Promise((resolve) => rl.question(query, resolve));
-
-	(async () => {
-		do {
-			try {
-				const name = await prompt("Enter your project's name: ");
-
-				dest = name;
-				rl.close();
-			} catch {
-				console.log("can't prompt");
-				break;
-			}
-		} while (dest === undefined);
-
-		await downloadRepo();
-	})();
+	// update dest variable with the new project's name
+	dest = newProjectName;
 }
+
+// ask for template, add enum of templates
+async function askForTemplate() {
+	const newTemplate = await select({
+		message: 'Select a template',
+		choices: templates
+	});
+
+	// update template variable with the new template
+	template = newTemplate;
+}
+
+async function init() {
+	do {
+		// check if there is two arguments
+		if (args.length === 2) {
+			// check if the first argument is a template
+			if (templateValues.includes(args[0])) {
+				template = args[0];
+				dest = args[1];
+			} else {
+				dest = args[0];
+			}
+		} else if (args.length === 1) {
+			if (templateValues.includes(args[0])) {
+				template = args[0];
+
+				// ask for project's name
+				await askForProjectName();
+			} else {
+				dest = args[0];
+
+				// ask for template
+				await askForTemplate();
+			}
+		} else {
+			// ask for template and project's name
+			await askForProjectName();
+			await askForTemplate();
+		}
+	} while (dest === undefined && template === undefined);
+
+	// start downloading the repo
+	await downloadRepo();
+}
+
+init();

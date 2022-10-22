@@ -2,6 +2,7 @@
   "name": "create-nextjs-dapp",
   "version": "1.0.0",
   "private": false,
+  "type": "module",
   "bin": {
     "create-nextjs-dapp": "bin/create-nextjs-dapp.js"
   },
@@ -10,6 +11,8 @@
     "build": "node scripts/build.js"
   },
   "dependencies": {
+    "@inquirer/input": "^0.0.28-alpha.0",
+    "@inquirer/select": "^0.0.29-alpha.0",
     "request": "^2.88.2"
   }
 }
