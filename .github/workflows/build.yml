@@ -1,11 +1,11 @@
-name: Build the Nextjs app
+name: Build all templates
 
 on:
   pull_request:
     branches: [main]
 
 jobs:
-  lint:
+  build-templates:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -13,5 +13,5 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build the project
+      - name: Build all packages
         run: npm run build

@@ -20,7 +20,6 @@ win-component:
 
 # run tests before build
 build:
-	npm run lint
 	npm run build
 
 init:

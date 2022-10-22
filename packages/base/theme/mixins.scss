@@ -1,0 +1,94 @@
+@use 'sass:selector';
+
+@import './variables';
+
+@mixin sm {
+	@media (min-width: $screen-sm) {
+		@content;
+	}
+}
+
+@mixin md {
+	@media (min-width: $screen-md) {
+		@content;
+	}
+}
+@mixin lg {
+	@media (min-width: $screen-lg) {
+		@content;
+	}
+}
+@mixin xl {
+	@media (min-width: $screen-xl) {
+		@content;
+	}
+}
+
+@mixin transition($target: all, $duration: 0.4s, $delay: 0s, $timing: ease-in-out) {
+	@media screen and (prefers-reduced-motion: no-preference) {
+		transition: $target $duration $delay $timing;
+	}
+}
+
+@mixin unify-parent($child) {
+	@at-root #{selector.unify(&, $child)} {
+		@content;
+	}
+}
+
+@mixin unify-parents($children) {
+	@each $child in $children {
+		@at-root #{selector.unify(&, $child)} {
+			@content;
+		}
+	}
+}
+
+@mixin colors() {
+	&.blueGradient {
+		background: $blueGradient;
+		-webkit-background-clip: text;
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+
+	&.white {
+		color: $white;
+	}
+
+	&.black {
+		color: $black;
+	}
+
+	&.darkGray {
+		color: $darkGray;
+	}
+
+	&.gray {
+		color: $gray;
+	}
+
+	&.blue {
+		color: $blue;
+	}
+
+	&.lightBlue {
+		color: $lightBlue;
+	}
+
+	&.success {
+		color: $success;
+	}
+
+	&.yellow {
+		color: $yellow;
+	}
+
+	&.blueGradient {
+		color: $blueGradient;
+	}
+
+	&.darkGradient {
+		color: $darkGradient;
+	}
+}

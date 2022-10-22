@@ -1,0 +1,92 @@
+@import '../../../theme/variables';
+@import '../../../theme/mixins';
+
+.modalBackground {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 900;
+
+	border: none;
+	background-color: transparent;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	@include transition();
+
+	& > div {
+		position: relative;
+		z-index: 901;
+
+		transition: inherit;
+	}
+
+	& > div {
+		background-color: $black;
+		opacity: 0;
+
+		transition: inherit;
+	}
+
+	&:not(.isVisible) {
+		background-color: transparent;
+		& > div {
+			opacity: 0;
+		}
+	}
+
+	&.isVisible {
+		background-color: rgba($black, 0.8);
+		& > div {
+			opacity: 1;
+		}
+	}
+}
+
+.modalButton {
+	border: none;
+	background-color: transparent;
+	height: 80px;
+	width: 100%;
+
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+
+	border-radius: 8px;
+
+	background-color: rgba($gray, 0.3);
+
+	padding: 0 20px;
+
+	cursor: pointer;
+
+	@include transition();
+
+	&:hover {
+		background-color: rgba($gray, 0.4);
+	}
+
+	& > img {
+		margin-right: 12px;
+	}
+
+	& + button {
+		margin-top: 16px;
+	}
+}
+
+.gradientContainer {
+	width: 500px;
+	height: auto;
+
+	padding: 1rem;
+
+	@include md() {
+		padding: 1.5rem;
+	}
+}

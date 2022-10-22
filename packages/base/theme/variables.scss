@@ -1,0 +1,37 @@
+// media queries
+$screen-xs: 0px;
+$screen-sm: 600px;
+$screen-md: 900px;
+$screen-lg: 1200px;
+$screen-xl: 1536px;
+
+// colors
+$white: #ffffff;
+$black: #121314;
+$darkGray: #1e1f20;
+$gray: #979797;
+$blue: #2467df;
+$lightBlue: #00b1ea;
+$success: #24df9c;
+$yellow: #e3b341;
+$blueGradient: linear-gradient(90deg, #2467df 0%, #00b1ea 100%);
+$darkGradient: linear-gradient(180deg, #232424 0%, #171717 100%);
+
+// spacing
+$s-6xs: 2px;
+$s-5xs: 4px;
+$s-4xs: 8px;
+$s-3xs: 12px;
+$s-2xs: 16px;
+$s-xs: 20px;
+$s-s: 24px;
+$s-m: 32px;
+$s-l: 40px;
+$s-xl: 48px;
+$s-2xl: 64px;
+$s-3xl: 80px;
+$s-4xl: 100px;
+$s-5xl: 120px;
+$s-6xl: 140px;
+$s-7xl: 160px;
+$s-8xl: 180px;

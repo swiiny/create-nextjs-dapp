@@ -1,0 +1,178 @@
+@import '@theme/mixins';
+
+.buttonSharedStyles {
+	position: relative;
+	border: none;
+	background-color: transparent;
+
+	cursor: pointer;
+
+	font-size: calc(1.5rem * 0.6);
+
+	@include sm() {
+		font-size: calc(1.5rem * 0.7);
+	}
+
+	@include md() {
+		font-size: calc(1.5rem * 0.8);
+	}
+
+	@include lg() {
+		font-size: calc(1.5rem * 0.9);
+	}
+
+	@include xl() {
+		font-size: calc(1.5rem * 1);
+	}
+
+	@include transition();
+
+	@include colors();
+
+	& > span {
+		font-weight: bold;
+
+		transition: inherit;
+
+		@include colors();
+
+		& svg {
+			margin-left: 16px;
+
+			@include transition();
+
+			transform: scale(0.7);
+
+			@include md() {
+				transform: scale(0.8);
+			}
+
+			@include xl() {
+				transform: scale(1);
+			}
+		}
+
+		&:hover {
+			transform: scale(1.02);
+
+			color: $gray;
+
+			& svg {
+				color: $gray;
+			}
+		}
+	}
+
+	&.isSuccess {
+		& > span {
+			color: $success;
+
+			& svg {
+				color: $success;
+			}
+			&:hover {
+				& svg {
+					color: $success;
+				}
+			}
+		}
+	}
+}
+
+.styledButton {
+	& + button,
+	& + a {
+		margin-left: 16px;
+	}
+}
+
+.styledLink {
+	display: inline-block;
+
+	& + button,
+	& + a {
+		margin-left: 16px;
+	}
+}
+
+.iconsContainer {
+	position: relative;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	margin-left: 20px;
+
+	& > svg {
+		position: absolute;
+
+		@include transition();
+
+		transform: scale(0.7);
+
+		@include md() {
+			transform: scale(0.8);
+		}
+
+		@include xl() {
+			transform: scale(1);
+		}
+
+		&:nth-child(1) {
+			opacity: 1;
+			transform: translateX(0) rotateX(0);
+		}
+		&:nth-child(2) {
+			opacity: 0;
+			transform: translateX(50%) rotateX(-90deg);
+		}
+	}
+
+	&:not(.isActive) {
+		@include colors();
+	}
+
+	&.isActive {
+		& > svg {
+			&:nth-child(1) {
+				opacity: 0;
+				transform: translateX(-50%) rotateX(90deg);
+			}
+			&:nth-child(2) {
+				opacity: 1;
+				transform: translateX(0) rotateX(0);
+			}
+		}
+	}
+}
+
+.gradientContainer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	&.noPaddingResponsive {
+		padding: 12px 36px;
+	}
+
+	&:not(.noPaddingResponsive) {
+		padding: 6px 18px;
+
+		@include sm() {
+			padding: 9px 27px;
+		}
+
+		@include md() {
+			padding: 12px 36px;
+		}
+	}
+}
+
+.buttonIcon {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	@include colors();
+}
