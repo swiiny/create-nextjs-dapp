@@ -6,11 +6,10 @@
     "create-nextjs-dapp": "bin/create-nextjs-dapp.js"
   },
   "scripts": {
-    "copy": "make cp-common"
+    "copy": "make cp-common",
+    "build": "node scripts/build.js"
   },
   "dependencies": {
     "request": "^2.88.2"
-  },
-  "devDependencies": {
   }
 }

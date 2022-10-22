@@ -20,7 +20,6 @@ win-component:
 
 # run tests before build
 build:
-	npm run lint
 	npm run build
 
 init:
@@ -47,8 +46,3 @@ push:
 	npm run lint
 	npm run build
 	git push
-
-cp-common:
-	cp -r .env ./common
-	cp -r ./common/ ./packages/mui
-	cp -r ./common/ ./packages/base
