@@ -1,20 +1,19 @@
+import { EColor } from '@theme/theme.enum';
 import { ReactNode } from 'react';
-import { ButtonUnstyledProps } from '@mui/base/ButtonUnstyled';
-import { BoxProps } from '@mui/system';
-import { DefaultTheme } from 'styled-components';
+import { IGradientContainer } from '../GradientContainer/GradientContainer.type';
 
-interface IButton extends ButtonUnstyledProps {
+interface IButton {
 	children: ReactNode;
 	onClick?: () => void;
 	valueToCopy?: string;
 	noPaddingResponsive?: boolean;
 	icon?: ReactNode;
-	iconColor?: string;
-	gradientContainerProps?: BoxProps;
+	color?: EColor;
+	href?: string;
+	gradientContainerProps?: IGradientContainer;
 }
 
 interface ISharedButtonProps {
-	theme: DefaultTheme;
 	iconColor?: string;
 	color?: string;
 }

@@ -3,7 +3,7 @@ import { ethers, providers } from 'ethers';
 import WalletConnectProvider from '@walletconnect/web3-provider';
 import Address from '@models/Address';
 import { IWallet } from 'interfaces/wallet';
-import { clearLocalStorage, getLocalStorage, setLocalStorage } from 'utils/functions';
+import { clearLocalStorage, getLocalStorage, setLocalStorage } from 'utils/global';
 import { NETWORKS_RPC, WALLETS } from './Web3Context.variables';
 import { checkIfNetworkIsValid, getWalletFromName } from './Web3Context.functions';
 import { IWeb3, IWeb3Provider } from './Web3Context.type';

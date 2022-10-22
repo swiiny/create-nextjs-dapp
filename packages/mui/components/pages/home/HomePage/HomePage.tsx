@@ -1,12 +1,10 @@
-import Head from 'next/head';
-import React, { FC } from 'react';
-import { IHomePage } from './HomePage.type';
-import { Box } from '@mui/system';
-import Technologies from '@components/default/Technologies';
-import { useTheme } from 'styled-components';
-import Tagline from '@components/default/Tagline';
-import CTA from '@components/default/CTA';
 import Meta from '@components/common/Meta';
+import CTA from '@components/default/CTA';
+import Tagline from '@components/default/Tagline';
+import Technologies from '@components/default/Technologies';
+import { Box } from '@mui/system';
+import { FC } from 'react';
+import { IHomePage } from './HomePage.type';
 
 const HomePage: FC<IHomePage> = () => {
 	return (

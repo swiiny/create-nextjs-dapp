@@ -1,0 +1,23 @@
+@import '../../../../theme/mixins';
+
+.mainContainer {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+
+	height: 100vh;
+	padding-top: 30px;
+
+	padding-left: 15px;
+	padding-right: 15px;
+
+	@include md() {
+		padding-left: 32px;
+		padding-right: 32px;
+	}
+
+	@include lg() {
+		padding-left: 64px;
+		padding-right: 64px;
+	}
+}

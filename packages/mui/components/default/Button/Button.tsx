@@ -3,7 +3,7 @@ import { IButton } from './Button.type';
 import { StyledButton, StyledIconsContainer, StyledLink } from './Button.styles';
 import GradientContainer from '../GradientContainer';
 import { MdOutlineContentCopy, MdOutlineCheck } from 'react-icons/md';
-import { copy } from 'utils/functions';
+import { copy } from 'utils/global';
 import { useTheme } from 'styled-components';
 
 const Button: FC<IButton> = ({

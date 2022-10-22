@@ -1,8 +1,10 @@
+import { EHtmlTag } from '@theme/theme.enum';
 import { ReactNode } from 'react';
-import { BoxProps } from '@mui/system';
 
-interface IGradientContainer extends BoxProps {
+interface IGradientContainer {
 	children: ReactNode;
+	component?: EHtmlTag;
+	className?: string;
 }
 
 export type { IGradientContainer };

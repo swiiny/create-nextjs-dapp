@@ -1,46 +1,30 @@
 import React, { FC } from 'react';
 import { ICTA } from './CTA.type';
-import { Box } from '@mui/system';
 import Text from '../Text';
-import { useTheme } from 'styled-components';
-import { ESize } from 'theme/theme.enum';
+import { EColor, ESize } from 'theme/theme.enum';
 import { ETextType, EFontWeight, ETextAlign } from '../Text/Text.enum';
 import Button from '../Button';
-import { TextEx } from './CTA.styles';
+import styles from './CTA.module.scss';
 
 const cloneCmd = 'npx create-nextjs-dapp';
 
 const CTA: FC<ICTA> = () => {
-	const theme = useTheme();
-
 	return (
-		<Box
-			sx={{
-				display: 'flex',
-				flexDirection: 'column',
-				justifyContent: 'center',
-				alignItems: 'center',
-				transform: { xs: 'scale(0.9)', sm: 'unset' }
-			}}
-		>
-			<TextEx
+		<div className={styles.container}>
+			<Text
 				type={ETextType.h2}
 				size={ESize.s}
-				color={theme.colors.gray}
+				color={EColor.gray}
 				weight={EFontWeight.regular}
 				align={ETextAlign.center}
+				className={styles.text}
 			>
 				Start coding is easy as
-				<Button
-					color={theme.colors.lightBlue}
-					gradientContainerProps={{ marginTop: 4 }}
-					valueToCopy={cloneCmd + '@latest'}
-					noPaddingResponsive
-				>
+				<Button color={EColor.lightBlue} valueToCopy={cloneCmd + '@latest'} noPaddingResponsive>
 					{cloneCmd}
 				</Button>
-			</TextEx>
-		</Box>
+			</Text>
+		</div>
 	);
 };
 

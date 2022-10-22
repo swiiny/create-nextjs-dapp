@@ -1,48 +1,45 @@
 {
-  "files.exclude": {
-    "**/.git": true,
-    "**/.svn": true,
-    "**/.hg": true,
-    "**/CVS": true,
-    "**/.DS_Store": true,
-    "node_modules": false,
-    ".next": true,
-    ".firebase": true,
-    "build": true
-  },
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[javascriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "eslint.format.enable": true,
-  "prettier.jsxSingleQuote": true,
-  "prettier.singleQuote": true,
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
-  },
-  "prettier.tabWidth": 2,
+	"files.exclude": {
+		"**/.git": true,
+		"**/.svn": true,
+		"**/.hg": true,
+		"**/CVS": true,
+		"**/.DS_Store": true,
+		"node_modules": false,
+		".next": true,
+		".firebase": true,
+		"build": true
+	},
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[javascriptreact]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[typescript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[typescriptreact]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"eslint.format.enable": true,
+	"prettier.jsxSingleQuote": true,
+	"prettier.singleQuote": true,
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": true
+	},
+	"prettier.tabWidth": 2,
 	"prettier.useTabs": true,
-  "editor.tabSize": 2,
-  "projects.indentationSpaces": 2,
-  "eslint.validate": [
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact",
-    "html"
-  ],
-  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
-  "editor.formatOnSave": true,
-  "autoprefixer.formatOnSave": true,
-  "prettier.printWidth": 120,
-  "prettier.bracketSpacing": true,
-  "prettier.trailingComma": "none"  
+	"editor.tabSize": 2,
+	"projects.indentationSpaces": 2,
+	"eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact", "html"],
+	"editor.defaultFormatter": "dbaeumer.vscode-eslint",
+	"editor.formatOnSave": true,
+	"autoprefixer.formatOnSave": true,
+	"prettier.printWidth": 120,
+	"prettier.bracketSpacing": true,
+	"prettier.trailingComma": "none",
+	"[scss]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	}
 }

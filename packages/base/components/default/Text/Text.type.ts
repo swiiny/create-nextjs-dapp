@@ -10,6 +10,7 @@ interface IText {
 	align?: ETextAlign;
 	size?: ESize.s | ESize.m | ESize.l;
 	color?: string;
+	className?: string;
 }
 
 export type { IText };

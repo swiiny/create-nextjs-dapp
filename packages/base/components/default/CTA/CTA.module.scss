@@ -1,0 +1,25 @@
+@import '../../../theme/mixins.scss';
+
+.text {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	& > button {
+		margin-top: 32px;
+	}
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	transform: scale(0.9);
+
+	@include sm() {
+		transform: scale(1);
+	}
+}

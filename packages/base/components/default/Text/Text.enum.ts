@@ -10,8 +10,8 @@ enum ETextType {
 }
 
 enum EFontWeight {
-	regular = 400,
-	bold = 700
+	regular = 'regular',
+	bold = 'bold'
 }
 
 enum ETextAlign {

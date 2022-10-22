@@ -1,30 +1,27 @@
 import React, { FC } from 'react';
 import { ITagline } from './Tagline.type';
-import { useTheme } from 'styled-components';
 import Text from '@components/default/Text';
 import { EFontWeight, ETextAlign, ETextType } from '@components/default/Text/Text.enum';
-import { ESize } from 'theme/theme.enum';
+import { EColor, ESize } from 'theme/theme.enum';
 
 const Tagline: FC<ITagline> = () => {
-	const theme = useTheme();
-
 	return (
 		<div>
 			<Text type={ETextType.h1} component={ETextType.h2} weight={EFontWeight.regular} align={ETextAlign.center}>
 				{`Starter to create `}
-				<Text type={ETextType.span} color={theme.colors.blueGradient}>
+				<Text type={ETextType.span} color={EColor.blueGradient}>
 					Dapps
 				</Text>
 				{' with '}
-				<Text type={ETextType.span} color={theme.colors.blueGradient}>
+				<Text type={ETextType.span} color={EColor.blueGradient}>
 					Next
 				</Text>
 				{', '}
-				<Text type={ETextType.span} color={theme.colors.blueGradient}>
+				<Text type={ETextType.span} color={EColor.blueGradient}>
 					React
 				</Text>
 				{' and '}
-				<Text type={ETextType.span} color={theme.colors.blueGradient}>
+				<Text type={ETextType.span} color={EColor.blueGradient}>
 					Ethers
 				</Text>
 			</Text>
@@ -32,7 +29,7 @@ const Tagline: FC<ITagline> = () => {
 			<Text
 				type={ETextType.h2}
 				size={ESize.s}
-				color={theme.colors.gray}
+				color={EColor.gray}
 				weight={EFontWeight.regular}
 				align={ETextAlign.center}
 			>

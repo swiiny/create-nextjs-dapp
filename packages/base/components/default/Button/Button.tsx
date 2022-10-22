@@ -1,10 +1,12 @@
 import React, { FC, useMemo, useState } from 'react';
 import { IButton } from './Button.type';
-import { StyledButton, StyledIconsContainer, StyledLink } from './Button.styles';
 import GradientContainer from '../GradientContainer';
 import { MdOutlineContentCopy, MdOutlineCheck } from 'react-icons/md';
-import { copy } from 'utils/functions';
-import { useTheme } from 'styled-components';
+import { copy } from 'utils/global';
+import { EColor, EHtmlTag } from '@theme/theme.enum';
+import classNames from 'classnames';
+
+import styles from './Button.module.scss';
 
 const Button: FC<IButton> = ({
 	children,
@@ -14,13 +16,11 @@ const Button: FC<IButton> = ({
 	valueToCopy,
 	color,
 	icon,
-	iconColor,
 	gradientContainerProps
 }) => {
-	const theme = useTheme();
 	const [isCopying, setIsCopying] = useState(false);
 
-	const contentColor = isCopying ? theme.colors.success : color;
+	const contentColor = isCopying ? EColor.success : color;
 
 	const handleClick = () => {
 		if (valueToCopy) {
@@ -43,21 +43,24 @@ const Button: FC<IButton> = ({
 	const content = useMemo(() => {
 		return (
 			<GradientContainer
-				component='span'
-				paddingY={noPaddingResponsive ? '12px' : { xs: '6px', sm: '9px', md: '12px' }}
-				paddingX={noPaddingResponsive ? '36px' : { xs: '18px', sm: '27px', md: '36px' }}
-				display='flex'
-				sx={{ justifyContent: 'center', alignItems: 'center' }}
+				component={EHtmlTag.span}
+				className={classNames(styles.gradientContainer, {
+					[styles.noPaddingResponsive]: noPaddingResponsive
+				})}
 				{...gradientContainerProps}
 			>
 				{children}
 
 				{valueToCopy ? (
 					<>
-						<StyledIconsContainer isActive={isCopying}>
+						<div
+							className={classNames(styles.iconsContainer, {
+								[styles.isActive]: isCopying
+							})}
+						>
 							<MdOutlineContentCopy size={24} />
 							<MdOutlineCheck size={24} />
-						</StyledIconsContainer>
+						</div>
 					</>
 				) : icon ? (
 					icon
@@ -66,20 +69,34 @@ const Button: FC<IButton> = ({
 				)}
 			</GradientContainer>
 		);
-	}, [children, gradientContainerProps, icon, isCopying, valueToCopy, noPaddingResponsive]);
+	}, [children, gradientContainerProps, icon, isCopying, noPaddingResponsive, valueToCopy]);
 
 	if (href) {
 		return (
-			<StyledLink href={href} target='_blank' rel='noopener noreferrer' color={color} iconColor={iconColor}>
+			<a
+				href={href}
+				target='_blank'
+				rel='noopener noreferrer'
+				className={classNames(styles.buttonSharedStyles, styles.styledLink, {
+					[styles[`${contentColor}`]]: !!contentColor,
+					[styles.isSuccess]: !!isCopying
+				})}
+			>
 				{content}
-			</StyledLink>
+			</a>
 		);
 	}
 
 	return (
-		<StyledButton onClick={() => handleClick()} color={contentColor} iconColor={iconColor}>
+		<button
+			className={classNames(styles.buttonSharedStyles, styles.styledButton, {
+				[styles[`${contentColor}`]]: !!contentColor,
+				[styles.isSuccess]: !!isCopying
+			})}
+			onClick={() => handleClick()}
+		>
 			{content}
-		</StyledButton>
+		</button>
 	);
 };
 

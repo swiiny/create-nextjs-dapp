@@ -1,9 +1,8 @@
 import React, { FC } from 'react';
 import { ITechnologies } from './Technologies.type';
-import { Box } from '@mui/system';
 import Image from 'next/future/image';
-import { StyledLink, StyledLogoContainer } from './Technologies.styles';
 import useResponsive from '@hooks/useResponsive';
+import styles from './Technologies.module.scss';
 
 const LOGOS = [
 	{
@@ -38,34 +37,27 @@ const LOGOS = [
 	}
 ];
 
-const cssContainer = {
-	display: 'flex',
-	justifyContent: 'center',
-	alignItems: 'center',
-	flexWrap: 'wrap',
-	gap: { xs: '30px', md: '40px', lg: '50px' },
-	'&:hover': {
-		'& > div': {
-			opacity: '0.5'
-		}
-	}
-};
-
 const Technologies: FC<ITechnologies> = () => {
 	const { isBiggerThanMd } = useResponsive();
 
 	const cssLogo = !isBiggerThanMd ? { width: 'auto', height: '30px' } : { width: 'auto', height: '45px' };
 
 	return (
-		<Box sx={cssContainer}>
+		<div className={styles.technologies}>
 			{LOGOS.map((logo) => (
-				<StyledLogoContainer key={logo.label}>
+				<div className={styles.logoContainer} key={logo.label}>
 					<Image src={logo.src} alt={logo.label} width={60} height={60} style={cssLogo} />
 
-					<StyledLink href={logo.url} aria-label={`link to ${logo.label}`} target='_blank' rel='noopener noreferrer' />
-				</StyledLogoContainer>
+					<a
+						className={styles.link}
+						href={logo.url}
+						aria-label={`link to ${logo.label}`}
+						target='_blank'
+						rel='noopener noreferrer'
+					/>
+				</div>
 			))}
-		</Box>
+		</div>
 	);
 };
 
