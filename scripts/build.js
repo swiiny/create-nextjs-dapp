@@ -16,7 +16,12 @@ async function buildAll() {
 		console.log('Initializing build...');
 
 		console.log('\nCopy env variables...');
-		await exec('cp -r .env ./common');
+
+		try {
+			await exec('cp -r .env ./common');
+		} catch {
+			console.log('Failed to copy env variables, but not a critical issue. Continuing...');
+		}
 
 		console.log('\nShare common files...');
 		for (let i = 0; i < templates.length; i++) {
@@ -25,6 +30,7 @@ async function buildAll() {
 				console.log(`${success} ${templates[i]}`);
 			} catch {
 				console.log(`${fail} ${templates[i]}`);
+				process.exit(1);
 			}
 		}
 
@@ -35,6 +41,7 @@ async function buildAll() {
 				console.log(`${success} ${templates[i]}`);
 			} catch {
 				console.log(`${fail} ${templates[i]}`);
+				process.exit(1);
 			}
 		}
 
@@ -45,10 +52,12 @@ async function buildAll() {
 				console.log(`${success} ${templates[i]}`);
 			} catch {
 				console.log(`${fail} ${templates[i]}`);
+				process.exit(1);
 			}
 		}
 	} catch (err) {
 		console.log('buildAll error', err);
+		process.exit(1);
 	}
 }
 
