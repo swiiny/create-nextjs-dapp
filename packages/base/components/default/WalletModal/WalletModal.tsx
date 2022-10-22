@@ -45,7 +45,7 @@ const WalletModal: FC<IWalletModal> = ({ isOpen = false, onClose = () => {} }) =
 
 	const closeModal = (e: MouseEvent) => {
 		// @ts-ignore
-		if (e.target?.getAttribute('class')?.includes('modal-background')) {
+		if (e.target?.getAttribute('class')?.includes('modalBackground')) {
 			onClose();
 		}
 	};
@@ -65,11 +65,12 @@ const WalletModal: FC<IWalletModal> = ({ isOpen = false, onClose = () => {} }) =
 	return (
 		<Portal selector='body'>
 			<button
-				className={classNames('modal-background')}
-				isVisible={isModalVisible && isOpen}
+				className={classNames(styles.modalBackground, {
+					[styles.isVisible]: isModalVisible && isOpen
+				})}
 				onClick={(e: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>) => closeModal(e)}
 			>
-				<GradientContainer width={'500px'} height={'auto'} paddingY={{ xs: 2, md: 3 }} paddingX={{ xs: 2, md: 3 }}>
+				<GradientContainer className={styles.gradientContainer}>
 					{isWalletConnected && !isConnectingWallet ? (
 						<button className={styles.modalButton} onClick={() => handleDisconnectWallet()}>
 							<Text size={ESize.l} weight={EFontWeight.bold} align={ETextAlign.center}>

@@ -18,6 +18,7 @@
 		}
 
 		&.center {
+			width: 100%;
 			text-align: center;
 		}
 
@@ -56,7 +57,7 @@
 		}
 
 		&.large {
-			font-size: calc(1.25 * 3rem);
+			font-size: calc(1.25 * 3rem * 0.7);
 
 			@include md() {
 				font-size: calc(1.25 * 3rem * 0.8);
@@ -100,7 +101,7 @@
 		}
 
 		&.large {
-			font-size: calc(1.25 * 2.5rem);
+			font-size: calc(1.25 * 2.5rem * 0.7);
 
 			@include md() {
 				font-size: calc(1.25 * 2.5rem * 0.8);
@@ -144,7 +145,7 @@
 		}
 
 		&.large {
-			font-size: calc(1.25 * 2rem);
+			font-size: calc(1.25 * 2rem * 0.7);
 
 			@include md() {
 				font-size: calc(1.25 * 2rem * 0.8);
@@ -187,7 +188,7 @@
 		}
 
 		&.large {
-			font-size: calc(1.25 * 1.5rem);
+			font-size: calc(1.25 * 1.5rem * 0.7);
 
 			@include md() {
 				font-size: calc(1.25 * 1.5rem * 0.8);
@@ -229,7 +230,7 @@
 		}
 
 		&.large {
-			font-size: calc(1.25 * 1.25rem);
+			font-size: calc(1.25 * 1.25rem * 0.7);
 
 			@include md() {
 				font-size: calc(1.25 * 1.25rem * 0.8);
@@ -242,7 +243,7 @@
 			}
 		}
 	}
-	@include unify-parent('h6 p span') {
+	@include unify-parents(('h6', 'p')) {
 		&.small {
 			font-size: calc(0.75 * 1rem * 0.7);
 
@@ -261,18 +262,18 @@
 			font-size: calc(1rem * 0.7);
 
 			@include md() {
-				font-size: calc(2.5rem * 0.8);
+				font-size: calc(1rem * 0.8);
 			}
 			@include lg() {
-				font-size: calc(2.5rem * 0.9);
+				font-size: calc(1rem * 0.9);
 			}
 			@include xl() {
-				font-size: calc(2.5rem * 1);
+				font-size: calc(1rem * 1);
 			}
 		}
 
 		&.large {
-			font-size: calc(1.25 * 1rem);
+			font-size: calc(1.25 * 1rem * 0.7);
 
 			@include md() {
 				font-size: calc(1.25 * 1rem * 0.8);

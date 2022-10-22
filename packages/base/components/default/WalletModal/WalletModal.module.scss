@@ -1,7 +1,7 @@
 @import '../../../theme/variables';
 @import '../../../theme/mixins';
 
-.modal-background {
+.modalBackground {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -77,5 +77,16 @@
 
 	& + button {
 		margin-top: 16px;
+	}
+}
+
+.gradientContainer {
+	width: 500px;
+	height: auto;
+
+	padding: 1rem;
+
+	@include md() {
+		padding: 1.5rem;
 	}
 }

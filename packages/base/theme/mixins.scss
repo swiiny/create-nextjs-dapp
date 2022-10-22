@@ -36,6 +36,14 @@
 	}
 }
 
+@mixin unify-parents($children) {
+	@each $child in $children {
+		@at-root #{selector.unify(&, $child)} {
+			@content;
+		}
+	}
+}
+
 @mixin colors() {
 	&.blueGradient {
 		background: $blueGradient;

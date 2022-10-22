@@ -37,9 +37,19 @@
 		@include colors();
 
 		& svg {
+			margin-left: 16px;
+
 			@include transition();
 
-			margin-left: 16px;
+			transform: scale(0.7);
+
+			@include md() {
+				transform: scale(0.8);
+			}
+
+			@include xl() {
+				transform: scale(1);
+			}
 		}
 
 		&:hover {
@@ -160,5 +170,9 @@
 }
 
 .buttonIcon {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
 	@include colors();
 }
