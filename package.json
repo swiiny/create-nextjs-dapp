@@ -13,12 +13,8 @@
   "dependencies": {
     "@inquirer/input": "^0.0.28-alpha.0",
     "@inquirer/select": "^0.0.29-alpha.0",
-    "jszip": "^3.10.1",
-    "list-github-dir-content": "^3.0.0",
     "node-fetch": "^3.2.10",
     "p-map": "^5.5.0",
-    "p-retry": "^5.1.1",
-    "request": "^2.88.2",
-    "save-file": "^2.3.1"
+    "p-retry": "^5.1.1"
   }
 }
