@@ -6,7 +6,8 @@
 	justify-content: space-evenly;
 
 	height: 100vh;
-	padding-top: 30px;
+
+	padding-top: 100px;
 
 	padding-left: 15px;
 	padding-right: 15px;
@@ -14,6 +15,7 @@
 	@include md() {
 		padding-left: 32px;
 		padding-right: 32px;
+		padding-top: 30px;
 	}
 
 	@include lg() {

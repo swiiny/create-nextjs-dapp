@@ -2,6 +2,7 @@ import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import Web3Provider from '@contexts/Web3Context';
 import '../theme/globals.scss';
+import Navbar from '@components/default/Navbar';
 
 const CreateNextjsDapp = ({ Component, pageProps }: AppProps) => {
 	return (
@@ -24,6 +25,7 @@ const CreateNextjsDapp = ({ Component, pageProps }: AppProps) => {
 			</Head>
 
 			<Web3Provider>
+				<Navbar />
 				<Component {...pageProps} />
 			</Web3Provider>
 		</>

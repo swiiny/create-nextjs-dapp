@@ -15,6 +15,7 @@ const Button: FC<IButton> = ({
 	noPaddingResponsive = false,
 	valueToCopy,
 	color,
+	iconColor,
 	icon,
 	gradientContainerProps
 }) => {
@@ -45,7 +46,8 @@ const Button: FC<IButton> = ({
 			<GradientContainer
 				component={EHtmlTag.span}
 				className={classNames(styles.gradientContainer, {
-					[styles.noPaddingResponsive]: noPaddingResponsive
+					[styles.noPaddingResponsive]: noPaddingResponsive,
+					[styles[`${contentColor}`]]: !!contentColor
 				})}
 				{...gradientContainerProps}
 			>
@@ -55,7 +57,8 @@ const Button: FC<IButton> = ({
 					<>
 						<div
 							className={classNames(styles.iconsContainer, {
-								[styles.isActive]: isCopying
+								[styles.isActive]: isCopying,
+								[styles[`${contentColor}`]]: !!contentColor
 							})}
 						>
 							<MdOutlineContentCopy size={24} />
@@ -63,13 +66,13 @@ const Button: FC<IButton> = ({
 						</div>
 					</>
 				) : icon ? (
-					icon
+					<div className={classNames(styles.buttonIcon, { [styles[`${iconColor}`]]: !!iconColor })}>{icon}</div>
 				) : (
 					<></>
 				)}
 			</GradientContainer>
 		);
-	}, [children, gradientContainerProps, icon, isCopying, noPaddingResponsive, valueToCopy]);
+	}, [children, contentColor, gradientContainerProps, icon, iconColor, isCopying, noPaddingResponsive, valueToCopy]);
 
 	if (href) {
 		return (

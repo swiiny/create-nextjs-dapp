@@ -34,7 +34,13 @@
 
 		transition: inherit;
 
-		color: inherit;
+		@include colors();
+
+		& svg {
+			@include transition();
+
+			margin-left: 16px;
+		}
 
 		&:hover {
 			transform: scale(1.02);
@@ -45,31 +51,16 @@
 				color: $gray;
 			}
 		}
-
-		& svg {
-			margin-left: 16px;
-
-			color: inherit;
-
-			@include transition();
-
-			transform: scale(0.7);
-
-			@include md() {
-				transform: scale(0.8);
-			}
-
-			@include xl() {
-				transform: scale(1);
-			}
-		}
 	}
 
 	&.isSuccess {
 		& > span {
-			&:hover {
-				color: $success;
+			color: $success;
 
+			& svg {
+				color: $success;
+			}
+			&:hover {
 				& svg {
 					color: $success;
 				}
@@ -105,7 +96,18 @@
 
 	& > svg {
 		position: absolute;
+
 		@include transition();
+
+		transform: scale(0.7);
+
+		@include md() {
+			transform: scale(0.8);
+		}
+
+		@include xl() {
+			transform: scale(1);
+		}
 
 		&:nth-child(1) {
 			opacity: 1;
@@ -115,6 +117,10 @@
 			opacity: 0;
 			transform: translateX(50%) rotateX(-90deg);
 		}
+	}
+
+	&:not(.isActive) {
+		@include colors();
 	}
 
 	&.isActive {
@@ -151,4 +157,8 @@
 			padding: 12px 36px;
 		}
 	}
+}
+
+.buttonIcon {
+	@include colors();
 }

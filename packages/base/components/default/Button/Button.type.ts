@@ -9,6 +9,7 @@ interface IButton {
 	noPaddingResponsive?: boolean;
 	icon?: ReactNode;
 	color?: EColor;
+	iconColor?: EColor;
 	href?: string;
 	gradientContainerProps?: IGradientContainer;
 }

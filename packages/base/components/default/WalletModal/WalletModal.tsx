@@ -1,6 +1,5 @@
 import React, { FC, MouseEvent, useEffect, useMemo, useState } from 'react';
 import { IWalletModal } from './WalletModal.type';
-import { StyledModalBackground, StyledModalButton } from './WalletModal.styles';
 import Portal from '@components/common/Portal';
 import { v4 as uuidv4 } from 'uuid';
 import GradientContainer from '../GradientContainer';
@@ -10,6 +9,8 @@ import Image from 'next/future/image';
 import Text from '../Text';
 import { ESize } from 'theme/theme.enum';
 import { EFontWeight, ETextAlign } from '../Text/Text.enum';
+import styles from './WalletModal.module.scss';
+import classNames from 'classnames';
 
 const WalletModal: FC<IWalletModal> = ({ isOpen = false, onClose = () => {} }) => {
 	const { connectWallet, isConnectingWallet, disconnectWallet, isWalletConnected, walletName } = useWeb3();
@@ -63,30 +64,30 @@ const WalletModal: FC<IWalletModal> = ({ isOpen = false, onClose = () => {} }) =
 
 	return (
 		<Portal selector='body'>
-			<StyledModalBackground
-				className='modal-background'
+			<button
+				className={classNames('modal-background')}
 				isVisible={isModalVisible && isOpen}
 				onClick={(e: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>) => closeModal(e)}
 			>
 				<GradientContainer width={'500px'} height={'auto'} paddingY={{ xs: 2, md: 3 }} paddingX={{ xs: 2, md: 3 }}>
 					{isWalletConnected && !isConnectingWallet ? (
-						<StyledModalButton onClick={() => handleDisconnectWallet()}>
+						<button className={styles.modalButton} onClick={() => handleDisconnectWallet()}>
 							<Text size={ESize.l} weight={EFontWeight.bold} align={ETextAlign.center}>
 								Disconnect {walletName}
 							</Text>
-						</StyledModalButton>
+						</button>
 					) : (
 						WALLETS_ARRAY.map((wallet) => (
-							<StyledModalButton key={wallet.name} onClick={() => connectWallet(wallet)}>
+							<button key={wallet.name} className={styles.modalButton} onClick={() => connectWallet(wallet)}>
 								<Image src={wallet.srcLogo} alt={`${wallet.name}'s logo`} width={60} height={60} />
 								<Text size={ESize.l} weight={EFontWeight.bold}>
 									{wallet.name}
 								</Text>
-							</StyledModalButton>
+							</button>
 						))
 					)}
 				</GradientContainer>
-			</StyledModalBackground>
+			</button>
 		</Portal>
 	);
 };
