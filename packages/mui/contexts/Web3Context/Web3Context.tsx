@@ -179,8 +179,9 @@ const Web3Provider: FC<{ children: ReactNode }> = ({ children }) => {
 				if (networkId === 1) {
 					ethereumProvider = web3Provider;
 				} else {
-					const ethereum = ethers.providers.getNetwork(1);
-					ethereumProvider = ethers.providers.getDefaultProvider(ethereum);
+					ethereumProvider = new ethers.providers.JsonRpcProvider(
+						process.env.RPC_ETHEREUM || 'https://rpc.ankr.com/eth'
+					);
 				}
 
 				const resolver = await ethereumProvider?.lookupAddress(address.toString());

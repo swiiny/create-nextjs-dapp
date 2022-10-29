@@ -6,7 +6,7 @@ import ChildProcess from 'child_process';
 const exec = util.promisify(ChildProcess.exec);
 
 // list all templates
-const templates = ['base', 'mui'];
+const templates = ['base', 'mui', 'styled-components'];
 
 const success = '✔';
 const fail = '×';
