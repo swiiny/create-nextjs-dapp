@@ -24,6 +24,7 @@ Here is the list of the available templates:
 
 - [Base](#base) (No UI kit)
 - [MUI](#mui)
+- [Styled Components](#styled-components)
 
 ## Quick start
 
