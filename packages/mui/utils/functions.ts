@@ -8,6 +8,16 @@ export const mq = (mediaQuery: EMediaQuery, children: string | FlattenSimpleInte
 	}`;
 };
 
+export const mqV = (
+	mediaQuery: EMediaQuery | string,
+	children: string | FlattenSimpleInterpolation,
+	minOrMax = 'min'
+) => {
+	return `@media only screen and (${minOrMax}-height: ${mediaQuery}) {
+		${children}
+	}`;
+};
+
 // add transition
 export const addTransition = (
 	target: string = 'all',
