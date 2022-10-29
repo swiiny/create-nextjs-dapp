@@ -17,7 +17,7 @@
 
 ## Introduction
 
-This is a starter for building dapps with Nextjs, React and ethers.  
+This is a starter for building Dapps with Nextjs, React and ethers.  
 By running `npx create-nextjs-dapp` you will be able to choose a **_project name_** and the **_template_** you want to use directly **_from your terminal_**.
 
 Here is the list of the available templates:
@@ -51,6 +51,7 @@ Working configuration:
 
 - [base](#base)
 - [MUI](#mui)
+- [Styled Components](#styled-components)
 
 ### Base
 
@@ -66,3 +67,11 @@ You can run the following command to install it:
 ```
 npm install @mui/material
 ```
+
+### Styled Components
+
+Styled components is a popular CSS-in-JS library developed for React. It is configured with the [Styled Components](https://styled-components.com/) library.
+
+There are already base functions to add responsive padding, margin and frames to your components.
+
+> See IPadding, IMargin and IFrames available at `./interfaces/layout.ts`
