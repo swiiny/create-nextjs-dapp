@@ -257,3 +257,19 @@ export const addFramesStyles = (p: any) => {
 		${p.xlMaxHeight ? mq(EMediaQuery.xl, `max-height: ${getSpacing(p.xlMaxHeight)};`) : ''}
 	`;
 };
+
+export const addVisibilityStyles = (p: any) => {
+	return css`
+		${p.hidden ? 'display: none;' : ''}
+		${p.smHidden ? mq(EMediaQuery.sm, 'display: none;') : ''}
+		${p.mdHidden ? mq(EMediaQuery.md, 'display: none;') : ''}
+		${p.lgHidden ? mq(EMediaQuery.lg, 'display: none;') : ''}
+		${p.xlHidden ? mq(EMediaQuery.xl, 'display: none;') : ''}
+
+		${p.visible ? `display: ${p.display || 'initial'};` : ''}
+		${p.smVisible ? mq(EMediaQuery.sm, `display: ${p.display || 'initial'};`) : ''}
+		${p.mdVisible ? mq(EMediaQuery.md, `display: ${p.display || 'initial'};`) : ''}
+		${p.lgVisible ? mq(EMediaQuery.lg, `display: ${p.display || 'initial'};`) : ''}
+		${p.xlVisible ? mq(EMediaQuery.xl, `display: ${p.display || 'initial'};`) : ''}
+	`;
+};

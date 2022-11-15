@@ -1,9 +1,8 @@
-import React, { FC } from 'react';
-import { ITechnologies } from './Technologies.type';
-import Image from 'next/future/image';
-import { StyledLink, StyledLogoContainer, StyledTechnologies } from './Technologies.styles';
-import useResponsive from '@hooks/useResponsive';
 import { EFlex } from '@components/layout/Flex/Flex.enum';
+import Image from 'next/future/image';
+import { FC } from 'react';
+import { StyledLink, StyledLogoContainer, StyledTechnologies } from './Technologies.styles';
+import { ITechnologies } from './Technologies.type';
 
 const LOGOS = [
 	{
@@ -39,15 +38,11 @@ const LOGOS = [
 ];
 
 const Technologies: FC<ITechnologies> = () => {
-	const { isBiggerThanMd } = useResponsive();
-
-	const cssLogo = !isBiggerThanMd ? { width: 'auto', height: '30px' } : { width: 'auto', height: '45px' };
-
 	return (
 		<StyledTechnologies horizontal={EFlex.center} vertical={EFlex.center} wrapItems gap={30} mdGap={40} lgGap={50}>
 			{LOGOS.map((logo) => (
 				<StyledLogoContainer key={logo.label}>
-					<Image src={logo.src} alt={logo.label} width={60} height={60} style={cssLogo} />
+					<Image src={logo.src} alt={logo.label} width={60} height={60} />
 
 					<StyledLink href={logo.url} aria-label={`link to ${logo.label}`} target='_blank' rel='noopener noreferrer' />
 				</StyledLogoContainer>

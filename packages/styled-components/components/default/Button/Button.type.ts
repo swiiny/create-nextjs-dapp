@@ -1,8 +1,9 @@
+import { IFrames, IMargin, IPadding, IVisibility } from '@interfaces/layout';
 import { ReactNode } from 'react';
 import { DefaultTheme } from 'styled-components';
 import { IGradientContainer } from '../GradientContainer/GradientContainer.type';
 
-interface IButton {
+interface IButton extends IFrames, IVisibility, IPadding, IMargin {
 	children: ReactNode;
 	onClick?: () => void;
 	valueToCopy?: string;

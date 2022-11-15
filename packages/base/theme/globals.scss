@@ -13,14 +13,14 @@
 }
 
 body {
-		margin: 0 auto;
-		max-width: 1600px;
+	margin: 0 auto;
+	max-width: 1600px;
 
-    background-color: $black;
+	background-color: $black;
 }
 
 html {
-  height: 100%;
+	height: 100%;
 }
 
 h1,
@@ -48,34 +48,32 @@ h5,
 h6,
 button,
 a {
-  // set font family
-  font-family: 'Nunito', sans-serif;
-  font-weight: bold;
+	// set font family
+	font-family: 'Nunito', sans-serif;
+	font-weight: bold;
 }
-
 
 p,
 span,
 input,
 textarea {
-  // set font family
-  font-family: 'Nunito', sans-serif;
-  font-weight: 400;
+	// set font family
+	font-family: 'Nunito', sans-serif;
+	font-weight: 400;
 }
 
-
 ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+	list-style: none;
+	padding: 0;
+	margin: 0;
 }
 
 a {
-  text-decoration: none;
+	text-decoration: none;
 }
 
 input:-webkit-autofill,
-input:-webkit-autofill:hover, 
+input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 textarea:-webkit-autofill,
 textarea:-webkit-autofill:hover,
@@ -83,23 +81,22 @@ textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
-  -webkit-text-fill-color: $white;
-  box-shadow: 0 0 0px 1000px #00000000 inset;
-  -webkit-transition: background-color 5000s ease-in-out 0s;
-  transition: background-color 5000s ease-in-out 0s;
+	-webkit-text-fill-color: $white;
+	box-shadow: 0 0 0px 1000px #00000000 inset;
+	-webkit-transition: background-color 5000s ease-in-out 0s;
+	transition: background-color 5000s ease-in-out 0s;
 }
 
 input,
 textarea {
-  background-color: transparent;
+	background-color: transparent;
 }
 
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+	width: 6px;
+	height: 6px;
 }
 
- 
 //========================================================================================================
 // ANIMATIONS
 //========================================================================================================
@@ -107,4 +104,3 @@ textarea {
 //========================================================================================================
 // FONTS
 //========================================================================================================
-

@@ -17,7 +17,8 @@ const Button: FC<IButton> = ({
 	color,
 	icon,
 	iconColor,
-	gradientContainerProps
+	gradientContainerProps,
+	...otherProps
 }) => {
 	const theme = useTheme();
 	const [isCopying, setIsCopying] = useState(false);
@@ -76,14 +77,21 @@ const Button: FC<IButton> = ({
 
 	if (href) {
 		return (
-			<StyledLink href={href} target='_blank' rel='noopener noreferrer' color={color} iconColor={iconColor}>
+			<StyledLink
+				href={href}
+				target='_blank'
+				rel='noopener noreferrer'
+				color={color}
+				iconColor={iconColor}
+				{...otherProps}
+			>
 				{content}
 			</StyledLink>
 		);
 	}
 
 	return (
-		<StyledButton onClick={() => handleClick()} color={contentColor} iconColor={iconColor}>
+		<StyledButton onClick={() => handleClick()} color={contentColor} iconColor={iconColor} {...otherProps}>
 			{content}
 		</StyledButton>
 	);

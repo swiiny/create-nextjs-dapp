@@ -1,4 +1,5 @@
 import { EColor } from '@theme/theme.enum';
+import classNames from 'classnames';
 import { ReactNode } from 'react';
 import { IGradientContainer } from '../GradientContainer/GradientContainer.type';
 
@@ -12,6 +13,7 @@ interface IButton {
 	iconColor?: EColor;
 	href?: string;
 	gradientContainerProps?: IGradientContainer;
+	customClasses?: string;
 }
 
 interface ISharedButtonProps {

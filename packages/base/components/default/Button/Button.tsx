@@ -17,7 +17,8 @@ const Button: FC<IButton> = ({
 	color,
 	iconColor,
 	icon,
-	gradientContainerProps
+	gradientContainerProps,
+	customClasses = ''
 }) => {
 	const [isCopying, setIsCopying] = useState(false);
 
@@ -80,7 +81,7 @@ const Button: FC<IButton> = ({
 				href={href}
 				target='_blank'
 				rel='noopener noreferrer'
-				className={classNames(styles.buttonSharedStyles, styles.styledLink, {
+				className={classNames(styles.buttonSharedStyles, styles.styledLink, customClasses, {
 					[styles[`${contentColor}`]]: !!contentColor,
 					[styles.isSuccess]: !!isCopying
 				})}
@@ -92,7 +93,7 @@ const Button: FC<IButton> = ({
 
 	return (
 		<button
-			className={classNames(styles.buttonSharedStyles, styles.styledButton, {
+			className={classNames(styles.buttonSharedStyles, styles.styledButton, customClasses, {
 				[styles[`${contentColor}`]]: !!contentColor,
 				[styles.isSuccess]: !!isCopying
 			})}

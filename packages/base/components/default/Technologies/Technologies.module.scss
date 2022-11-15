@@ -24,6 +24,16 @@
 
 	@include transition();
 
+	& > img {
+		width: auto;
+		height: 30px;
+
+		@include md() {
+			width: auto;
+			height: 45px;
+		}
+	}
+
 	&::before {
 		content: ' ';
 		position: absolute;

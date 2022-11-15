@@ -52,15 +52,11 @@ const cssContainer = {
 };
 
 const Technologies: FC<ITechnologies> = () => {
-	const { isBiggerThanMd } = useResponsive();
-
-	const cssLogo = !isBiggerThanMd ? { width: 'auto', height: '30px' } : { width: 'auto', height: '45px' };
-
 	return (
 		<Box sx={cssContainer}>
 			{LOGOS.map((logo) => (
 				<StyledLogoContainer key={logo.label}>
-					<Image src={logo.src} alt={logo.label} width={60} height={60} style={cssLogo} />
+					<Image src={logo.src} alt={logo.label} width={60} height={60} />
 
 					<StyledLink href={logo.url} aria-label={`link to ${logo.label}`} target='_blank' rel='noopener noreferrer' />
 				</StyledLogoContainer>
