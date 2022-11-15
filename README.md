@@ -22,8 +22,9 @@ By running `npx create-nextjs-dapp` you will be able to choose a **_project name
 
 Here is the list of the available templates:
 
-- Base (No UI kit)
-- [MUI](https://mui.com/) (MUI Base + MUI system, you can run `npm install @mui/material` if you need it)
+- [Base](#base) (No UI kit)
+- [MUI](#mui)
+- [Styled Components](#styled-components)
 
 ## Quick start
 
