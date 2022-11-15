@@ -5,8 +5,29 @@
 
 version: 2
 updates:
-  - package-ecosystem: 'npm' # See documentation for possible values
-    directory: '/' # Location of package manifests
-    target-branch: 'develop'
+  - package-ecosystem: 'npm'
+    directory: './packages/base'
     schedule:
       interval: 'weekly'
+    target-branch: 'develop'
+    labels:
+      - 'npm dependencies'
+      - 'base'
+
+  - package-ecosystem: 'npm'
+    directory: './packages/mui'
+    schedule:
+      interval: 'weekly'
+    target-branch: 'develop'
+    labels:
+      - 'npm dependencies'
+      - 'mui'
+
+  - package-ecosystem: 'npm'
+    directory: './packages/styled-components'
+    schedule:
+      interval: 'weekly'
+    target-branch: 'develop'
+    labels:
+      - 'npm dependencies'
+      - 'styled-components'
