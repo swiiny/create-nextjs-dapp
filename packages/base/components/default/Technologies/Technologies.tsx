@@ -38,15 +38,11 @@ const LOGOS = [
 ];
 
 const Technologies: FC<ITechnologies> = () => {
-	const { isBiggerThanMd } = useResponsive();
-
-	const cssLogo = !isBiggerThanMd ? { width: 'auto', height: '30px' } : { width: 'auto', height: '45px' };
-
 	return (
 		<div className={styles.technologies}>
 			{LOGOS.map((logo) => (
 				<div className={styles.logoContainer} key={logo.label}>
-					<Image src={logo.src} alt={logo.label} width={60} height={60} style={cssLogo} />
+					<Image src={logo.src} alt={logo.label} width={60} height={60} />
 
 					<a
 						className={styles.link}

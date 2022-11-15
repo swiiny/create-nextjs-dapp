@@ -1,5 +1,12 @@
 import styled, { css, DefaultTheme } from 'styled-components';
-import { addTransition, mq } from 'utils/functions';
+import {
+	addFramesStyles,
+	addMarginStyles,
+	addPaddingStyles,
+	addTransition,
+	addVisibilityStyles,
+	mq
+} from 'utils/functions';
 import { ISharedButtonProps } from './Button.type';
 import { EFontWeight } from '../Text/Text.enum';
 import { EMediaQuery } from 'theme/theme.enum';
@@ -60,7 +67,13 @@ const sharedStyle = (p: ISharedButtonProps) => {
 };
 
 export const StyledButton = styled.button<ISharedButtonProps>`
-	${(p) => sharedStyle(p)}
+	${(p) => css`
+		${sharedStyle(p)}
+		${addVisibilityStyles(p)}
+		${addPaddingStyles(p)}
+		${addMarginStyles(p)}
+		${addFramesStyles(p)}
+	`}
 
 	& + button,
 	& + a {
@@ -70,7 +83,14 @@ export const StyledButton = styled.button<ISharedButtonProps>`
 
 export const StyledLink = styled.a<ISharedButtonProps>`
 	display: inline-block;
-	${(p) => sharedStyle(p)}
+
+	${(p) => css`
+		${sharedStyle(p)}
+		${addVisibilityStyles({ ...p, display: 'inline-block' })}
+		${addPaddingStyles(p)}
+		${addMarginStyles(p)}
+		${addFramesStyles(p)}
+	`}
 
 	& + button,
 	& + a {

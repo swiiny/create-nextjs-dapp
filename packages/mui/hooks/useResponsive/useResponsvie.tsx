@@ -1,5 +1,8 @@
 import { useEffect, useState } from 'react';
 import { IFrames, IUseResponsive } from './useResponsive.type';
+import { setLocalStorage, getLocalStorage } from '@utils/global';
+
+const USE_RESPONSIVE_KEY = 'saved-use-responsive';
 
 function getResponsive(): IFrames {
 	if (typeof window === 'undefined') {
@@ -23,17 +26,32 @@ function useResponsive(): IUseResponsive {
 	const mqLg: number = 1200;
 	const mqXl: number = 1536;
 
-	const [screenFrames, setScreenFrames] = useState<IFrames>(getResponsive());
-	const [isBiggerThanSm, setIsBiggerThanSm] = useState<boolean>(false);
-	const [isBiggerThanMd, setIsBiggerThanMd] = useState<boolean>(false);
-	const [isBiggerThanLg, setIsBiggerThanLg] = useState<boolean>(false);
-	const [isBiggerThanXl, setIsBiggerThanXl] = useState<boolean>(false);
+	const savedData = getLocalStorage(USE_RESPONSIVE_KEY) as IUseResponsive | undefined;
+
+	const [screenFrames, setScreenFrames] = useState<IFrames>(savedData?.screenFrames || getResponsive());
+	const [isBiggerThanSm, setIsBiggerThanSm] = useState<boolean>(savedData?.isBiggerThanSm || false);
+	const [isBiggerThanMd, setIsBiggerThanMd] = useState<boolean>(savedData?.isBiggerThanMd || false);
+	const [isBiggerThanLg, setIsBiggerThanLg] = useState<boolean>(savedData?.isBiggerThanLg || false);
+	const [isBiggerThanXl, setIsBiggerThanXl] = useState<boolean>(savedData?.isBiggerThanXl || false);
 
 	useEffect(() => {
+		clearTimeout(window['use-responsive-timeout']);
+
 		setIsBiggerThanSm(screenFrames.width > mqSm);
 		setIsBiggerThanMd(screenFrames.width > mqMd);
 		setIsBiggerThanLg(screenFrames.width > mqLg);
 		setIsBiggerThanXl(screenFrames.width > mqXl);
+
+		// throttle to prevent too many writes to local storage
+		window['use-responsive-timeout'] = setTimeout(() => {
+			setLocalStorage(USE_RESPONSIVE_KEY, {
+				screenFrames,
+				isBiggerThanSm: screenFrames.width > mqSm,
+				isBiggerThanMd: screenFrames.width > mqMd,
+				isBiggerThanLg: screenFrames.width > mqLg,
+				isBiggerThanXl: screenFrames.width > mqXl
+			});
+		}, 500);
 	}, [screenFrames]);
 
 	useEffect(() => {

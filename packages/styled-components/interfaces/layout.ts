@@ -124,4 +124,20 @@ interface IFrames {
 	xlMaxHeight?: TSize;
 }
 
-export type { TSize, IPadding, IMargin, IFrames };
+interface IVisibility {
+	hidden?: boolean;
+	smHidden?: boolean;
+	mdHidden?: boolean;
+	lgHidden?: boolean;
+	xlHidden?: boolean;
+
+	visible?: boolean;
+	smVisible?: boolean;
+	mdVisible?: boolean;
+	lgVisible?: boolean;
+	xlVisible?: boolean;
+
+	display?: string;
+}
+
+export type { TSize, IPadding, IMargin, IFrames, IVisibility };

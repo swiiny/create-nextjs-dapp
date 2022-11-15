@@ -16,3 +16,11 @@
 		padding: 2rem;
 	}
 }
+
+.mdVisible {
+	display: none;
+
+	@include md() {
+		display: inline-block;
+	}
+}

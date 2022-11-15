@@ -1,6 +1,7 @@
-import { addTransition } from 'utils/functions';
+import { addTransition, mq } from 'utils/functions';
 import styled, { css } from 'styled-components';
 import Flex from '@components/layout/Flex';
+import { EMediaQuery } from '@theme/theme.enum';
 
 export const StyledTechnologies = styled(Flex)`
 	&:hover {
@@ -17,6 +18,13 @@ export const StyledLogoContainer = styled.div`
 		border-radius: 12px;
 
 		${addTransition()}
+
+		& > img {
+			width: auto;
+			height: 30px;
+
+			${mq(EMediaQuery.md, 'height: 45px;')}
+		}
 
 		&::before {
 			content: ' ';
