@@ -220,7 +220,7 @@ export const addMarginStyles = (p: any) => {
 };
 
 export const addFramesStyles = (p: any) => {
-	return css`
+	return `
 		${p.width ? `width: ${getSpacing(p.width)};` : ''}
 		${p.height ? `height: ${getSpacing(p.height)};` : ''}
 		${p.minWidth ? `min-width: ${getSpacing(p.minWidth)};` : ''}
@@ -259,7 +259,7 @@ export const addFramesStyles = (p: any) => {
 };
 
 export const addVisibilityStyles = (p: any) => {
-	return css`
+	return `
 		${p.hidden ? 'display: none;' : ''}
 		${p.smHidden ? mq(EMediaQuery.sm, 'display: none;') : ''}
 		${p.mdHidden ? mq(EMediaQuery.md, 'display: none;') : ''}
