@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@mui/base": "^5.0.0-alpha.98",
+    "@mui/base": "^5.0.0-alpha.108",
     "@mui/styled-engine-sc": "^5.10.6",
     "@mui/system": "^5.10.14",
     "@walletconnect/web3-provider": "^1.8.0",
