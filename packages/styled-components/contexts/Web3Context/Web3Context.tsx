@@ -1,17 +1,17 @@
-import React, { useState, useEffect, createContext, FC, useContext, useCallback, ReactNode } from 'react';
-import { ethers, providers } from 'ethers';
-import WalletConnectProvider from '@walletconnect/web3-provider';
 import Address from '@models/Address';
+import WalletConnectProvider from '@walletconnect/web3-provider';
+import { ethers, providers } from 'ethers';
 import { IWallet } from 'interfaces/wallet';
+import React, { createContext, FC, ReactNode, useCallback, useEffect, useState } from 'react';
 import { clearLocalStorage, getLocalStorage, setLocalStorage } from 'utils/global';
-import { NETWORKS_RPC, WALLETS } from './Web3Context.variables';
 import { checkIfNetworkIsValid, getWalletFromName } from './Web3Context.functions';
 import { IWeb3, IWeb3Provider } from './Web3Context.type';
+import { NETWORKS_RPC, WALLETS } from './Web3Context.variables';
 
 // the key used to save the state in localStorage
 const WalletLocalStorageKey = 'wallet';
 
-const Web3Context = createContext<IWeb3 | undefined>(undefined);
+export const Web3Context = createContext<IWeb3 | undefined>(undefined);
 
 const defaultProvider = { error: true };
 const Web3Provider: FC<{ children: ReactNode }> = ({ children }) => {
@@ -245,14 +245,5 @@ const Web3Provider: FC<{ children: ReactNode }> = ({ children }) => {
 		</Web3Context.Provider>
 	);
 };
-
-export function useWeb3() {
-	const context = useContext(Web3Context);
-	if (context === undefined) {
-		throw new Error('unable to find Web3Context');
-	}
-
-	return context;
-}
 
 export { Web3Provider };
