@@ -1,11 +1,12 @@
-import React, { FC, useState } from 'react';
+import { FC } from 'react';
 import { IWalletButton } from './WalletButton.type';
 
-import { useWeb3 } from '@contexts/Web3Context/Web3Context';
-import Button from '../Button';
+import useWeb3 from '@hooks/useWeb3';
+
 import { MdOutlineAccountBalanceWallet } from 'react-icons/md';
-import WalletModal from '../WalletModal';
 import { useTheme } from 'styled-components';
+import Button from '../Button';
+import WalletModal from '../WalletModal';
 
 const WalletButton: FC<IWalletButton> = () => {
 	const { isWalletModalOpen, setIsWalletModalOpen, address, isWalletConnected, ens } = useWeb3();

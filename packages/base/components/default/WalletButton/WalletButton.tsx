@@ -1,10 +1,10 @@
-import { FC } from 'react';
-import { IWalletButton } from './WalletButton.type';
-import { useWeb3 } from '@contexts/Web3Context/Web3Context';
+import useWeb3 from '@hooks/useWeb3';
 import { EColor } from '@theme/theme.enum';
+import { FC } from 'react';
 import { MdOutlineAccountBalanceWallet } from 'react-icons/md';
 import Button from '../Button';
 import WalletModal from '../WalletModal';
+import { IWalletButton } from './WalletButton.type';
 
 const WalletButton: FC<IWalletButton> = () => {
 	const { isWalletModalOpen, setIsWalletModalOpen, address, isWalletConnected, ens } = useWeb3();

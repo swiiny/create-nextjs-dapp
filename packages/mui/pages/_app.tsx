@@ -1,10 +1,11 @@
+import Navbar from '@components/default/Navbar';
+import ResponsiveProvider from '@contexts/ResponsiveContext';
+import Web3Provider from '@contexts/Web3Context';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { ThemeProvider } from 'styled-components';
 import GlobalStyle from 'theme/GlobalStyles';
 import { darkTheme } from 'theme/theme';
-import Navbar from '@components/default/Navbar';
-import Web3Provider from '@contexts/Web3Context';
 
 const CreateNextjsDapp = ({ Component, pageProps }: AppProps) => {
 	return (
@@ -26,13 +27,15 @@ const CreateNextjsDapp = ({ Component, pageProps }: AppProps) => {
 				<meta name='theme-color' content='#1E1F20' />
 			</Head>
 
-			<Web3Provider>
-				<ThemeProvider theme={darkTheme}>
-					<GlobalStyle />
-					<Navbar />
-					<Component {...pageProps} />
-				</ThemeProvider>
-			</Web3Provider>
+			<ResponsiveProvider>
+				<Web3Provider>
+					<ThemeProvider theme={darkTheme}>
+						<GlobalStyle />
+						<Navbar />
+						<Component {...pageProps} />
+					</ThemeProvider>
+				</Web3Provider>
+			</ResponsiveProvider>
 		</>
 	);
 };

@@ -1,8 +1,7 @@
-import React, { FC } from 'react';
-import { ITechnologies } from './Technologies.type';
 import Image from 'next/future/image';
-import useResponsive from '@hooks/useResponsive';
+import { FC } from 'react';
 import styles from './Technologies.module.scss';
+import { ITechnologies } from './Technologies.type';
 
 const LOGOS = [
 	{
