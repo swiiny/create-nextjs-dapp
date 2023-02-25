@@ -17,4 +17,4 @@ const Error404: FC = () => {
 	);
 };
 
-export default Error404;
+export default Hello404;
