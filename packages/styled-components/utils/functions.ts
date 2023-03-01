@@ -273,9 +273,16 @@ export const addFramesStyles = (p: any) => {
 	`;
 };
 
-// the css rule for not displaying an element on the page
+/**
+ * The CSS rule for not displaying an element on the page
+ */
 const displayNoneRule = `display: none;`;
 
+/**
+ * Returns a string of media queries that will hide the element on the given ranges
+ * @param ranges - Array of ranges to hide the element
+ * @returns A string of media queries that will hide the element
+ */
 export const displayNone = (ranges: THiddenRange[]) => {
 	const queries = [];
 	for (const range of ranges) {
@@ -301,6 +308,11 @@ export const displayNone = (ranges: THiddenRange[]) => {
 	return queries.join(';');
 };
 
+/**
+ * Returns a string of media queries that will hide the element on the given hidden ranges from the props
+ * @param p - Props that may contain hidden ranges
+ * @returns A string of media queries that will hide the element
+ */
 export const addHiddenRangesStyles = (p: any) => {
 	if (p.hiddenRange?.length) {
 		return displayNone([p.hiddenRange]);
