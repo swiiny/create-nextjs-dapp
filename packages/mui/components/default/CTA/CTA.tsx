@@ -1,28 +1,29 @@
-import React, { FC } from 'react';
-import { ICTA } from './CTA.type';
 import { Box } from '@mui/system';
-import Text from '../Text';
+import { FC } from 'react';
 import { useTheme } from 'styled-components';
 import { ESize } from 'theme/theme.enum';
-import { ETextType, EFontWeight, ETextAlign } from '../Text/Text.enum';
 import Button from '../Button';
+import { EFontWeight, ETextAlign, ETextType } from '../Text/Text.enum';
 import { TextEx } from './CTA.styles';
+import { ICTA } from './CTA.type';
 
 const cloneCmd = 'npx create-nextjs-dapp';
+
+const boxStyles = {
+	display: 'flex',
+	flexDirection: 'column',
+	justifyContent: 'center',
+	alignItems: 'center',
+	transform: { xs: 'scale(0.9)', sm: 'unset' }
+};
+
+const gradientContainerProps = { marginTop: 4 };
 
 const CTA: FC<ICTA> = () => {
 	const theme = useTheme();
 
 	return (
-		<Box
-			sx={{
-				display: 'flex',
-				flexDirection: 'column',
-				justifyContent: 'center',
-				alignItems: 'center',
-				transform: { xs: 'scale(0.9)', sm: 'unset' }
-			}}
-		>
+		<Box sx={boxStyles}>
 			<TextEx
 				type={ETextType.h2}
 				size={ESize.s}
@@ -33,7 +34,7 @@ const CTA: FC<ICTA> = () => {
 				Start coding is easy as
 				<Button
 					color={theme.colors.lightBlue}
-					gradientContainerProps={{ marginTop: 4 }}
+					gradientContainerProps={gradientContainerProps}
 					valueToCopy={cloneCmd + '@latest'}
 					noPaddingResponsive
 				>

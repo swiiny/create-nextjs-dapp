@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-import util from 'util';
 import ChildProcess from 'child_process';
+import util from 'util';
 
 const exec = util.promisify(ChildProcess.exec);
 
