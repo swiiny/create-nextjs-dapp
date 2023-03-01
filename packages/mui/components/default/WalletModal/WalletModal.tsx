@@ -1,15 +1,14 @@
 import Portal from '@components/common/Portal';
-import useWeb3 from '@hooks/useWeb3';
-import { FC, MouseEvent, useEffect, useId, useState } from 'react';
-import GradientContainer from '../GradientContainer';
-import { StyledModalBackground, StyledModalButton } from './WalletModal.styles';
-import { IWalletModal } from './WalletModal.type';
-
 import { WALLETS_ARRAY } from '@contexts/Web3Context/Web3Context.variables';
-import Image from 'next/future/image';
+import useWeb3 from '@hooks/useWeb3';
+import Image from 'next/image';
+import { FC, MouseEvent, useEffect, useId, useState } from 'react';
 import { ESize } from 'theme/theme.enum';
+import GradientContainer from '../GradientContainer';
 import Text from '../Text';
 import { EFontWeight, ETextAlign } from '../Text/Text.enum';
+import { StyledModalBackground, StyledModalButton } from './WalletModal.styles';
+import { IWalletModal } from './WalletModal.type';
 
 const WalletModal: FC<IWalletModal> = ({ isOpen = false, onClose = () => {} }) => {
 	const { connectWallet, isConnectingWallet, disconnectWallet, isWalletConnected, walletName } = useWeb3();

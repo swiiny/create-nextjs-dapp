@@ -1,5 +1,5 @@
 import { Box } from '@mui/system';
-import Image from 'next/future/image';
+import Image from 'next/image';
 import { FC } from 'react';
 import { StyledLink, StyledLogoContainer } from './Technologies.styles';
 import { ITechnologies } from './Technologies.type';
