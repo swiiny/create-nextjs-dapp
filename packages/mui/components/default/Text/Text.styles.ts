@@ -1,10 +1,10 @@
+import styled, { css } from 'styled-components';
 import { EMediaQuery, ESize } from 'theme/theme.enum';
 import { mq } from 'utils/functions';
-import styled, { css } from 'styled-components';
-import { EFontWeight, ETextAlign, ETextType } from './Text.enum';
+import { ETextAlign, ETextType } from './Text.enum';
 import { IText } from './Text.type';
 
-export const StyledText = styled.div<IText>`
+export const StyledText = styled.p<IText>`
 	${(p) => css`
 		position: relative;
 

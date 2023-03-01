@@ -6,7 +6,7 @@
 	top: 0;
 
 	display: flex;
-	justify-content: space-between;
+	justify-content: flex-end;
 
 	width: 100%;
 
@@ -14,6 +14,18 @@
 
 	@include md() {
 		padding: 2rem;
+	}
+
+	& h1 {
+		display: none;
+	}
+
+	@include sm() {
+		justify-content: space-between;
+
+		& h1 {
+			display: initial;
+		}
 	}
 }
 

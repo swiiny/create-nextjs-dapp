@@ -1,7 +1,6 @@
 import Portal from '@components/common/Portal';
 import useWeb3 from '@hooks/useWeb3';
-import { FC, MouseEvent, useEffect, useMemo, useState } from 'react';
-import { v4 as uuidv4 } from 'uuid';
+import { FC, MouseEvent, useEffect, useId, useState } from 'react';
 import GradientContainer from '../GradientContainer';
 import { StyledModalBackground, StyledModalButton } from './WalletModal.styles';
 import { IWalletModal } from './WalletModal.type';
@@ -17,9 +16,7 @@ const WalletModal: FC<IWalletModal> = ({ isOpen = false, onClose = () => {} }) =
 
 	const [isModalVisible, setIsModalVisible] = useState<boolean>(false);
 
-	const uuid = useMemo(() => {
-		return uuidv4();
-	}, []);
+	const uuid = useId();
 
 	useEffect(() => {
 		if (!uuid) {

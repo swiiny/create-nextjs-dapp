@@ -1,62 +1,40 @@
 import { createContext, FC, useEffect, useState } from 'react';
+import { debounce, getResponsive } from './ResponsiveContext.functions';
 import { IFrames, IUseResponsive } from './ResponsiveContext.type';
 
-export const ResponsiveContext = createContext<IUseResponsive | undefined>(undefined);
+const ResponsiveContext = createContext<IUseResponsive | undefined>(undefined);
 
-const mqSm: number = 600;
-const mqMd: number = 900;
-const mqLg: number = 1200;
-const mqXl: number = 1536;
-
-function getResponsive(): IFrames {
-	if (typeof window === 'undefined') {
-		return {
-			width: 1200,
-			height: 900
-		};
-	}
-
-	const { innerWidth: width, innerHeight: height } = window;
-
-	return {
-		width,
-		height
-	};
-}
+const breakpoints = [600, 900, 1200, 1536];
 
 const ResponsiveProvider: FC<{ children: any }> = ({ children }) => {
 	const [screenFrames, setScreenFrames] = useState<IFrames>(getResponsive());
-	const [isBiggerThanSm, setIsBiggerThanSm] = useState<boolean | undefined>(undefined);
-	const [isBiggerThanMd, setIsBiggerThanMd] = useState<boolean | undefined>(undefined);
-	const [isBiggerThanLg, setIsBiggerThanLg] = useState<boolean | undefined>(undefined);
-	const [isBiggerThanXl, setIsBiggerThanXl] = useState<boolean | undefined>(undefined);
+	const [isSmallerThanBreakpoint, setIsSmallerThanBreakpoint] = useState<boolean[]>(breakpoints.map(() => false));
 
 	useEffect(() => {
 		function handleResize() {
 			const newScreenFrames = getResponsive();
 			setScreenFrames(newScreenFrames);
-			setIsBiggerThanSm(newScreenFrames.width > mqSm);
-			setIsBiggerThanMd(newScreenFrames.width > mqMd);
-			setIsBiggerThanLg(newScreenFrames.width > mqLg);
-			setIsBiggerThanXl(newScreenFrames.width > mqXl);
+			const newIsSmallerThanBreakpoint = breakpoints.map((breakpoint) => newScreenFrames.width > breakpoint);
+			setIsSmallerThanBreakpoint(newIsSmallerThanBreakpoint);
 		}
 
-		setTimeout(() => {
-			handleResize();
-		}, 100);
+		const handleResizeDebounced = debounce(handleResize, 100);
 
-		window.addEventListener('resize', handleResize);
-		return () => window.removeEventListener('resize', handleResize);
+		handleResize();
+
+		window.addEventListener('resize', handleResizeDebounced);
+
+		return () => window.removeEventListener('resize', handleResizeDebounced);
 	}, []);
 
 	return (
 		<ResponsiveContext.Provider
 			value={{
 				screenFrames,
-				isBiggerThanSm,
-				isBiggerThanMd,
-				isBiggerThanLg,
-				isBiggerThanXl
+				isBiggerThanSm: isSmallerThanBreakpoint[0],
+				isBiggerThanMd: isSmallerThanBreakpoint[1],
+				isBiggerThanLg: isSmallerThanBreakpoint[2],
+				isBiggerThanXl: isSmallerThanBreakpoint[3]
 			}}
 		>
 			{children}
@@ -64,4 +42,4 @@ const ResponsiveProvider: FC<{ children: any }> = ({ children }) => {
 	);
 };
 
-export { ResponsiveProvider };
+export { ResponsiveProvider, ResponsiveContext };

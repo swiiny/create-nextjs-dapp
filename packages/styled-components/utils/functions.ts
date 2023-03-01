@@ -1,11 +1,26 @@
 import { TSize } from '@interfaces/layout';
 import { defaultTheme } from '@theme/theme';
 import { EMediaQuery, ESize } from '@theme/theme.enum';
-import { css, DefaultTheme, FlattenSimpleInterpolation } from 'styled-components';
+import { FlattenSimpleInterpolation } from 'styled-components';
+import { THiddenRange } from 'types/functions.type';
 
 // media queries
-export const mq = (mediaQuery: EMediaQuery, children: string | FlattenSimpleInterpolation, minOrMax = 'min') => {
+export const mq = (
+	mediaQuery: EMediaQuery | string,
+	children: string | FlattenSimpleInterpolation,
+	minOrMax = 'min'
+) => {
 	return `@media only screen and (${minOrMax}-width: ${mediaQuery}) {
+		${children}
+	}`;
+};
+
+export const mqRange = (
+	minWidth: EMediaQuery | string,
+	maxWidth: EMediaQuery | string,
+	children: string | FlattenSimpleInterpolation
+) => {
+	return `@media only screen and (min-width: ${minWidth}) and (max-width: ${maxWidth}) {
 		${children}
 	}`;
 };
@@ -258,18 +273,40 @@ export const addFramesStyles = (p: any) => {
 	`;
 };
 
-export const addVisibilityStyles = (p: any) => {
-	return `
-		${p.hidden ? 'display: none;' : ''}
-		${p.smHidden ? mq(EMediaQuery.sm, 'display: none;') : ''}
-		${p.mdHidden ? mq(EMediaQuery.md, 'display: none;') : ''}
-		${p.lgHidden ? mq(EMediaQuery.lg, 'display: none;') : ''}
-		${p.xlHidden ? mq(EMediaQuery.xl, 'display: none;') : ''}
+// the css rule for not displaying an element on the page
+const displayNoneRule = `display: none;`;
 
-		${p.visible ? `display: ${p.display || 'initial'};` : ''}
-		${p.smVisible ? mq(EMediaQuery.sm, `display: ${p.display || 'initial'};`) : ''}
-		${p.mdVisible ? mq(EMediaQuery.md, `display: ${p.display || 'initial'};`) : ''}
-		${p.lgVisible ? mq(EMediaQuery.lg, `display: ${p.display || 'initial'};`) : ''}
-		${p.xlVisible ? mq(EMediaQuery.xl, `display: ${p.display || 'initial'};`) : ''}
-	`;
+export const displayNone = (ranges: THiddenRange[]) => {
+	const queries = [];
+	for (const range of ranges) {
+		if (range === undefined || (range[0] === undefined && range[1] === undefined)) {
+			queries.push(displayNoneRule);
+		} else {
+			let query = '';
+
+			if (range[0] === undefined && range[1]) {
+				query = mq(range[1], displayNoneRule, 'min');
+			} else if (range[1] === undefined && range[0]) {
+				query = mq(range[0], displayNoneRule, 'max');
+			} else if (range[0] && range[1]) {
+				query = mqRange(range[0], range[1], displayNoneRule);
+			}
+
+			queries.push(`
+				${query}
+			`);
+		}
+	}
+
+	return queries.join(';');
+};
+
+export const addHiddenRangesStyles = (p: any) => {
+	if (p.hiddenRange?.length) {
+		return displayNone([p.hiddenRange]);
+	}
+
+	if (!p.hiddenRanges?.length) return ``;
+
+	return displayNone(p.hiddenRanges);
 };
