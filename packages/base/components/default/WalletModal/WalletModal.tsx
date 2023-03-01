@@ -7,7 +7,7 @@ import { IWalletModal } from './WalletModal.type';
 
 import { WALLETS_ARRAY } from '@contexts/Web3Context/Web3Context.variables';
 import classNames from 'classnames';
-import Image from 'next/future/image';
+import Image from 'next/image';
 import { ESize } from 'theme/theme.enum';
 import Text from '../Text';
 import { EFontWeight, ETextAlign } from '../Text/Text.enum';
