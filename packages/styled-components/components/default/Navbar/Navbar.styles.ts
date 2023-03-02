@@ -9,11 +9,12 @@ export const StyledNavbar = styled.nav`
 	z-index: 100;
 
 	display: flex;
-	justify-content: space-between;
+	justify-content: flex-end;
 
 	width: 100%;
 
 	padding: 1rem;
 
+	${mq(EMediaQuery.sm, 'justify-content: space-between;')}
 	${mq(EMediaQuery.md, 'padding: 2rem;')}
 `;

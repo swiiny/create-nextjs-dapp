@@ -1,9 +1,9 @@
-import React, { FC } from 'react';
-import { ITagline } from './Tagline.type';
-import { useTheme } from 'styled-components';
 import Text from '@components/default/Text';
 import { EFontWeight, ETextAlign, ETextType } from '@components/default/Text/Text.enum';
+import { FC } from 'react';
+import { useTheme } from 'styled-components';
 import { ESize } from 'theme/theme.enum';
+import { ITagline } from './Tagline.type';
 
 const Tagline: FC<ITagline> = () => {
 	const theme = useTheme();

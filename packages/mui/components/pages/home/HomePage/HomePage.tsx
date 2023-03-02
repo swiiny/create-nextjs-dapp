@@ -6,6 +6,15 @@ import { Box } from '@mui/system';
 import { FC } from 'react';
 import { IHomePage } from './HomePage.type';
 
+const boxStyles = {
+	display: 'flex',
+	flexDirection: 'column',
+	justifyContent: 'space-evenly',
+	paddingX: { xs: '15px', md: '32px', lg: '64px' },
+	paddingTop: '30px',
+	height: '100vh'
+};
+
 const HomePage: FC<IHomePage> = () => {
 	return (
 		<>
@@ -14,12 +23,7 @@ const HomePage: FC<IHomePage> = () => {
 				description='Starter to create Dapps with Next, React and Ethers. Start coding is easy as npx create-nextjs-dapp'
 			/>
 			<div>
-				<Box
-					height='100vh'
-					paddingTop='30px'
-					paddingX={{ xs: '15px', md: '32px', lg: '64px' }}
-					sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-evenly' }}
-				>
+				<Box sx={boxStyles}>
 					<Technologies />
 
 					<Tagline />

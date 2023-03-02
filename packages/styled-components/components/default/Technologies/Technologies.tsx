@@ -1,5 +1,5 @@
 import { EFlex } from '@components/layout/Flex/Flex.enum';
-import Image from 'next/future/image';
+import Image from 'next/image';
 import { FC } from 'react';
 import { StyledLink, StyledLogoContainer, StyledTechnologies } from './Technologies.styles';
 import { ITechnologies } from './Technologies.type';

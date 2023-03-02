@@ -1,9 +1,8 @@
-import React, { FC } from 'react';
-import { ITechnologies } from './Technologies.type';
 import { Box } from '@mui/system';
-import Image from 'next/future/image';
+import Image from 'next/image';
+import { FC } from 'react';
 import { StyledLink, StyledLogoContainer } from './Technologies.styles';
-import useResponsive from '@hooks/useResponsive';
+import { ITechnologies } from './Technologies.type';
 
 const LOGOS = [
 	{
@@ -38,7 +37,7 @@ const LOGOS = [
 	}
 ];
 
-const cssContainer = {
+const boxStyles = {
 	display: 'flex',
 	justifyContent: 'center',
 	alignItems: 'center',
@@ -53,7 +52,7 @@ const cssContainer = {
 
 const Technologies: FC<ITechnologies> = () => {
 	return (
-		<Box sx={cssContainer}>
+		<Box sx={boxStyles}>
 			{LOGOS.map((logo) => (
 				<StyledLogoContainer key={logo.label}>
 					<Image src={logo.src} alt={logo.label} width={60} height={60} />

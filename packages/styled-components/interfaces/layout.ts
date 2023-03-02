@@ -1,4 +1,5 @@
 import { ESize } from '@theme/theme.enum';
+import { THiddenRange } from 'types/functions.type';
 
 type TSize = ESize | number | string;
 
@@ -124,20 +125,9 @@ interface IFrames {
 	xlMaxHeight?: TSize;
 }
 
-interface IVisibility {
-	hidden?: boolean;
-	smHidden?: boolean;
-	mdHidden?: boolean;
-	lgHidden?: boolean;
-	xlHidden?: boolean;
-
-	visible?: boolean;
-	smVisible?: boolean;
-	mdVisible?: boolean;
-	lgVisible?: boolean;
-	xlVisible?: boolean;
-
-	display?: string;
+interface IHiddenRanges {
+	hiddenRange?: THiddenRange;
+	hiddenRanges?: THiddenRange[];
 }
 
-export type { TSize, IPadding, IMargin, IFrames, IVisibility };
+export type { TSize, IPadding, IMargin, IFrames, IHiddenRanges };

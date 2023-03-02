@@ -1,9 +1,9 @@
-import { ESize } from 'theme/theme.enum';
+import { IHiddenRanges, IMargin, IPadding } from '@interfaces/layout';
 import { ReactNode } from 'react';
+import { ESize } from 'theme/theme.enum';
 import { EFontWeight, ETextAlign, ETextType } from './Text.enum';
-import { IMargin, IPadding } from '@interfaces/layout';
 
-interface IText extends IMargin, IPadding {
+interface IText extends IMargin, IPadding, IHiddenRanges {
 	component?: ETextType;
 	children?: string | ReactNode;
 	type?: ETextType;
