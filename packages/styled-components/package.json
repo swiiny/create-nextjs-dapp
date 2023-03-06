@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@walletconnect/web3-provider": "^1.8.0",
-    "ethers": "^5.7.2",
+    "ethers": "^6.0.8",
     "next": "13.2.3",
     "next-transpile-modules": "^10.0.0",
     "react": "18.2.0",
