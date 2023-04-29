@@ -25,6 +25,7 @@ Here is the list of the available templates:
 - [Base](#base) (No UI kit)
 - [MUI](#mui)
 - [Styled Components](#styled-components)
+- [Tailwind](#tailwind)
 
 ## Quick start
 
@@ -53,6 +54,7 @@ Working configuration:
 - [base](#base)
 - [MUI](#mui)
 - [Styled Components](#styled-components)
+- [Tailwind](#tailwind)
 
 ### Base
 
@@ -73,24 +75,14 @@ npm install @mui/material
 
 Styled components is a popular CSS-in-JS library developed for React. It is configured with the [Styled Components](https://styled-components.com/) library.
 
-There are already base functions to add responsive padding, margin and frames to your components.
+There are already base functions to add responsive padding, margin, and frames to your components.
 
-> See IPadding, IMargin and IFrames available at `./interfaces/layout.ts`
+> See IPadding, IMargin, and IFrames available at `./interfaces/layout.ts`
 
 ---
 
-# Contributing
+### Tailwind
 
-### Creating a new template
+The Tailwind template is based on the [Tailwind CSS](https://tailwindcss.com/) framework. It is configured with the [Tailwind CSS](https://tailwindcss.com/docs/installation) library. This template utilizes the utility-first approach to styling, providing a highly customizable and efficient way to build your Dapp.
 
-1. Create a new folder in `./packages` with the name of your template.
-2. Create the following files, inspired by other templates (see `./packages/base` for an example):
-   - `./packages/[template-name]/package.json`
-   - `./packages/[template-name]/pages/index.tsx`
-   - `./packages/[template-name]/tsconfig.json`
-   - `./packages/[template-name]/next.config.js`
-   - `./packages/[template-name]/next-env.d.ts`
-3. Open `./scripts/build.js` and add your template to the `templates` array (the name has to be the same as the template directory name in `./packages`).
-   - `const templates = ['base', 'mui', 'styled-components', 'new-template-name'];`
-4. Go to the project root directory `./` and run `npm run build` to copy the template common files to the new template.
-5. Go to your template (`cd ./packages/[template-name]`) and start development with `npm run dev`.
+This template includes a base configuration file (`tailwind.config.js`) to get you started with customizing your styles. You can refer to the [Tailwind CSS documentation](https://tailwindcss.com/docs/configuration) for more information on how to extend and modify the default configuration.
