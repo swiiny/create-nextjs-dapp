@@ -1,7 +1,7 @@
 import { IWallet } from '@interfaces/wallet';
 import Address from '@models/Address';
 import WalletConnectProvider from '@walletconnect/web3-provider';
-import { providers } from 'ethers';
+import { BrowserProvider, JsonRpcProvider } from 'ethers';
 
 interface IWeb3 {
 	provider: IWeb3Provider;
@@ -19,7 +19,7 @@ interface IWeb3 {
 }
 
 interface IWeb3Provider {
-	web3Provider?: providers.Web3Provider;
+	web3Provider?: JsonRpcProvider | BrowserProvider;
 	web3Instance?: WalletConnectProvider | any;
 	isWallet?: boolean;
 	error?: boolean;

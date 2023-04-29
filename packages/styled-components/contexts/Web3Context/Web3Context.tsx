@@ -1,8 +1,8 @@
 import Address from '@models/Address';
 import WalletConnectProvider from '@walletconnect/web3-provider';
-import { ethers, providers } from 'ethers';
+import { BrowserProvider, JsonRpcProvider } from 'ethers';
 import { IWallet } from 'interfaces/wallet';
-import React, { createContext, FC, ReactNode, useCallback, useEffect, useState } from 'react';
+import { FC, ReactNode, createContext, useCallback, useEffect, useState } from 'react';
 import { clearLocalStorage, getLocalStorage, setLocalStorage } from 'utils/global';
 import { checkIfNetworkIsValid, getWalletFromName } from './Web3Context.functions';
 import { IWeb3, IWeb3Provider } from './Web3Context.type';
@@ -85,7 +85,7 @@ const Web3Provider: FC<{ children: ReactNode }> = ({ children }) => {
 
 						setAddress(Address.from(accounts[0]));
 
-						const web3provider = new providers.Web3Provider(web3Instance);
+						const web3provider = new BrowserProvider(web3Instance);
 
 						setProvider({
 							web3Provider: web3provider,
@@ -107,7 +107,7 @@ const Web3Provider: FC<{ children: ReactNode }> = ({ children }) => {
 
 						await newProvider.enable();
 
-						const web3Provider = new providers.Web3Provider(newProvider);
+						const web3Provider = new BrowserProvider(newProvider);
 						setProvider({
 							web3Provider,
 							web3Instance: newProvider
@@ -172,16 +172,14 @@ const Web3Provider: FC<{ children: ReactNode }> = ({ children }) => {
 	}, [connectWallet]);
 
 	const checkIfUserHasEns = useCallback(
-		async (address: Address, web3Provider: ethers.providers.Web3Provider) => {
+		async (address: Address, web3Provider: JsonRpcProvider | BrowserProvider) => {
 			if (address && networkId) {
 				let ethereumProvider;
 
 				if (networkId === 1) {
 					ethereumProvider = web3Provider;
 				} else {
-					ethereumProvider = new ethers.providers.JsonRpcProvider(
-						process.env.RPC_ETHEREUM || 'https://rpc.ankr.com/eth'
-					);
+					ethereumProvider = new JsonRpcProvider(process.env.RPC_ETHEREUM || 'https://rpc.ankr.com/eth');
 				}
 
 				const resolver = await ethereumProvider?.lookupAddress(address.toString());

@@ -1,4 +1,4 @@
-import { utils } from 'ethers';
+import { getAddress, isAddress } from 'ethers';
 
 export type TAddress = Address | string | undefined;
 
@@ -11,10 +11,10 @@ class Address {
 		if (address instanceof Address) {
 			newAddress = address.toString();
 		} else if (typeof address === 'string') {
-			newAddress = utils.getAddress(address);
+			newAddress = getAddress(address);
 		}
 
-		if (!newAddress || !utils.isAddress(newAddress)) {
+		if (!newAddress || !isAddress(newAddress)) {
 			throw new Error('Invalid address');
 		}
 
