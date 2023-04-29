@@ -1,0 +1,404 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+	box-sizing: border-box;
+}
+*::before {
+	box-sizing: border-box;
+}
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0 auto;
+	max-width: 1600px;
+
+	background-color: #121314;
+}
+
+html {
+	height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button,
+span,
+a,
+p,
+input,
+textarea {
+	color: #ffffff;
+
+	margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button,
+a {
+	font-family: 'Nunito', sans-serif;
+	font-weight: bold;
+}
+
+p,
+span,
+input,
+textarea {
+	font-family: 'Nunito', sans-serif;
+	font-weight: 400;
+}
+
+/* h1 */
+.font-h1-small {
+	font-size: 1.575rem;
+}
+.font-h1-medium {
+	font-size: 2.1rem;
+}
+.font-h1-large {
+	font-size: 2.625rem;
+}
+
+/* h2 */
+.font-h2-small {
+	font-size: 1.3125rem;
+}
+.font-h2-medium {
+	font-size: 1.75rem;
+}
+.font-h2-large {
+	font-size: 2.1875rem;
+}
+
+/* h3 */
+.font-h3-small {
+	font-size: 1.05rem;
+}
+.font-h3-medium {
+	font-size: 1.4rem;
+}
+.font-h3-large {
+	font-size: 1.75rem;
+}
+
+/* h4 */
+.font-h4-small {
+	font-size: 0.7875rem;
+}
+.font-h4-medium {
+	font-size: 1.05rem;
+}
+.font-h4-large {
+	font-size: 1.3125rem;
+}
+
+/* h5 */
+.font-h5-small {
+	font-size: 0.65625rem;
+}
+.font-h5-medium {
+	font-size: 0.875rem;
+}
+.font-h5-large {
+	font-size: 1.09375rem;
+}
+
+/* h6 */
+.font-h6-small {
+	font-size: 0.525rem;
+}
+.font-h6-medium {
+	font-size: 0.7rem;
+}
+.font-h6-large {
+	font-size: 0.875rem;
+}
+
+/* p */
+.font-p-small {
+	font-size: 0.525rem;
+}
+.font-p-medium {
+	font-size: 0.7rem;
+}
+.font-p-large {
+	font-size: 0.875rem;
+}
+
+@layer components {
+	/* =========================================================
+  *  Text component
+  =========================================================== */
+	.text {
+		@apply relative;
+	}
+
+	.text.regular {
+		@apply font-normal;
+	}
+
+	.text.bold {
+		@apply font-bold;
+	}
+
+	.text.align-left {
+		@apply text-left;
+	}
+
+	.text.align-center {
+		@apply w-full text-center;
+	}
+
+	.text.align-right {
+		@apply text-right;
+	}
+}
+
+/* Custom font sizes for headings and paragraphs */
+
+/* Responsive font sizes */
+@screen md {
+	/* h1 */
+	.font-h1-small {
+		font-size: 1.8rem;
+	}
+	.font-h1-medium {
+		font-size: 2.4rem;
+	}
+	.font-h1-large {
+		font-size: 3rem;
+	}
+
+	/* h2 */
+	.font-h2-small {
+		font-size: 1.5rem;
+	}
+	.font-h2-medium {
+		font-size: 2rem;
+	}
+	.font-h2-large {
+		font-size: 2.5rem;
+	}
+
+	/* h3 */
+	.font-h3-small {
+		font-size: 1.2rem;
+	}
+	.font-h3-medium {
+		font-size: 1.6rem;
+	}
+	.font-h3-large {
+		font-size: 2rem;
+	}
+
+	/* h4 */
+	.font-h4-small {
+		font-size: 0.9rem;
+	}
+	.font-h4-medium {
+		font-size: 1.2rem;
+	}
+	.font-h4-large {
+		font-size: 1.5rem;
+	}
+
+	/* h5 */
+	.font-h5-small {
+		font-size: 0.75rem;
+	}
+	.font-h5-medium {
+		font-size: 1rem;
+	}
+	.font-h5-large {
+		font-size: 1.25rem;
+	}
+
+	/* h6 and p */
+	.font-h6-small {
+		font-size: 0.6rem;
+	}
+	.font-h6-medium {
+		font-size: 0.8rem;
+	}
+	.font-h6-large {
+		font-size: 1rem;
+	}
+
+	.font-p-small {
+		font-size: 0.6rem;
+	}
+	.font-p-medium {
+		font-size: 0.8rem;
+	}
+	.font-p-large {
+		font-size: 1rem;
+	}
+}
+
+@screen lg {
+	/* h1 */
+	.font-h1-small {
+		font-size: 2.025rem;
+	}
+	.font-h1-medium {
+		font-size: 2.7rem;
+	}
+	.font-h1-large {
+		font-size: 3.375rem;
+	}
+
+	/* h2 */
+	.font-h2-small {
+		font-size: 1.6875rem;
+	}
+	.font-h2-medium {
+		font-size: 2.25rem;
+	}
+	.font-h2-large {
+		font-size: 2.8125rem;
+	}
+
+	/* h3 */
+	.font-h3-small {
+		font-size: 1.35rem;
+	}
+	.font-h3-medium {
+		font-size: 1.8rem;
+	}
+	.font-h3-large {
+		font-size: 2.25rem;
+	}
+
+	/* h4 */
+	.font-h4-small {
+		font-size: 1.0125rem;
+	}
+	.font-h4-medium {
+		font-size: 1.35rem;
+	}
+	.font-h4-large {
+		font-size: 1.6875rem;
+	}
+
+	/* h5 */
+	.font-h5-small {
+		font-size: 0.84375rem;
+	}
+	.font-h5-medium {
+		font-size: 1.125rem;
+	}
+	.font-h5-large {
+		font-size: 1.40625rem;
+	}
+
+	/* h6 and p */
+	.font-h6-small {
+		font-size: 0.675rem;
+	}
+	.font-h6-medium {
+		font-size: 0.9rem;
+	}
+	.font-h6-large {
+		font-size: 1.125rem;
+	}
+
+	.font-p-small {
+		font-size: 0.675rem;
+	}
+	.font-p-medium {
+		font-size: 0.9rem;
+	}
+	.font-p-large {
+		font-size: 1.125rem;
+	}
+}
+
+@screen xl {
+	/* h1 */
+	.font-h1-small {
+		font-size: 2.25rem;
+	}
+	.font-h1-medium {
+		font-size: 3rem;
+	}
+	.font-h1-large {
+		font-size: 3.75rem;
+	}
+
+	/* h2 */
+	.font-h2-small {
+		font-size: 1.875rem;
+	}
+	.font-h2-medium {
+		font-size: 2.5rem;
+	}
+	.font-h2-large {
+		font-size: 3.125rem;
+	}
+
+	/* h3 */
+	.font-h3-small {
+		font-size: 1.5rem;
+	}
+	.font-h3-medium {
+		font-size: 2rem;
+	}
+	.font-h3-large {
+		font-size: 2.5rem;
+	}
+
+	/* h4 */
+	.font-h4-small {
+		font-size: 1.125rem;
+	}
+	.font-h4-medium {
+		font-size: 1.5rem;
+	}
+	.font-h4-large {
+		font-size: 1.875rem;
+	}
+
+	/* h5 */
+	.font-h5-small {
+		font-size: 0.9375rem;
+	}
+	.font-h5-medium {
+		font-size: 1.25rem;
+	}
+	.font-h5-large {
+		font-size: 1.5625rem;
+	}
+
+	/* h6 and p */
+	.font-h6-small {
+		font-size: 0.75rem;
+	}
+	.font-h6-medium {
+		font-size: 1rem;
+	}
+	.font-h6-large {
+		font-size: 1.25rem;
+	}
+
+	.font-p-small {
+		font-size: 0.75rem;
+	}
+	.font-p-medium {
+		font-size: 1rem;
+	}
+	.font-p-large {
+		font-size: 1.25rem;
+	}
+}
