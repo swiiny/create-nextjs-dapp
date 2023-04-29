@@ -6,7 +6,7 @@ import util from 'util';
 const exec = util.promisify(ChildProcess.exec);
 
 // list all templates
-const templates = ['base', 'mui', 'styled-components'];
+const templates = ['base', 'mui', 'styled-components', 'tailwind'];
 
 const success = '✔';
 const fail = '×';
