@@ -1,9 +1,9 @@
-import { ReactNode } from 'react';
-import { ButtonUnstyledProps } from '@mui/base/ButtonUnstyled';
+import { ButtonProps } from '@mui/base';
 import { BoxProps } from '@mui/system';
+import { ReactNode } from 'react';
 import { DefaultTheme } from 'styled-components';
 
-interface IButton extends ButtonUnstyledProps {
+interface IButton extends ButtonProps {
 	children: ReactNode;
 	onClick?: () => void;
 	valueToCopy?: string;

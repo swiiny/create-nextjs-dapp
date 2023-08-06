@@ -14,6 +14,8 @@ const boxStyles = {
 	position: 'fixed',
 	left: '0',
 	right: '0',
+	marginY: '16px',
+	paddingX: '16px',
 	padding: { xs: 2, md: 4 }
 };
 
