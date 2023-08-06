@@ -1,7 +1,5 @@
 import Portal from '@components/common/Portal';
-import { WALLETS_ARRAY } from '@contexts/Web3Context/Web3Context.variables';
 import useWeb3 from '@hooks/useWeb3';
-import Image from 'next/image';
 import { FC, MouseEvent, useEffect, useId, useState } from 'react';
 import { ESize } from 'theme/theme.enum';
 import GradientContainer from '../GradientContainer';
@@ -11,7 +9,7 @@ import { StyledModalBackground, StyledModalButton } from './WalletModal.styles';
 import { IWalletModal } from './WalletModal.type';
 
 const WalletModal: FC<IWalletModal> = ({ isOpen = false, onClose = () => {} }) => {
-	const { connectWallet, isConnectingWallet, disconnectWallet, isWalletConnected, walletName } = useWeb3();
+	const { disconnectWallet } = useWeb3();
 
 	const [isModalVisible, setIsModalVisible] = useState<boolean>(false);
 
@@ -63,25 +61,14 @@ const WalletModal: FC<IWalletModal> = ({ isOpen = false, onClose = () => {} }) =
 			<StyledModalBackground
 				className='modal-background'
 				isVisible={isModalVisible && isOpen}
-				onClick={(e: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>) => closeModal(e)}
+				onClick={(e) => closeModal(e)}
 			>
 				<GradientContainer width={'500px'} height={'auto'} paddingY={{ xs: 2, md: 3 }} paddingX={{ xs: 2, md: 3 }}>
-					{isWalletConnected && !isConnectingWallet ? (
-						<StyledModalButton onClick={() => handleDisconnectWallet()}>
-							<Text size={ESize.l} weight={EFontWeight.bold} align={ETextAlign.center}>
-								Disconnect {walletName}
-							</Text>
-						</StyledModalButton>
-					) : (
-						WALLETS_ARRAY.map((wallet) => (
-							<StyledModalButton key={wallet.name} onClick={() => connectWallet(wallet)}>
-								<Image src={wallet.srcLogo} alt={`${wallet.name}'s logo`} width={60} height={60} />
-								<Text size={ESize.l} weight={EFontWeight.bold}>
-									{wallet.name}
-								</Text>
-							</StyledModalButton>
-						))
-					)}
+					<StyledModalButton onClick={() => handleDisconnectWallet()}>
+						<Text size={ESize.l} weight={EFontWeight.bold} align={ETextAlign.center}>
+							Disconnect Wallet
+						</Text>
+					</StyledModalButton>
 				</GradientContainer>
 			</StyledModalBackground>
 		</Portal>

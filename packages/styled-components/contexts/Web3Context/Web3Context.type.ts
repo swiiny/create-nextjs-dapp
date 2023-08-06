@@ -1,28 +1,15 @@
 import { IWallet } from '@interfaces/wallet';
-import Address from '@models/Address';
-import WalletConnectProvider from '@walletconnect/web3-provider';
-import { BrowserProvider, JsonRpcProvider } from 'ethers';
+import { WalletState } from '@web3-onboard/core';
 
 interface IWeb3 {
-	provider: IWeb3Provider;
-	address: Address | undefined;
+	provider: WalletState['provider'] | null;
+	accounts: WalletState['accounts'];
 	networkId: number | undefined;
-	isWalletConnected: boolean;
 	isWalletModalOpen: boolean;
-	walletName: string | undefined;
-	ens: string | undefined;
-	isConnectingWallet: boolean;
+	setIsWalletModalOpen: (newState: boolean) => void;
 	isValidNetwork: boolean;
 	connectWallet: (wallet: IWallet) => void;
-	setIsWalletModalOpen: (newState: boolean) => void;
 	disconnectWallet: () => void;
 }
 
-interface IWeb3Provider {
-	web3Provider?: JsonRpcProvider | BrowserProvider;
-	web3Instance?: WalletConnectProvider | any;
-	isWallet?: boolean;
-	error?: boolean;
-}
-
-export type { IWeb3Provider, IWeb3 };
+export type { IWeb3 };

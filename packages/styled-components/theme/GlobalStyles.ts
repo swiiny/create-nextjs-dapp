@@ -19,7 +19,6 @@ body {
 		max-width: 1600px;
 
     background-color: ${(p) => p.theme.colors.black};
-    //background-color: ${(p) => p.theme.colors.white};
 }
 
 html {

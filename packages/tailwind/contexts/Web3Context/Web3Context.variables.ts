@@ -1,45 +1,45 @@
 import { INetwork } from '@interfaces/network';
-import { IWallet } from '@interfaces/wallet';
+
+const NETWORKS = {
+	ethereum: 1,
+	goerli: 5,
+	optimism: 10,
+	goerliOptimism: 420,
+	avalanche: 43114,
+	fuji: 43113 // to verify
+};
 
 const WALLETS = {
-	metamask: {
-		name: 'MetaMask',
+	blocknative: {
+		name: 'BlockNative',
 		srcLogo: '/assets/logo-metamask-color.svg'
-	} as IWallet,
-	walletConnect: {
-		name: 'Wallet Connect',
-		srcLogo: '/assets/logo-wallet-connect-color.svg'
-	} as IWallet
+	}
 };
 
 const WALLETS_ARRAY = Object.values(WALLETS);
 
-const NETWORKS_DATA: any = {
-	ethereum: {
-		id: 'ethereum',
+const NETWORKS_DATA = {
+	[NETWORKS.ethereum]: {
+		id: NETWORKS.ethereum,
 		name: 'Ethereum',
-		ticker: 'ETH',
-		rpc: process.env.RPC_ETHEREUM,
-		networkId: 1
-	} as INetwork,
-	avalanche: {
-		id: 'avalanche',
+		token: 'ETH',
+		rpcUrl: process.env.RPC_ETHEREUM || 'https://mainnet.infura.io/v3/YOUR_API_KEY'
+	},
+	[NETWORKS.avalanche]: {
+		id: NETWORKS.avalanche,
 		name: 'Avalanche',
-		ticker: 'AVAX',
-		rpc: process.env.RPC_AVALANCHE,
-		networkId: 43114
-	} as INetwork
+		token: 'AVAX',
+		rpcUrl: process.env.RPC_AVALANCHE || 'https://api.avax.network/ext/bc/C/rpc'
+	}
 };
 
-const NETWORKS_RPC: {
-	[x: number]: string;
-} = {
-	[NETWORKS_DATA.ethereum.networkId]: NETWORKS_DATA.ethereum.rpc,
-	[NETWORKS_DATA.avalanche.networkId]: NETWORKS_DATA.avalanche.rpc
+const NETWORKS_RPC = {
+	[NETWORKS.ethereum]: NETWORKS_DATA[NETWORKS.ethereum].rpcUrl,
+	[NETWORKS.avalanche]: NETWORKS_DATA[NETWORKS.avalanche].rpcUrl
 };
 
 const VALID_CHAIN_IDS: number[] = (Object.values(NETWORKS_DATA) as INetwork[])
-	.map((n: INetwork): number => n.networkId || 0)
+	.map((n: INetwork): number => n.id || 0)
 	.filter((n: number): boolean => n !== 0);
 
-export { NETWORKS_DATA, VALID_CHAIN_IDS, WALLETS, WALLETS_ARRAY, NETWORKS_RPC };
+export { NETWORKS, NETWORKS_DATA, NETWORKS_RPC, VALID_CHAIN_IDS, WALLETS, WALLETS_ARRAY };

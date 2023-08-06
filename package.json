@@ -1,15 +1,15 @@
 {
-  "name": "create-nextjs-dapp",
-  "version": "1.4.0",
-  "private": false,
-  "type": "module",
-  "scripts": {
-    "dev": "npm run dev:styled-components",
-    "dev:mui": "cd ./packages/mui && npm run dev",
-    "dev:base": "cd ./packages/base && npm run dev",
-    "dev:tailwind": "cd ./packages/tailwind && npm run dev",
-    "dev:sc": "npm run dev:styled-components",
-    "dev:styled-components": "cd ./packages/styled-components && npm run dev",
-    "build": "node scripts/build.js"
-  }
+	"name": "create-nextjs-dapp",
+	"version": "1.4.0",
+	"private": false,
+	"type": "module",
+	"scripts": {
+		"dev": "npm run dev:styled-components",
+		"dev:mui": "cd ./packages/mui && npm run dev",
+		"dev:base": "cd ./packages/base && npm run dev",
+		"dev:tailwind": "cd ./packages/tailwind && npm run dev",
+		"dev:sc": "npm run dev:styled-components",
+		"dev:styled-components": "cd ./packages/styled-components && npm run dev",
+		"build": "node scripts/build.js"
+	}
 }
