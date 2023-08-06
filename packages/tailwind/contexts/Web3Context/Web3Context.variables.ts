@@ -4,15 +4,13 @@ const NETWORKS = {
 	ethereum: 1,
 	goerli: 5,
 	optimism: 10,
-	goerliOptimism: 420,
-	avalanche: 43114,
-	fuji: 43113 // to verify
+	goerliOptimism: 420
 };
 
 const WALLETS = {
 	blocknative: {
 		name: 'BlockNative',
-		srcLogo: '/assets/logo-metamask-color.svg'
+		srcLogo: '/assets/logo-blocknative.svg'
 	}
 };
 
@@ -21,21 +19,35 @@ const WALLETS_ARRAY = Object.values(WALLETS);
 const NETWORKS_DATA = {
 	[NETWORKS.ethereum]: {
 		id: NETWORKS.ethereum,
-		name: 'Ethereum',
+		label: 'Ethereum',
 		token: 'ETH',
-		rpcUrl: process.env.RPC_ETHEREUM || 'https://mainnet.infura.io/v3/YOUR_API_KEY'
+		rpcUrl: process.env.RPC_ETHEREUM || 'https://rpc.ankr.com/eth'
 	},
-	[NETWORKS.avalanche]: {
-		id: NETWORKS.avalanche,
-		name: 'Avalanche',
-		token: 'AVAX',
-		rpcUrl: process.env.RPC_AVALANCHE || 'https://api.avax.network/ext/bc/C/rpc'
+	[NETWORKS.goerli]: {
+		id: NETWORKS.goerli,
+		label: 'Goerli',
+		token: 'gETH',
+		rpcUrl: process.env.RPC_GOERLI || 'https://rpc.ankr.com/eth_goerli'
+	},
+	[NETWORKS.optimism]: {
+		id: NETWORKS.optimism,
+		label: 'Optimism',
+		token: 'ETH',
+		rpcUrl: process.env.RPC_OPTIMISM || 'https://rpc.ankr.com/optimism'
+	},
+	[NETWORKS.goerliOptimism]: {
+		id: NETWORKS.goerliOptimism,
+		label: 'Goerli Optimism',
+		token: 'gETH',
+		rpcUrl: process.env.RPC_GOERLI_OPTIMISM || 'https://rpc.ankr.com/optimism_testnet'
 	}
 };
 
 const NETWORKS_RPC = {
 	[NETWORKS.ethereum]: NETWORKS_DATA[NETWORKS.ethereum].rpcUrl,
-	[NETWORKS.avalanche]: NETWORKS_DATA[NETWORKS.avalanche].rpcUrl
+	[NETWORKS.goerli]: NETWORKS_DATA[NETWORKS.goerli].rpcUrl,
+	[NETWORKS.optimism]: NETWORKS_DATA[NETWORKS.optimism].rpcUrl,
+	[NETWORKS.goerliOptimism]: NETWORKS_DATA[NETWORKS.goerliOptimism].rpcUrl
 };
 
 const VALID_CHAIN_IDS: number[] = (Object.values(NETWORKS_DATA) as INetwork[])
