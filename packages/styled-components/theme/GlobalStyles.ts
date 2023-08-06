@@ -1,6 +1,6 @@
-import { createGlobalStyle, DefaultTheme } from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 
-const GlobalStyle = createGlobalStyle<{ theme: DefaultTheme }>`
+const GlobalStyle = createGlobalStyle`
 //========================================================================================================
 // GENERAL
 //========================================================================================================
@@ -19,7 +19,6 @@ body {
 		max-width: 1600px;
 
     background-color: ${(p) => p.theme.colors.black};
-    //background-color: ${(p) => p.theme.colors.white};
 }
 
 html {

@@ -18,7 +18,8 @@ const nextConfig = withTM({
 	},
 	env: {
 		RPC_ETHEREUM: process.env.RPC_ETHEREUM,
-		RPC_AVALANCHE: process.env.RPC_AVALANCHE
+		RPC_AVALANCHE: process.env.RPC_AVALANCHE,
+		WALLET_CONNECT_PROJECT_ID: process.env.WALLET_CONNECT_PROJECT_ID
 	},
 	webpack: (config) => {
 		config.resolve.alias = {

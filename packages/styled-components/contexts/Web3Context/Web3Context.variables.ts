@@ -1,45 +1,57 @@
 import { INetwork } from '@interfaces/network';
-import { IWallet } from '@interfaces/wallet';
+
+const NETWORKS = {
+	ethereum: 1,
+	goerli: 5,
+	optimism: 10,
+	goerliOptimism: 420
+};
 
 const WALLETS = {
-	metamask: {
-		name: 'MetaMask',
-		srcLogo: '/assets/logo-metamask-color.svg'
-	} as IWallet,
-	walletConnect: {
-		name: 'Wallet Connect',
-		srcLogo: '/assets/logo-wallet-connect-color.svg'
-	} as IWallet
+	blocknative: {
+		name: 'BlockNative',
+		srcLogo: '/assets/logo-blocknative.svg'
+	}
 };
 
 const WALLETS_ARRAY = Object.values(WALLETS);
 
-const NETWORKS_DATA: any = {
-	ethereum: {
-		id: 'ethereum',
-		name: 'Ethereum',
-		ticker: 'ETH',
-		rpc: process.env.RPC_ETHEREUM,
-		networkId: 1
-	} as INetwork,
-	avalanche: {
-		id: 'avalanche',
-		name: 'Avalanche',
-		ticker: 'AVAX',
-		rpc: process.env.RPC_AVALANCHE,
-		networkId: 43114
-	} as INetwork
+const NETWORKS_DATA = {
+	[NETWORKS.ethereum]: {
+		id: NETWORKS.ethereum,
+		label: 'Ethereum',
+		token: 'ETH',
+		rpcUrl: process.env.RPC_ETHEREUM || 'https://rpc.ankr.com/eth'
+	},
+	[NETWORKS.goerli]: {
+		id: NETWORKS.goerli,
+		label: 'Goerli',
+		token: 'gETH',
+		rpcUrl: process.env.RPC_GOERLI || 'https://rpc.ankr.com/eth_goerli'
+	},
+	[NETWORKS.optimism]: {
+		id: NETWORKS.optimism,
+		label: 'Optimism',
+		token: 'ETH',
+		rpcUrl: process.env.RPC_OPTIMISM || 'https://rpc.ankr.com/optimism'
+	},
+	[NETWORKS.goerliOptimism]: {
+		id: NETWORKS.goerliOptimism,
+		label: 'Goerli Optimism',
+		token: 'gETH',
+		rpcUrl: process.env.RPC_GOERLI_OPTIMISM || 'https://rpc.ankr.com/optimism_testnet'
+	}
 };
 
-const NETWORKS_RPC: {
-	[x: number]: string;
-} = {
-	[NETWORKS_DATA.ethereum.networkId]: NETWORKS_DATA.ethereum.rpc,
-	[NETWORKS_DATA.avalanche.networkId]: NETWORKS_DATA.avalanche.rpc
+const NETWORKS_RPC = {
+	[NETWORKS.ethereum]: NETWORKS_DATA[NETWORKS.ethereum].rpcUrl,
+	[NETWORKS.goerli]: NETWORKS_DATA[NETWORKS.goerli].rpcUrl,
+	[NETWORKS.optimism]: NETWORKS_DATA[NETWORKS.optimism].rpcUrl,
+	[NETWORKS.goerliOptimism]: NETWORKS_DATA[NETWORKS.goerliOptimism].rpcUrl
 };
 
 const VALID_CHAIN_IDS: number[] = (Object.values(NETWORKS_DATA) as INetwork[])
-	.map((n: INetwork): number => n.networkId || 0)
+	.map((n: INetwork): number => n.id || 0)
 	.filter((n: number): boolean => n !== 0);
 
-export { NETWORKS_DATA, VALID_CHAIN_IDS, WALLETS, WALLETS_ARRAY, NETWORKS_RPC };
+export { NETWORKS, NETWORKS_DATA, NETWORKS_RPC, VALID_CHAIN_IDS, WALLETS, WALLETS_ARRAY };

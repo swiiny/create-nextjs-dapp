@@ -1,7 +1,8 @@
-import { addTransition } from 'utils/functions';
+import { MouseEventHandler } from 'react';
 import styled, { css } from 'styled-components';
+import { addTransition } from 'utils/functions';
 
-export const StyledModalBackground = styled.button<{ isVisible: boolean }>`
+export const StyledModalBackground = styled.div<{ isVisible: boolean; onClick?: MouseEventHandler<HTMLElement> }>`
 	position: fixed;
 	top: 0;
 	left: 0;

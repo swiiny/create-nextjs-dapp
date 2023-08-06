@@ -1,18 +1,14 @@
 import { EMediaQuery } from '@theme/theme.enum';
-import { FlattenSimpleInterpolation } from 'styled-components';
+import { CSSProp } from 'styled-components';
 
 // media queries
-export const mq = (mediaQuery: EMediaQuery, children: string | FlattenSimpleInterpolation, minOrMax = 'min') => {
+export const mq = (mediaQuery: EMediaQuery, children: string | CSSProp, minOrMax = 'min') => {
 	return `@media only screen and (${minOrMax}-width: ${mediaQuery}) {
 		${children}
 	}`;
 };
 
-export const mqV = (
-	mediaQuery: EMediaQuery | string,
-	children: string | FlattenSimpleInterpolation,
-	minOrMax = 'min'
-) => {
+export const mqV = (mediaQuery: EMediaQuery | string, children: string | CSSProp, minOrMax = 'min') => {
 	return `@media only screen and (${minOrMax}-height: ${mediaQuery}) {
 		${children}
 	}`;

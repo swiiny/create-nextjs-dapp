@@ -22,18 +22,13 @@ const LOGOS = [
 	},
 	{
 		label: 'Ethers',
-		url: 'https://docs.ethers.io/v5/',
+		url: 'https://docs.ethers.io/v6/',
 		src: '/assets/logo-ethers.svg'
 	},
 	{
-		label: 'WalletConnect',
-		url: 'https://walletconnect.org/',
-		src: '/assets/logo-wallet-connect.svg'
-	},
-	{
-		label: 'MetaMask',
-		url: 'https://metamask.io/',
-		src: '/assets/logo-metamask.svg'
+		label: 'BlockNative',
+		url: 'https://www.blocknative.com/wallets',
+		src: '/assets/logo-blocknative.svg'
 	}
 ];
 

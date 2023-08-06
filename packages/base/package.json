@@ -1,30 +1,33 @@
 {
-  "name": "create-nextjs-dapp-base",
-  "version": "1.0.2",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "@walletconnect/web3-provider": "^1.8.0",
-    "classnames": "^2.3.2",
-    "ethers": "^6.3.0",
-    "next": "13.2.3",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "react-icons": "^4.8.0",
-    "sass": "^1.58.3"
-  },
-  "devDependencies": {
-    "@types/node": "18.14.2",
-    "@types/react": "18.0.25",
-    "@types/react-dom": "18.0.11",
-    "eslint": "^8.35.0",
-    "eslint-config-next": "^13.2.3",
-    "prettier": "2.8.4",
-    "typescript": "4.9.5"
-  }
+	"name": "create-nextjs-dapp-base",
+	"version": "1.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"lint": "next lint"
+	},
+	"dependencies": {
+		"classnames": "^2.3.2",
+		"ethers": "^6.7.0",
+		"next": "13.4.12",
+		"react": "18.2.0",
+		"react-dom": "18.2.0",
+		"react-icons": "^4.10.1",
+		"sass": "^1.64.2",
+		"@web3-onboard/core": "^2.20.5",
+		"@web3-onboard/frame": "^2.0.2",
+		"@web3-onboard/injected-wallets": "^2.10.4",
+		"@web3-onboard/walletconnect": "^2.4.4"
+	},
+	"devDependencies": {
+		"@types/node": "20.4.8",
+		"@types/react": "18.2.18",
+		"@types/react-dom": "18.0.11",
+		"eslint": "^8.35.0",
+		"eslint-config-next": "^13.2.3",
+		"prettier": "2.8.4",
+		"typescript": "4.9.5"
+	}
 }

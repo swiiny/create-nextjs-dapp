@@ -1,35 +1,23 @@
 import { TSize } from '@interfaces/layout';
 import { defaultTheme } from '@theme/theme';
 import { EMediaQuery, ESize } from '@theme/theme.enum';
-import { FlattenSimpleInterpolation } from 'styled-components';
+import { CSSProp } from 'styled-components';
 import { THiddenRange } from 'types/functions.type';
 
 // media queries
-export const mq = (
-	mediaQuery: EMediaQuery | string,
-	children: string | FlattenSimpleInterpolation,
-	minOrMax = 'min'
-) => {
+export const mq = (mediaQuery: EMediaQuery | string, children: string | CSSProp, minOrMax = 'min') => {
 	return `@media only screen and (${minOrMax}-width: ${mediaQuery}) {
 		${children}
 	}`;
 };
 
-export const mqRange = (
-	minWidth: EMediaQuery | string,
-	maxWidth: EMediaQuery | string,
-	children: string | FlattenSimpleInterpolation
-) => {
+export const mqRange = (minWidth: EMediaQuery | string, maxWidth: EMediaQuery | string, children: string | CSSProp) => {
 	return `@media only screen and (min-width: ${minWidth}) and (max-width: ${maxWidth}) {
 		${children}
 	}`;
 };
 
-export const mqV = (
-	mediaQuery: EMediaQuery | string,
-	children: string | FlattenSimpleInterpolation,
-	minOrMax = 'min'
-) => {
+export const mqV = (mediaQuery: EMediaQuery | string, children: string | CSSProp, minOrMax = 'min') => {
 	return `@media only screen and (${minOrMax}-height: ${mediaQuery}) {
 		${children}
 	}`;

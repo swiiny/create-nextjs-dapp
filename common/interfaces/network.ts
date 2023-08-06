@@ -1,9 +1,8 @@
 interface INetwork {
-	id: string;
-	name: string;
-	ticker: string;
-	networkId: number;
-	rpc?: string;
+	id: number;
+	label: string;
+	token: string;
+	rpcUrl: string;
 }
 
 export type { INetwork };

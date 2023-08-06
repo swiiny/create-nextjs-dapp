@@ -1,7 +1,7 @@
 import { IFrames, IMargin, IPadding } from '@interfaces/layout';
 import { ESize } from '@theme/theme.enum';
 import React from 'react';
-import { CSSProperties } from 'styled-components';
+import { CSSProp } from 'styled-components';
 import { EFlex } from './Flex.enum';
 
 interface IFlex extends IPadding, IMargin, IFrames {
@@ -12,7 +12,7 @@ interface IFlex extends IPadding, IMargin, IFrames {
 	as?: any;
 	forwardedAs?: any;
 	id?: string;
-	style?: CSSProperties;
+	style?: CSSProp;
 
 	direction?: EFlex.row | EFlex.rowReverse | EFlex.column | EFlex.columnReverse;
 	horizontal?: EFlex.start | EFlex.end | EFlex.between | EFlex.around | EFlex.center;
