@@ -75,8 +75,8 @@ const Web3Provider: FC<{ children: ReactNode }> = ({ children }) => {
 					},
 					appMetadata: {
 						name: 'Create NextJs Dapp',
-						icon: '/path/to/icon.svg',
-						logo: '/path/to/logo.svg',
+						icon: '/assets/logo-placeholder.svg',
+						logo: '/assets/logo-placeholder.svg',
 						description: 'Create NextJs Dapp template'
 					},
 					connect: {
