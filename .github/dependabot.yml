@@ -9,7 +9,7 @@ updates:
     directory: './packages/base'
     schedule:
       interval: 'weekly'
-    target-branch: 'develop'
+    target-branch: 'main'
     labels:
       - 'npm dependencies'
       - 'base'
@@ -18,7 +18,7 @@ updates:
     directory: './packages/mui'
     schedule:
       interval: 'weekly'
-    target-branch: 'develop'
+    target-branch: 'main'
     labels:
       - 'npm dependencies'
       - 'mui'
@@ -27,7 +27,16 @@ updates:
     directory: './packages/styled-components'
     schedule:
       interval: 'weekly'
-    target-branch: 'develop'
+    target-branch: 'main'
     labels:
       - 'npm dependencies'
       - 'styled-components'
+
+  - package-ecosystem: 'npm'
+    directory: './packages/tailwind'
+    schedule:
+      interval: 'weekly'
+    target-branch: 'main'
+    labels:
+      - 'npm dependencies'
+      - 'tailwind'
