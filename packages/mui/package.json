@@ -10,7 +10,7 @@
 	},
 	"dependencies": {
 		"@mui/base": "^5.0.0-alpha.109",
-		"@mui/styled-engine-sc": "^5.12.0",
+		"@mui/styled-engine-sc": "^5.14.7",
 		"@mui/system": "^5.10.17",
 		"ethers": "^6.7.0",
 		"next": "13.4.12",
