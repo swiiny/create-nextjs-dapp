@@ -15,7 +15,7 @@
 		"react": "18.2.0",
 		"react-dom": "18.2.0",
 		"react-icons": "^4.10.1",
-		"sass": "^1.64.2",
+		"sass": "^1.67.0",
 		"@web3-onboard/core": "^2.20.5",
 		"@web3-onboard/frame": "^2.0.2",
 		"@web3-onboard/injected-wallets": "^2.10.4",
