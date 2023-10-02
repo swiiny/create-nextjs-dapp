@@ -1,10 +1,10 @@
-import React, { FC, useMemo, useState } from 'react';
-import { IButton } from './Button.type';
-import { StyledButton, StyledIconsContainer, StyledLink } from './Button.styles';
-import GradientContainer from '../GradientContainer';
-import { MdOutlineContentCopy, MdOutlineCheck } from 'react-icons/md';
-import { copy } from 'utils/global';
+import { FC, useMemo, useState } from 'react';
+import { MdOutlineCheck, MdOutlineContentCopy } from 'react-icons/md';
 import { useTheme } from 'styled-components';
+import { copy } from 'utils/global';
+import GradientContainer from '../GradientContainer';
+import { StyledButton, StyledIconsContainer, StyledLink } from './Button.styles';
+import { IButton } from './Button.type';
 
 const Button: FC<IButton> = ({
 	children,

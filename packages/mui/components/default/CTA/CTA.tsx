@@ -17,7 +17,7 @@ const boxStyles = {
 	transform: { xs: 'scale(0.9)', sm: 'unset' }
 };
 
-const gradientContainerProps = { marginTop: 4 };
+const gradientContainerProps = { marginTop: "32px" };
 
 const CTA: FC<ICTA> = () => {
 	const theme = useTheme();
