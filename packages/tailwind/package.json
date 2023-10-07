@@ -28,7 +28,7 @@
 		"autoprefixer": "^10.4.14",
 		"eslint": "^8.35.0",
 		"eslint-config-next": "^13.2.3",
-		"postcss": "^8.4.23",
+		"postcss": "^8.4.31",
 		"postcss-nesting": "^11.2.2",
 		"prettier": "2.8.4",
 		"tailwindcss": "^3.3.2",
