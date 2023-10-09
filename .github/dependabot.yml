@@ -1,8 +1,3 @@
-# To get started with Dependabot version updates, you'll need to specify which
-# package ecosystems to update and where the package manifests are located.
-# Please see the documentation for all configuration options:
-# https://docs.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
-
 version: 2
 updates:
   - package-ecosystem: 'npm'
@@ -13,6 +8,9 @@ updates:
     labels:
       - 'npm dependencies'
       - 'base'
+    ignore:
+      - dependency-name: '*'
+        update-types: ['version-update:semver-patch']
 
   - package-ecosystem: 'npm'
     directory: './packages/mui'
@@ -22,6 +20,9 @@ updates:
     labels:
       - 'npm dependencies'
       - 'mui'
+    ignore:
+      - dependency-name: '*'
+        update-types: ['version-update:semver-patch']
 
   - package-ecosystem: 'npm'
     directory: './packages/styled-components'
@@ -31,6 +32,9 @@ updates:
     labels:
       - 'npm dependencies'
       - 'styled-components'
+    ignore:
+      - dependency-name: '*'
+        update-types: ['version-update:semver-patch']
 
   - package-ecosystem: 'npm'
     directory: './packages/tailwind'
@@ -40,3 +44,6 @@ updates:
     labels:
       - 'npm dependencies'
       - 'tailwind'
+    ignore:
+      - dependency-name: '*'
+        update-types: ['version-update:semver-patch']

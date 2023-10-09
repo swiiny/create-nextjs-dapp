@@ -1,6 +1,7 @@
 import Navbar from '@components/default/Navbar';
 import ResponsiveProvider from '@contexts/ResponsiveContext';
 import Web3Provider from '@contexts/Web3Context';
+import { Analytics } from '@vercel/analytics/react';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { ThemeProvider } from 'styled-components';
@@ -33,6 +34,7 @@ const CreateNextjsDapp = ({ Component, pageProps }: AppProps) => {
 						<GlobalStyle />
 						<Navbar />
 						<Component {...pageProps} />
+						<Analytics />
 					</ThemeProvider>
 				</Web3Provider>
 			</ResponsiveProvider>
