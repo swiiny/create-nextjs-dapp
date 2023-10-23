@@ -14,7 +14,7 @@
 		"@web3-onboard/core": "^2.21.2",
 		"@web3-onboard/frame": "^2.0.2",
 		"@web3-onboard/injected-wallets": "^2.10.7",
-		"@web3-onboard/walletconnect": "^2.4.7",
+		"@web3-onboard/walletconnect": "^2.5.0",
 		"ethers": "^6.7.1",
 		"next": "13.5.3",
 		"next-transpile-modules": "^10.0.1",
