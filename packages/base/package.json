@@ -19,7 +19,7 @@
 		"@web3-onboard/core": "^2.21.2",
 		"@web3-onboard/frame": "^2.0.2",
 		"@web3-onboard/injected-wallets": "^2.10.6",
-		"@web3-onboard/walletconnect": "^2.4.6"
+		"@web3-onboard/walletconnect": "^2.5.0"
 	},
 	"devDependencies": {
 		"@types/node": "20.8.1",
