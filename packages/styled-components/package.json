@@ -16,7 +16,7 @@
 		"@web3-onboard/injected-wallets": "^2.10.7",
 		"@web3-onboard/walletconnect": "^2.4.7",
 		"ethers": "^6.7.1",
-		"next": "13.5.3",
+		"next": "14.0.1",
 		"next-transpile-modules": "^10.0.1",
 		"react": "18.2.0",
 		"react-dom": "18.2.0",
