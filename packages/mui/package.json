@@ -12,7 +12,7 @@
 		"@mui/base": "5.0.0-beta.17",
 		"@mui/styled-engine-sc": "^5.14.11",
 		"@mui/system": "^5.14.11",
-		"ethers": "^6.7.1",
+		"ethers": "^6.9.0",
 		"next": "13.5.3",
 		"next-transpile-modules": "^10.0.1",
 		"react": "18.2.0",
