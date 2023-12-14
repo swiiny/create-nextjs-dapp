@@ -6,7 +6,7 @@ import { EColor, ESize } from 'theme/theme.enum';
 import WalletButton from '../WalletButton';
 import styles from './Navbar.module.scss';
 
-const repoUrl = 'https://github.com/JeremyTheintz/create-nextjs-dapp';
+const repoUrl = 'https://github.com/swiiny/create-nextjs-dapp';
 
 const Navbar = () => {
 	return (
