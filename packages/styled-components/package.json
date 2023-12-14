@@ -1,6 +1,6 @@
 {
 	"name": "create-nextjs-dapp-styled-components",
-	"version": "1.2.2",
+	"version": "1.2.4",
 	"private": true,
 	"scripts": {
 		"dev": "next dev",
@@ -9,27 +9,27 @@
 		"lint": "next lint"
 	},
 	"dependencies": {
-		"@types/styled-components": "^5.1.28",
-		"@vercel/analytics": "^1.1.0",
+		"@vercel/analytics": "^1.1.1",
 		"@web3-onboard/core": "^2.21.2",
 		"@web3-onboard/frame": "^2.0.2",
-		"@web3-onboard/injected-wallets": "^2.10.7",
-		"@web3-onboard/walletconnect": "^2.4.7",
-		"ethers": "^6.7.1",
-		"next": "13.5.3",
+		"@web3-onboard/injected-wallets": "^2.10.10",
+		"@web3-onboard/walletconnect": "^2.5.1",
+		"ethers": "^6.9.0",
+		"next": "14.0.4",
 		"next-transpile-modules": "^10.0.1",
 		"react": "18.2.0",
 		"react-dom": "18.2.0",
-		"react-icons": "^4.11.0",
-		"styled-components": "^6.0.8"
+		"react-icons": "^4.12.0",
+		"styled-components": "^6.1.1"
 	},
 	"devDependencies": {
-		"@types/node": "20.8.1",
-		"@types/react": "18.2.24",
-		"@types/react-dom": "18.2.8",
-		"eslint": "^8.50.0",
-		"eslint-config-next": "^13.5.3",
-		"prettier": "3.0.3",
-		"typescript": "5.2.2"
+		"@types/styled-components": "^5.1.34",
+		"@types/node": "20.10.4",
+		"@types/react": "18.2.45",
+		"@types/react-dom": "18.2.17",
+		"eslint": "^8.55.0",
+		"eslint-config-next": "^13.5.6",
+		"prettier": "3.1.1",
+		"typescript": "5.3.3"
 	}
 }

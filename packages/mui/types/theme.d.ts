@@ -2,7 +2,7 @@ import 'styled-components';
 
 declare module 'styled-components' {
 	export interface DefaultTheme {
-		spacing: {
+		grid: {
 			unset: string;
 			'6xs': string;
 			'5xs': string;

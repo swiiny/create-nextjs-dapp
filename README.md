@@ -2,11 +2,11 @@
 
 [![npm version](https://img.shields.io/npm/v/create-nextjs-dapp?color=blue)](https://www.npmjs.com/package/create-nextjs-dapp)
 [![npm downloads](https://img.shields.io/npm/dm/create-nextjs-dapp.svg?color=blue)](https://www.npmjs.com/package/create-nextjs-dapp)
-[![GitHub stars](https://img.shields.io/github/stars/JeremyTheintz/create-nextjs-dapp.svg?label=Stars&style=flat&logo=github&color=blue)](https://www.npmjs.com/package/create-nextjs-dapp)
+[![GitHub stars](https://img.shields.io/github/stars/swiiny/create-nextjs-dapp.svg?label=Stars&style=flat&logo=github&color=blue)](https://www.npmjs.com/package/create-nextjs-dapp)
 ![contributions welcome](https://img.shields.io/badge/contributions-welcome-blue.svg?style=flat&logo=github)
-![GitHub](https://img.shields.io/github/license/JeremyTheintz/create-nextjs-dapp?color=blue)
+![GitHub](https://img.shields.io/github/license/swiiny/create-nextjs-dapp?color=blue)
 
-![image](https://github.com/JeremyTheintz/create-nextjs-dapp/raw/main/doc/tagline.png)
+![image](https://github.com/swiiny/create-nextjs-dapp/raw/main/doc/tagline.png)
 
 ## Table of Contents
 

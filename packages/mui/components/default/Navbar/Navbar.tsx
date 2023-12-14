@@ -6,7 +6,7 @@ import { FaStar } from 'react-icons/fa';
 import { ESize } from 'theme/theme.enum';
 import WalletButton from '../WalletButton';
 
-const repoUrl = 'https://github.com/JeremyTheintz/create-nextjs-dapp';
+const repoUrl = 'https://github.com/swiiny/create-nextjs-dapp';
 
 const boxStyles = {
 	display: 'flex',
@@ -15,8 +15,7 @@ const boxStyles = {
 	left: '0',
 	right: '0',
 	marginY: '16px',
-	paddingX: '16px',
-	padding: { xs: 2, md: 4 }
+	paddingX: '16px'
 };
 
 const titleStyles = { display: { xs: 'none', sm: 'flex' }, alignItems: 'center' };
