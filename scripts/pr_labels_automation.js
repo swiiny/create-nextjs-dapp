@@ -1,10 +1,13 @@
 import { Octokit } from '@octokit/rest';
+import fs from 'fs';
 import util from 'util';
 
 const octokit = new Octokit({ auth: process.env.TOKEN });
 const owner = process.env.GITHUB_REPOSITORY.split('/')[0];
 const repo = process.env.GITHUB_REPOSITORY.split('/')[1];
-const prNumber = process.env.GITHUB_EVENT_PATH ? require(process.env.GITHUB_EVENT_PATH).number : undefined;
+const prNumber = process.env.GITHUB_EVENT_PATH
+	? JSON.parse(fs.readFileSync(process.env.GITHUB_EVENT_PATH, 'utf8')).number
+	: undefined;
 
 /**
  * This script is used to automatically add labels to PRs based on the checkboxes in the PR body.
