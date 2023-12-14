@@ -10,28 +10,28 @@
 	},
 	"dependencies": {
 		"clsx": "^2.0.0",
-		"ethers": "^6.7.1",
-		"next": "13.5.3",
+		"ethers": "^6.9.0",
+		"next": "14.0.4",
 		"postcss-import": "^15.1.0",
 		"react": "18.2.0",
 		"react-dom": "18.2.0",
-		"react-icons": "^4.11.0",
+		"react-icons": "^4.12.0",
 		"@web3-onboard/core": "^2.21.2",
 		"@web3-onboard/frame": "^2.0.2",
-		"@web3-onboard/injected-wallets": "^2.10.6",
-		"@web3-onboard/walletconnect": "^2.4.6"
+		"@web3-onboard/injected-wallets": "^2.10.10",
+		"@web3-onboard/walletconnect": "^2.5.1"
 	},
 	"devDependencies": {
-		"@types/node": "20.8.1",
-		"@types/react": "18.2.24",
-		"@types/react-dom": "18.2.8",
+		"@types/node": "20.10.4",
+		"@types/react": "18.2.45",
+		"@types/react-dom": "18.2.17",
 		"autoprefixer": "^10.4.16",
-		"eslint": "^8.50.0",
-		"eslint-config-next": "^13.5.3",
-		"postcss": "^8.4.31",
+		"eslint": "^8.55.0",
+		"eslint-config-next": "^14.0.4",
+		"postcss": "^8.4.32",
 		"postcss-nesting": "^12.0.1",
-		"prettier": "3.0.3",
-		"tailwindcss": "^3.3.3",
-		"typescript": "5.2.2"
+		"prettier": "3.1.1",
+		"tailwindcss": "^3.3.6",
+		"typescript": "5.3.3"
 	}
 }
