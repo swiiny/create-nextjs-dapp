@@ -26,7 +26,7 @@
 	"prettier.jsxSingleQuote": true,
 	"prettier.singleQuote": true,
 	"editor.codeActionsOnSave": {
-		"source.fixAll.eslint": true
+		"source.fixAll.eslint": "explicit"
 	},
 	"prettier.tabWidth": 2,
 	"prettier.useTabs": true,
