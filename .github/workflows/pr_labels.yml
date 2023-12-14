@@ -1,0 +1,36 @@
+name: PR Labels
+
+on:
+  pull_request:
+    types:
+      - opened
+      - edited
+      - synchronize
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  label:
+    runs-on: ubuntu-latest
+    name: PR Labels
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install @octokit/rest
+
+      - name: Run label script
+        working-directory: ./
+        env:
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          node ./scripts/pr_labels_automation.js
