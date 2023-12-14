@@ -15,8 +15,7 @@ const boxStyles = {
 	left: '0',
 	right: '0',
 	marginY: '16px',
-	paddingX: '16px',
-	padding: { xs: 2, md: 4 }
+	paddingX: '16px'
 };
 
 const titleStyles = { display: { xs: 'none', sm: 'flex' }, alignItems: 'center' };

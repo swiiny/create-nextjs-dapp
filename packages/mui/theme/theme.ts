@@ -2,7 +2,7 @@
 import { DefaultTheme } from 'styled-components';
 
 export const defaultTheme = {
-	spacing: {
+	grid: {
 		unset: 'unset',
 		'6xs': '2px',
 		'5xs': '4px',

@@ -1,6 +1,6 @@
 {
 	"name": "create-nextjs-dapp-mui",
-	"version": "1.1.1",
+	"version": "1.1.2",
 	"private": true,
 	"scripts": {
 		"dev": "next dev",
@@ -9,20 +9,20 @@
 		"lint": "next lint"
 	},
 	"dependencies": {
-		"@mui/base": "5.0.0-beta.17",
-		"@mui/styled-engine-sc": "^5.14.11",
-		"@mui/system": "^5.14.11",
-		"ethers": "^6.7.1",
-		"next": "13.5.3",
+		"@mui/base": "5.0.0-beta.27",
+		"@mui/styled-engine-sc": "^5.14.12",
+		"@mui/system": "^5.15.0",
+		"ethers": "^6.9.0",
+		"next": "14.0.4",
 		"next-transpile-modules": "^10.0.1",
 		"react": "18.2.0",
 		"react-dom": "18.2.0",
-		"react-icons": "^4.11.0",
+		"react-icons": "^4.12.0",
 		"styled-components": "5.3.1",
 		"@web3-onboard/core": "^2.21.2",
 		"@web3-onboard/frame": "^2.0.2",
-		"@web3-onboard/injected-wallets": "^2.10.6",
-		"@web3-onboard/walletconnect": "^2.4.6"
+		"@web3-onboard/injected-wallets": "^2.10.10",
+		"@web3-onboard/walletconnect": "^2.5.1"
 	},
 	"devDependencies": {
 		"@types/node": "20.8.1",
