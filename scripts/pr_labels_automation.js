@@ -1,6 +1,7 @@
-const { Octokit } = require('@octokit/rest');
+import { Octokit } from '@octokit/rest';
+import util from 'util';
+
 const octokit = new Octokit({ auth: process.env.TOKEN });
-const util = require('util');
 const owner = process.env.GITHUB_REPOSITORY.split('/')[0];
 const repo = process.env.GITHUB_REPOSITORY.split('/')[1];
 const prNumber = process.env.GITHUB_EVENT_PATH ? require(process.env.GITHUB_EVENT_PATH).number : undefined;
