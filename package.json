@@ -10,6 +10,11 @@
 		"dev:tailwind": "cd ./packages/tailwind && npm run dev",
 		"dev:sc": "npm run dev:styled-components",
 		"dev:styled-components": "cd ./packages/styled-components && npm run dev",
-		"build": "node scripts/build.js"
+		"build": "node scripts/share_files.js && node scripts/build.js",
+		"share-files": "node scripts/share_files.js",
+		"new-template": "node scripts/new_template.js"
+	},
+	"dependencies": {
+		"chalk": "^5.3.0"
 	}
 }

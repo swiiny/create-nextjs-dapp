@@ -13,38 +13,33 @@ templates.pop();
 const success = '✔';
 const fail = '×';
 
-async function buildAll() {
+async function shareAll() {
 	try {
-		console.log(chalk.cyan('\nInitializing build...'));
+		console.log(chalk.cyan(`\nShare files with all templates...`));
 
-		console.log(chalk.italic('\nInstall dependencies...'));
+		console.log(chalk.italic('\nCopy env variables in /common...'));
+
+		try {
+			await exec('cp -r .env ./common');
+			console.log(chalk.green(`${success} .env`));
+		} catch {
+			console.log(chalk.yellow('Failed to copy env variables, but not a critical issue. Continuing...'));
+		}
+
+		console.log(chalk.italic('\nShare common files...'));
 		for (let i = 0; i < templates.length; i++) {
 			try {
-				await exec(`cd ./packages/${templates[i]} && npm install`);
+				await exec(`cp -r ./common/ ./packages/${templates[i]}`);
 				console.log(chalk.green(`${success} ${templates[i]}`));
 			} catch {
 				console.log(chalk.red(`${fail} ${templates[i]}`));
 				process.exit(1);
 			}
 		}
-
-		console.log(chalk.italic('\nBuild all templates...'));
-		for (let i = 0; i < templates.length; i++) {
-			try {
-				await exec(`cd packages/${templates[i]} && npm run build`);
-				console.log(chalk.green(`${success} ${templates[i]}`));
-			} catch {
-				console.log(chalk.red(`${fail} ${templates[i]}`));
-				process.exit(1);
-			}
-		}
-
-		// success
-		console.log(chalk.green('\nBuild completed successfully.'));
 	} catch (err) {
-		console.log(chalk.red('build error: ' + err));
+		console.log(chalk.red('Share files error', err));
 		process.exit(1);
 	}
 }
 
-buildAll();
+shareAll();
