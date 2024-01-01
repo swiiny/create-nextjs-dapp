@@ -1,6 +1,6 @@
 {
 	"name": "create-nextjs-dapp",
-	"version": "1.5.3",
+	"version": "1.6.0-develop.1",
 	"private": true,
 	"type": "module",
 	"scripts": {
