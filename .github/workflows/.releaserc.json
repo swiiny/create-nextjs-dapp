@@ -1,0 +1,29 @@
+{
+	"branches": ["main", { "name": "develop", "prerelease": true }],
+	"plugins": [
+		[
+			"@semantic-release/commit-analyzer",
+			{
+				"preset": "angular",
+				"releaseRules": [
+					{ "type": "feat", "section": "✨ Features", "release": "minor" },
+					{ "type": "fix", "section": "🐛 Bug Fixes", "release": "patch" },
+					{ "type": "chore", "section": "🧹 Maintenance", "release": "patch" },
+					{ "type": "docs", "hidden": true, "release": "patch" },
+					{ "type": "style", "hidden": true, "release": "patch" },
+					{ "type": "refactor", "section": "♻️ Refactor", "release": "patch" },
+					{ "type": "perf", "hidden": true, "release": "patch" },
+					{ "type": "test", "hidden": true, "release": "patch" }
+				],
+				"parserOpts": {
+					"noteKeywords": ["BREAKING CHANGE", "BREAKING CHANGES"]
+				}
+			}
+		],
+		"@semantic-release/release-notes-generator",
+		"@semantic-release/changelog",
+		"@semantic-release/npm",
+		"@semantic-release/git",
+		"@semantic-release/github"
+	]
+}

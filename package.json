@@ -10,6 +10,15 @@
 		"dev:tailwind": "cd ./packages/tailwind && npm run dev",
 		"dev:sc": "npm run dev:styled-components",
 		"dev:styled-components": "cd ./packages/styled-components && npm run dev",
-		"build": "node scripts/build.js"
+		"build": "node scripts/build.js",
+		"husky": "husky install"
+	},
+	"devDependencies": {
+		"@commitlint/cli": "^17.8.1",
+		"@commitlint/config-conventional": "^17.8.0",
+		"@semantic-release/changelog": "^6.0.3",
+		"@semantic-release/github": "^9.2.6",
+		"husky": "^8.0.3",
+		"semantic-release": "^22.0.12"
 	}
 }
