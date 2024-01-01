@@ -45,5 +45,5 @@
 	"[css]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
-	"cSpell.words": ["nextjs", "swiiny"]
+	"cSpell.words": ["nextjs", "stylex", "stylexjs", "swiiny"]
 }
