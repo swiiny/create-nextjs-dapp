@@ -10,7 +10,6 @@ To efficiently contribute a new template to the project, you can utilize the aut
 
 - Creates a new folder in `./packages` with the specified template name.
 - Copies necessary files from the example template (located in `./packages/example`) to the new template folder. These files include `package.json`, `pages/index.tsx`, `tsconfig.json`, `next.config.js`, and `next-env.d.ts`.
-- Adds the new template name to the `templates` array in `./scripts/build.js`.
 
 This automated process simplifies the initial setup, allowing you to focus on developing the new template. Remember to replace `[template-name]` with the actual name of your template when executing the commands.
 
@@ -23,6 +22,7 @@ Please follow these guidelines to ensure a smooth contribution process:
 - Keep your pull requests focused and limited to a single feature or bug fix.
 - Provide a clear and concise description of your changes in the pull request.
 - If your changes are related to an existing issue, reference the issue number in your pull request.
+- **Important**: Ensure you have Husky pre-commit hooks set up by running `npm run husky`. This step is crucial to maintain code quality and consistency.
 
 ## Getting Help
 
