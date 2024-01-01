@@ -1,7 +1,7 @@
 {
 	"name": "create-nextjs-dapp",
 	"version": "1.5.3",
-	"private": false,
+	"private": true,
 	"type": "module",
 	"scripts": {
 		"dev": "npm run dev:styled-components",
