@@ -8,6 +8,7 @@
 		"dev:mui": "cd ./packages/mui && npm run dev",
 		"dev:base": "cd ./packages/base && npm run dev",
 		"dev:tailwind": "cd ./packages/tailwind && npm run dev",
+		"dev:stylex": "cd ./packages/stylex && npm run dev",
 		"dev:sc": "npm run dev:styled-components",
 		"dev:styled-components": "cd ./packages/styled-components && npm run dev",
 		"build": "node scripts/share_files.js && node scripts/build.js",
