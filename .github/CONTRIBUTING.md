@@ -9,7 +9,7 @@ To efficiently contribute a new template to the project, you can utilize the aut
 **Run the Template Creation Script**: Execute the script to automate the creation of the new template. Use the command `npm run new-template [template-name]`, replacing `[template-name]` with the desired name of your new template. This command performs the following tasks:
 
 - Creates a new folder in `./packages` with the specified template name.
-- Copies necessary files from the example template (located in `./packages/example`) to the new template folder. These files include `package.json`, `pages/index.tsx`, `tsconfig.json`, `next.config.js`, and `next-env.d.ts`.
+- Copies necessary files from the example template (located in `./packages/example`) to the new template folder.
 
 This automated process simplifies the initial setup, allowing you to focus on developing the new template. Remember to replace `[template-name]` with the actual name of your template when executing the commands.
 

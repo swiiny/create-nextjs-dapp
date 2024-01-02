@@ -2,6 +2,7 @@ import ResponsiveProvider from '@contexts/ResponsiveContext';
 import Web3Provider from '@contexts/Web3Context';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
+import '../styles/globals.css';
 
 const CreateNextjsDapp = ({ Component, pageProps }: AppProps) => {
 	return (

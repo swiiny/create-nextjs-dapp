@@ -28,7 +28,9 @@ const createTemplate = (templateName) => {
 
 	// create pages folder
 	if (!fs.existsSync(path.join(newTemplatePath, 'pages'))) {
+		// create pages folder
 		fs.mkdirSync(path.join(newTemplatePath, 'pages'));
+		// create api folder
 		fs.mkdirSync(path.join(newTemplatePath, 'pages/api'));
 	}
 
