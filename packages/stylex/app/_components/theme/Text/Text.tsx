@@ -222,10 +222,14 @@ const Text: FC<PropsWithChildren<IText>> = ({
 }) => {
 	const TextTag = component || type;
 
+	// heading key
+	const key = textTypeStylexKeyMap(ESize.m)[type as keyof typeof ETextType] as keyof typeof styles;
+
 	return (
 		<TextTag
 			{...stylex.props(
-				styles[textTypeStylexKeyMap(size)[type]],
+				// @ts-ignore @todo(dig to find the ts issue reason)
+				styles[key],
 				styles.text,
 				weight === EFontWeight.regular && styles.regular,
 				weight === EFontWeight.bold && styles.bold,
