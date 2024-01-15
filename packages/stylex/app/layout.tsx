@@ -1,3 +1,4 @@
+import Navbar from '@components/Navbar';
 import * as stylex from '@stylexjs/stylex';
 import { Metadata } from 'next';
 import '../styles/globals.css';
@@ -35,6 +36,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 			</head>
 
 			<body {...stylex.props(styles.body)}>
+				<Navbar />
 				{children}
 
 				<footer></footer>

@@ -3,7 +3,7 @@ import { spacing } from '../../../../styles/theme.stylex';
 import Tagline from '../Tagline';
 import Technologies from '../Technologies';
 
-const MD = '@media only screen and (min-width: 900px)';
+const MD = '@media only screen and (min-width: 900px) and (max-width: 1199px)';
 const LG = '@media only screen and (min-width: 1200px)';
 
 const styles = stylex.create({

@@ -6,8 +6,8 @@ import { EFontWeight, ETextAlign, ETextType } from './Text.enum';
 import { IText } from './Text.type';
 import { textTypeStylexKeyMap } from './Text.variables';
 
-const MD = '@media only screen and (min-width: 900px)';
-const LG = '@media only screen and (min-width: 1200px)';
+const MD = '@media only screen and (min-width: 900px) and (max-width: 1199px)';
+const LG = '@media only screen and (min-width: 1200px) and (max-width: 1535px)';
 const XL = '@media only screen and (min-width: 1536px)';
 
 const styles = stylex.create({

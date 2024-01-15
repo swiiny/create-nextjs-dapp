@@ -58,3 +58,13 @@ export const texts = stylex.defineVars({
 	normal: '400',
 	bold: 'bold'
 });
+
+/* export const globalStyles = stylex.create({
+	gradientContainer: {
+		position: 'relative',
+		borderRadius: '13px',
+		background: colors.darkGradient,
+		border: `1px solid ${colors.darkGray}`,
+		boxShadow: `0px 5px 20px 10px ${colors.black + '50'}`
+	}
+}); */
