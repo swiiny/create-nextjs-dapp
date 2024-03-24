@@ -6,13 +6,13 @@
 			{
 				"preset": "angular",
 				"releaseRules": [
-					{ "type": "feat", "section": "✨ Features", "release": "minor" },
-					{ "type": "fix", "section": "🐛 Bug Fixes", "release": "patch" },
-					{ "type": "chore", "section": "🧹 Maintenance", "release": "patch" },
-					{ "type": "docs", "hidden": true, "release": "patch" },
-					{ "type": "style", "hidden": true, "release": "patch" },
+					{ "type": "feat", "section": "Features", "release": "minor" },
+					{ "type": "fix", "section": "Bug Fixes", "release": "patch" },
+					{ "type": "chore", "section": "Maintenance", "release": "patch" },
+					{ "type": "docs", "release": "patch" },
+					{ "type": "style", "release": "patch" },
 					{ "type": "refactor", "section": "♻️ Refactor", "release": "patch" },
-					{ "type": "perf", "hidden": true, "release": "patch" },
+					{ "type": "perf", "release": "patch" },
 					{ "type": "test", "hidden": true, "release": "patch" }
 				],
 				"parserOpts": {
