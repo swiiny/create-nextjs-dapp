@@ -25,6 +25,7 @@ Here is the list of the available templates:
 - [Base](#base) (No UI kit)
 - [MUI](#mui)
 - [Styled Components](#styled-components)
+- [Stylex](#stylex)
 - [Tailwind](#tailwind)
 
 ## Quick start
@@ -54,6 +55,7 @@ Working configuration:
 - [base](#base)
 - [MUI](#mui)
 - [Styled Components](#styled-components)
+- [Stylex](#stylex)
 - [Tailwind](#tailwind)
 
 ### Base
@@ -80,6 +82,10 @@ There are already base functions to add responsive padding, margin, and frames t
 > See IPadding, IMargin, and IFrames available at `./interfaces/layout.ts`
 
 ---
+
+### Stylex
+
+The Stylex template leverages [Stylex](https://stylexjs.com/) for styling, blending the benefits of inline styles and CSS without their limitations. It provides a simple JavaScript syntax and compiler for defining component-scoped styles, avoiding specificity issues while supporting media queries. Stylex utilizes atomic CSS to minimize output size, ensuring scalability and maintainability of styles in large projects. Please refer to the [Stylex documentation](https://stylexjs.com/docs/learn/) for more information on how to use the library.
 
 ### Tailwind
 
