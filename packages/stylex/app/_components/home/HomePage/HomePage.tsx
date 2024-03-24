@@ -12,7 +12,7 @@ const styles = stylex.create({
 		flexDirection: 'column',
 		justifyContent: 'space-evenly',
 		alignItems: 'center',
-		height: '100svh',
+		height: '100dvh',
 		paddingTop: spacing.m,
 		paddingLeft: {
 			default: spacing['2xs'],

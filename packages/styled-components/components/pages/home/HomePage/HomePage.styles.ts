@@ -9,7 +9,7 @@ export const StyledMainContainer = styled.div`
 	flex-direction: column;
 	justify-content: space-evenly;
 
-	height: 100vh;
+	height: 100dvh;
 
 	padding-top: 32px;
 	padding-left: 15px;
