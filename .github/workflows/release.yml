@@ -1,10 +1,8 @@
 name: Release
 
 on:
-  push:
-    branches:
-      - main
-      - develop
+  repository_dispatch:
+    types: [semantic-release]
 
 permissions:
   contents: write
@@ -16,6 +14,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
 
       - name: Semantic Release
         uses: cycjimmy/semantic-release-action@v4
