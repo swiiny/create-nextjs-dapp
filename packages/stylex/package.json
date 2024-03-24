@@ -16,7 +16,7 @@
 		"@web3-onboard/frame": "^2.0.2",
 		"@web3-onboard/injected-wallets": "^2.10.12",
 		"@web3-onboard/walletconnect": "^2.5.4",
-		"classnames": "^2.3.2",
+		"classnames": "^2.5.1",
 		"ethers": "^6.11.1",
 		"next": "14.1.4",
 		"react": "18.2.0",
