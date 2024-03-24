@@ -1,0 +1,9 @@
+{
+	"1.4.x": "Eclipse",
+	"1.5.x": "Blaze",
+	"1.6.x": "Lightning",
+	"1.7.x": "Hurricane",
+	"1.8.x": "Cyclone",
+	"1.9.x": "Gale",
+	"1.10.x": "Typhoon"
+}

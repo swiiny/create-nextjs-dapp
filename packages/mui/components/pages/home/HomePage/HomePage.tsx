@@ -12,7 +12,7 @@ const boxStyles = {
 	justifyContent: 'space-evenly',
 	paddingX: { xs: '15px', md: '32px', lg: '64px' },
 	paddingTop: '30px',
-	height: '100vh'
+	height: '100dvh'
 };
 
 const HomePage: FC<IHomePage> = () => {

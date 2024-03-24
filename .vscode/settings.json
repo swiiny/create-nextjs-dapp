@@ -44,5 +44,6 @@
 	},
 	"[css]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	}
+	},
+	"cSpell.words": ["nextjs", "stylex", "stylexjs", "swiiny"]
 }

@@ -1,62 +1,48 @@
-#!/usr/bin/env node
-
+import chalk from 'chalk';
 import ChildProcess from 'child_process';
 import util from 'util';
 
 const exec = util.promisify(ChildProcess.exec);
 
-// list all templates
-const templates = ['base', 'mui', 'styled-components', 'tailwind'];
+// list all templates (those are the folders in packages/)
+let templates = ChildProcess.execSync(`ls ./packages`).toString().split('\n');
+
+// remove the last element of the array, which is an empty string
+templates.pop();
 
 const success = '✔';
 const fail = '×';
 
 async function buildAll() {
 	try {
-		console.log('Initializing build...');
+		console.log(chalk.cyan('\nInitializing build...'));
 
-		console.log('\nCopy env variables...');
-
-		try {
-			await exec('cp -r .env ./common');
-		} catch {
-			console.log('Failed to copy env variables, but not a critical issue. Continuing...');
-		}
-
-		console.log('\nShare common files...');
-		for (let i = 0; i < templates.length; i++) {
-			try {
-				await exec(`cp -r ./common/ ./packages/${templates[i]}`);
-				console.log(`${success} ${templates[i]}`);
-			} catch {
-				console.log(`${fail} ${templates[i]}`);
-				process.exit(1);
-			}
-		}
-
-		console.log('\nInstall dependencies...');
+		console.log(chalk.italic('\nInstall dependencies...'));
 		for (let i = 0; i < templates.length; i++) {
 			try {
 				await exec(`cd ./packages/${templates[i]} && npm install`);
-				console.log(`${success} ${templates[i]}`);
+				console.log(chalk.green(`${success} ${templates[i]}`));
 			} catch {
-				console.log(`${fail} ${templates[i]}`);
+				console.log(chalk.red(`${fail} ${templates[i]}`));
 				process.exit(1);
 			}
 		}
 
-		console.log('\nBuild all templates...');
+		console.log(chalk.italic('\nBuild all templates...'));
 		for (let i = 0; i < templates.length; i++) {
 			try {
 				await exec(`cd packages/${templates[i]} && npm run build`);
-				console.log(`${success} ${templates[i]}`);
+				console.log(chalk.green(`${success} ${templates[i]}`));
 			} catch {
-				console.log(`${fail} ${templates[i]}`);
+				console.log(chalk.red(`${fail} ${templates[i]}`));
 				process.exit(1);
 			}
 		}
+
+		// success
+		console.log(chalk.green('\nBuild completed successfully.'));
 	} catch (err) {
-		console.log('buildAll error', err);
+		console.log(chalk.red('build error: ' + err));
 		process.exit(1);
 	}
 }

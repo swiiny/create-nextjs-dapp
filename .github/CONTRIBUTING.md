@@ -2,27 +2,16 @@
 
 Thank you for considering contributing to this project! Your contributions are greatly appreciated. In this document, you'll find guidelines and tips for making the contribution process smooth and efficient.
 
-## Creating a new template
+## Creating a New Template
 
-If you want to contribute a new template, follow these steps:
+To efficiently contribute a new template to the project, you can utilize the automated script. Here's how to do it:
 
-1. Create a new folder in `./packages` with the name of your template.
+**Run the Template Creation Script**: Execute the script to automate the creation of the new template. Use the command `npm run new-template [template-name]`, replacing `[template-name]` with the desired name of your new template. This command performs the following tasks:
 
-2. Create the following files, taking inspiration from other templates (see `./packages/base` for an example):
+- Creates a new folder in `./packages` with the specified template name.
+- Copies necessary files from the example template (located in `./packages/example`) to the new template folder.
 
-   - `./packages/[template-name]/package.json`
-   - `./packages/[template-name]/pages/index.tsx`
-   - `./packages/[template-name]/tsconfig.json`
-   - `./packages/[template-name]/next.config.js`
-   - `./packages/[template-name]/next-env.d.ts`
-
-3. Open `./scripts/build.js` and add your template to the `templates` array (the name has to be the same as the template directory name in `./packages`).
-
-   - `const templates = ['base', 'mui', 'styled-components', 'new-template-name'];`
-
-4. Go to the project root directory `./` and run `npm run build` to copy the common files to the new template.
-
-5. Navigate to your template folder (`cd ./packages/[template-name]`) and start development with `npm run dev`.
+This automated process simplifies the initial setup, allowing you to focus on developing the new template. Remember to replace `[template-name]` with the actual name of your template when executing the commands.
 
 ## Contribution Guidelines
 
@@ -33,6 +22,7 @@ Please follow these guidelines to ensure a smooth contribution process:
 - Keep your pull requests focused and limited to a single feature or bug fix.
 - Provide a clear and concise description of your changes in the pull request.
 - If your changes are related to an existing issue, reference the issue number in your pull request.
+- **Important**: Ensure you have Husky pre-commit hooks set up by running `npm run husky`. This step is crucial to maintain code quality and consistency.
 
 ## Getting Help
 
