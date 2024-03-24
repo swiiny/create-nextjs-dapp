@@ -13,6 +13,12 @@ export const colors = stylex.defineVars({
 	gray: {
 		default: '#979797'
 	},
+	transparentGray: {
+		default: '#97979730'
+	},
+	lessTransparentGray: {
+		default: '#97979740'
+	},
 	blue: {
 		default: '#2467df'
 	},

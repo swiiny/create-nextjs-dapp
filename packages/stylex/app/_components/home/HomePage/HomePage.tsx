@@ -1,5 +1,6 @@
 import * as stylex from '@stylexjs/stylex';
 import { spacing } from '../../../../styles/theme.stylex';
+import CTA from '../CTA';
 import Tagline from '../Tagline';
 import Technologies from '../Technologies';
 
@@ -33,6 +34,8 @@ const HomePage = () => {
 			<Technologies />
 
 			<Tagline />
+
+			<CTA />
 		</main>
 	);
 };

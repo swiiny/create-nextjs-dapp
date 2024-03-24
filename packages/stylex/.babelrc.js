@@ -14,6 +14,7 @@ module.exports = {
 					rootDir: path.join(__dirname, '../..')
 				}
 			}
-		]
+		],
+		'@babel/plugin-transform-private-methods'
 	]
 };

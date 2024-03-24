@@ -40,14 +40,19 @@ const styles = stylex.create({
 		display: 'flex',
 		justifyContent: 'center',
 		alignItems: 'center',
-		marginLeft: '20px'
+		marginLeft: '20px',
+		color: 'inherit'
 	},
 	icons: {
-		position: 'absolute'
+		position: 'absolute',
+		transition: {
+			'@media screen and (prefers-reduced-motion: no-preference)': 'all 0.3s ease-in-out'
+		}
 	},
 	firstIcon: {
 		opacity: 1,
-		transform: 'translateX(0) rotateX(0)'
+		transform: 'translateX(0) rotateX(0)',
+		color: 'inherit'
 	},
 	firstIconActive: {
 		opacity: 0,
@@ -62,7 +67,7 @@ const styles = stylex.create({
 		transform: 'translateX(0) rotateX(0)'
 	},
 	gradientContainer: {
-		height: '46px',
+		minHeight: '46px',
 		position: 'relative',
 		borderRadius: '13px',
 		background: colors.darkGradient,
@@ -74,8 +79,12 @@ const styles = stylex.create({
 		alignItems: 'center',
 		padding: {
 			default: '6px 18px',
-			'@media screen and (min-width: 600px)': '9px 27px',
+			[SM]: '9px 27px',
 			'@media screen and (min-width: 960px)': '12px 36px'
+		},
+		transform: {
+			default: 'scale(1.0)',
+			':hover': 'scale(1.02)'
 		}
 	},
 	containerGap: {
@@ -114,9 +123,12 @@ const Button: FC<IButton> = ({ children, onClick, href, valueToCopy, icon, style
 						<span {...stylex.props(styles.iconContainer)}>
 							<MdOutlineContentCopy
 								size={24}
-								{...stylex.props(isCopying ? styles.firstIconActive : styles.firstIcon)}
+								{...stylex.props(styles.icons, isCopying ? styles.firstIconActive : styles.firstIcon)}
 							/>
-							<MdOutlineCheck size={24} {...stylex.props(isCopying ? styles.secondIconActive : styles.secondIcon)} />
+							<MdOutlineCheck
+								size={24}
+								{...stylex.props(styles.icons, isCopying ? styles.secondIconActive : styles.secondIcon)}
+							/>
 						</span>
 					</>
 				) : icon ? (
@@ -140,7 +152,6 @@ const Button: FC<IButton> = ({ children, onClick, href, valueToCopy, icon, style
 					style,
 					isCopying && styles.copyingColor
 				)}
-				{...otherProps}
 			>
 				{content}
 			</a>

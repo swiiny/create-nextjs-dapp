@@ -3,7 +3,8 @@ import Text from '@components/theme/Text';
 import { ETextType } from '@components/theme/Text/Text.enum';
 import * as stylex from '@stylexjs/stylex';
 import { FaStar } from 'react-icons/fa';
-import { ESize } from '../../../styles/theme.enum';
+import { ESize } from '../../../../styles/theme.enum';
+import WalletButton from '../WalletButton';
 
 const repoUrl = 'https://github.com/swiiny/create-nextjs-dapp';
 
@@ -15,7 +16,7 @@ const styles = stylex.create({
 		position: 'fixed',
 		top: 0,
 		left: 0,
-		zIndex: 100,
+		zIndex: 10,
 		display: 'flex',
 		width: '100%',
 		padding: {
@@ -35,11 +36,13 @@ const styles = stylex.create({
 	},
 	buttonsContainer: {
 		display: 'flex',
-		alignItems: 'center'
+		alignItems: 'center',
+		gap: '1rem'
 	},
 	button: {
 		display: {
-			default: 'flex'
+			default: 'initial',
+			'@media (max-width: 600px)': 'none'
 		}
 	},
 	icon: {
@@ -55,11 +58,11 @@ const Navbar = () => {
 			</Text>
 
 			<div {...stylex.props(styles.buttonsContainer)}>
-				<Button href={repoUrl} icon={<FaStar size={28} {...stylex.props(styles.icon)} />} style={styles.button}>
+				<Button href={repoUrl} icon={<FaStar size={28} {...stylex.props(styles.icon, styles.button)} />}>
 					Star on Github
 				</Button>
 
-				{/* <WalletButton /> */}
+				<WalletButton />
 			</div>
 		</nav>
 	);

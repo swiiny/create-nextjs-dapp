@@ -1,8 +1,9 @@
-import Navbar from '@components/Navbar';
+import Navbar from '@components/navbar/Navbar';
 import * as stylex from '@stylexjs/stylex';
 import { Metadata } from 'next';
 import '../styles/globals.css';
 import { colors } from '../styles/theme.stylex';
+import { ClientProviders } from './providers';
 
 export const metadata: Metadata = {
 	title: 'Create NextJs Dapp',
@@ -36,10 +37,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 			</head>
 
 			<body {...stylex.props(styles.body)}>
-				<Navbar />
-				{children}
+				<ClientProviders>
+					<Navbar />
 
-				<footer></footer>
+					{children}
+
+					<footer></footer>
+				</ClientProviders>
 			</body>
 		</html>
 	);

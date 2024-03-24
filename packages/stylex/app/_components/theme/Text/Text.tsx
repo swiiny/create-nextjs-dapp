@@ -223,12 +223,14 @@ const Text: FC<PropsWithChildren<IText>> = ({
 	const TextTag = component || type;
 
 	// heading key
-	const key = textTypeStylexKeyMap(ESize.m)[type as keyof typeof ETextType] as keyof typeof styles;
+	const key = textTypeStylexKeyMap(size)[type as keyof typeof ETextType] as keyof Omit<
+		typeof styles,
+		'getColor' | 'text' | 'getGradient' | 'inherit'
+	>;
 
 	return (
 		<TextTag
 			{...stylex.props(
-				// @ts-ignore @todo(dig to find the ts issue reason)
 				styles[key],
 				styles.text,
 				weight === EFontWeight.regular && styles.regular,
