@@ -1,3 +1,15 @@
+## [1.6.1](https://github.com/swiiny/create-nextjs-dapp/compare/v1.6.0...v1.6.1) (2024-07-22)
+
+
+### Bug Fixes
+
+* bump base template packages ([a6c0af2](https://github.com/swiiny/create-nextjs-dapp/commit/a6c0af28b1d95aef985a4b3b4c8756684d1681b9))
+* bump example template packages ([fb2b603](https://github.com/swiiny/create-nextjs-dapp/commit/fb2b603bad27fd5198c9a91e77d9842c49ade020))
+* bump mui template packages ([294e2d3](https://github.com/swiiny/create-nextjs-dapp/commit/294e2d3a61e742e4e9f1cb8d8a2516bd1f6c9067))
+* bump styled components template packages ([53fb307](https://github.com/swiiny/create-nextjs-dapp/commit/53fb307b8dcb50b2e49284f8b65565028714bfb9))
+* bump stylex template packages ([c5418a0](https://github.com/swiiny/create-nextjs-dapp/commit/c5418a0ecde4cbd1f91f0c35b365696a27a166cd))
+* bump tailwind template packages ([17ed35a](https://github.com/swiiny/create-nextjs-dapp/commit/17ed35afc2729812f46d55fb2c3e0dc657595d50))
+
 # [1.6.0](https://github.com/swiiny/create-nextjs-dapp/compare/v1.5.3...v1.6.0) (2024-03-24)
 
 
