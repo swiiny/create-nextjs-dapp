@@ -1,3 +1,15 @@
+## [1.6.2](https://github.com/swiiny/create-nextjs-dapp/compare/v1.6.1...v1.6.2) (2024-10-16)
+
+
+### Bug Fixes
+
+* bump base template packages & update mobile-web-app-capable meta tag ([d3fd8ab](https://github.com/swiiny/create-nextjs-dapp/commit/d3fd8abf32f13b09e8572b8182011f2c30beac71))
+* bump example template packages & update mobile-web-app-capable meta tag ([722ede1](https://github.com/swiiny/create-nextjs-dapp/commit/722ede1f601f4f5a4059c72b467a9fea10577662))
+* bump mui template packages & update mobile-web-app-capable meta tag ([9a3c8d9](https://github.com/swiiny/create-nextjs-dapp/commit/9a3c8d998dc5d71ad233e800a56026a690cc1560))
+* bump styled-components template packages & update mobile-web-app-capable meta tag ([aacbcc8](https://github.com/swiiny/create-nextjs-dapp/commit/aacbcc83a2287111db9071b1ebcc07cb9c5180c4))
+* bump stylex template packages & update mobile-web-app-capable meta tag ([6598278](https://github.com/swiiny/create-nextjs-dapp/commit/65982785b92ac23a8d0fc32917528de5c1dd88ad))
+* bump tailwind template packages & update mobile-web-app-capable meta tag ([3f5627a](https://github.com/swiiny/create-nextjs-dapp/commit/3f5627a8747d7fa701c5a92e2227d5584efb1928))
+
 ## [1.6.1](https://github.com/swiiny/create-nextjs-dapp/compare/v1.6.0...v1.6.1) (2024-07-22)
 
 
