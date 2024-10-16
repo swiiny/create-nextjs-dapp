@@ -16,7 +16,7 @@ const CreateNextjsDapp = ({ Component, pageProps }: AppProps) => {
 				<link rel='apple-touch-icon' href='/icon.png'></link>
 
 				<meta name='application-name' content='Create Nextjs Dapp' />
-				<meta name='apple-mobile-web-app-capable' content='yes' />
+				<meta name='mobile-web-app-capable' content='yes' />
 				<meta name='apple-mobile-web-app-status-bar-style' content='default' />
 				<meta name='apple-mobile-web-app-title' content='Create Nextjs Dapp' />
 				<meta

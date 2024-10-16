@@ -1,4 +1,4 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document';
+import Document, { Head, Html, Main, NextScript } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
 
 export default function CreateNextjsDappDocument() {
@@ -7,7 +7,7 @@ export default function CreateNextjsDappDocument() {
 			<Head>
 				<link href='https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap' rel='stylesheet' />
 				<meta name='application-name' content='Create NextJs Dapp' />
-				<meta name='apple-mobile-web-app-capable' content='yes' />
+				<meta name='mobile-web-app-capable' content='yes' />
 				<meta name='apple-mobile-web-app-status-bar-style' content='default' />
 				<meta name='apple-mobile-web-app-title' content='Create NextJs Dapp' />
 				<meta
