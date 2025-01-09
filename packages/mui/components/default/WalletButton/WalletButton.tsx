@@ -21,6 +21,7 @@ const WalletButton: FC<IWalletButton> = () => {
 		<>
 			<WalletModal isOpen={isWalletModalOpen} onClose={() => setIsWalletModalOpen(false)} />
 			<Button
+				data-testid='connect-wallet-button'
 				onClick={!!address ? () => setIsWalletModalOpen(true) : () => connectWallet(WALLETS.blocknative)}
 				color={isWalletConnected ? theme.colors.lightBlue : theme.colors.white}
 				icon={<MdOutlineAccountBalanceWallet size={28} />}

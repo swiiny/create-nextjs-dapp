@@ -14,7 +14,8 @@ const Button: FC<IButton> = ({
 	color = EColor.white,
 	icon,
 	gradientContainerProps,
-	customClasses = ''
+	customClasses = '',
+	...otherProps
 }) => {
 	const [isCopying, setIsCopying] = useState(false);
 
@@ -108,6 +109,7 @@ const Button: FC<IButton> = ({
 		<button
 			className={`relative transition-all border-none bg-transparent cursor-pointer transition-all ml-4 hover:transform-gpu hover:scale-[1.02] text-[0.9rem] sm:text-[1.05rem] md:text-[1.2rem] lg:text-[1.35rem] xl:text-[1.5rem] ${textColor} ${customClasses}`}
 			onClick={() => handleClick()}
+			{...otherProps}
 		>
 			{content}
 		</button>

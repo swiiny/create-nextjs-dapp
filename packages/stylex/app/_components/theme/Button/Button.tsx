@@ -168,6 +168,7 @@ const Button: FC<IButton> = ({ children, onClick, href, valueToCopy, icon, style
 				style,
 				isCopying && styles.copyingColor
 			)}
+			{...otherProps}
 		>
 			{content}
 		</button>

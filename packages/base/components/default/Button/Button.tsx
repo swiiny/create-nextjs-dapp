@@ -18,7 +18,8 @@ const Button: FC<IButton> = ({
 	iconColor,
 	icon,
 	gradientContainerProps,
-	customClasses = ''
+	customClasses = '',
+	...otherProps
 }) => {
 	const [isCopying, setIsCopying] = useState(false);
 
@@ -98,6 +99,7 @@ const Button: FC<IButton> = ({
 				[styles.isSuccess]: !!isCopying
 			})}
 			onClick={() => handleClick()}
+			{...otherProps}
 		>
 			{content}
 		</button>

@@ -15,7 +15,8 @@ const Button: FC<IButton> = ({
 	color,
 	icon,
 	iconColor,
-	gradientContainerProps
+	gradientContainerProps,
+	...otherProps
 }) => {
 	const theme = useTheme();
 	const [isCopying, setIsCopying] = useState(false);
@@ -77,7 +78,7 @@ const Button: FC<IButton> = ({
 	}
 
 	return (
-		<StyledButton onClick={() => handleClick()} color={contentColor} iconColor={iconColor}>
+		<StyledButton onClick={() => handleClick()} color={contentColor} iconColor={iconColor} {...otherProps}>
 			{content}
 		</StyledButton>
 	);
