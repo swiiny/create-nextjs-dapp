@@ -77,7 +77,7 @@ const styles = stylex.create({
 		height: {
 			default: '30px',
 			[MD]: '45px',
-			[LG]: '60px'
+			[LG]: '45px'
 		}
 	},
 	link: {

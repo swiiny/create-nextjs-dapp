@@ -8,6 +8,6 @@ export const StyledGradientContainer = styled(Flex)`
 		border-radius: 13px;
 		background: ${p.theme.colors.darkGradient};
 		border: 1px solid ${p.theme.colors.darkGray};
-		box-shadow: 0px 5px 20px 10px ${p.theme.colors.black + '50'};
+		box-shadow: 0px 5px 20px 10px ${p.theme.colors.darkGray + '50'};
 	`}
 `;

@@ -13,7 +13,7 @@ export const StyledText = styled.p<IText>`
 					background: ${p.color};
 					-webkit-background-clip: text;
 					-webkit-text-fill-color: transparent;
-			  `
+				`
 			: `color: ${p.color || p.theme.colors.white};`}
 
 		${p.weight ? `font-weight: ${p.weight};` : ''}
@@ -49,7 +49,7 @@ export const StyledText = styled.p<IText>`
 					fontSize = 1;
 					break;
 				case ETextType.span:
-					// the span herit the font-size from the parent
+					// the span inherit the font-size from the parent
 					return '';
 				default:
 					fontSize = 1;

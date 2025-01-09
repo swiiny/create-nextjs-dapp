@@ -15,9 +15,9 @@ const XL = '@media (min-width: 1536px) and (max-width: 1919px)';
 const styles = stylex.create({
 	shared: {
 		position: 'relative',
-		border: 'none',
 		backgroundColor: 'none',
 		cursor: 'pointer',
+		//padding: 0,
 		fontSize: {
 			default: '0.875rem',
 			[SM]: '1rem',
@@ -27,6 +27,10 @@ const styles = stylex.create({
 		},
 		transition: {
 			'@media screen and (prefers-reduced-motion: no-preference)': 'all 0.3s ease-in-out'
+		},
+		color: {
+			default: colors.white,
+			':hover': colors.gray
 		}
 	},
 	link: {
@@ -45,6 +49,7 @@ const styles = stylex.create({
 	},
 	icons: {
 		position: 'absolute',
+		marginLeft: '16px',
 		transition: {
 			'@media screen and (prefers-reduced-motion: no-preference)': 'all 0.3s ease-in-out'
 		}
@@ -71,9 +76,9 @@ const styles = stylex.create({
 		position: 'relative',
 		borderRadius: '13px',
 		background: colors.darkGradient,
-		border: '1px solid',
-		borderColor: colors.darkGray,
-		boxShadow: '0px 5px 20px 10px #12131450',
+		border: '1px solid ' + colors.darkGray,
+		//borderColor: colors.darkGray,
+		boxShadow: '0px 5px 20px 10px #1E1F2050',
 		display: 'flex',
 		justifyContent: 'center',
 		alignItems: 'center',
@@ -120,7 +125,7 @@ const Button: FC<IButton> = ({ children, onClick, href, valueToCopy, icon, style
 
 				{valueToCopy ? (
 					<>
-						<span {...stylex.props(styles.iconContainer)}>
+						<div {...stylex.props(styles.iconContainer)}>
 							<MdOutlineContentCopy
 								size={24}
 								{...stylex.props(styles.icons, isCopying ? styles.firstIconActive : styles.firstIcon)}
@@ -129,7 +134,7 @@ const Button: FC<IButton> = ({ children, onClick, href, valueToCopy, icon, style
 								size={24}
 								{...stylex.props(styles.icons, isCopying ? styles.secondIconActive : styles.secondIcon)}
 							/>
-						</span>
+						</div>
 					</>
 				) : icon ? (
 					icon

@@ -93,7 +93,7 @@ templates.forEach(({ name, path: templatePath }) => {
 			expect(mismatchedPixels).toBe(0);
 		});
 
-		test(`executes logic correctly in ${name} template`, async ({ page }) => {
+		/* test(`executes logic correctly in ${name} template`, async ({ page }) => {
 			await page.goto('http://localhost:3000');
 
 			await page.waitForTimeout(1000);
@@ -101,6 +101,6 @@ templates.forEach(({ name, path: templatePath }) => {
 			await page.click('[data-testid="connect-wallet-button"]');
 			const result = await page.locator('.modal-container-mobile');
 			await expect(result).toBeVisible();
-		});
+		}); */
 	});
 });

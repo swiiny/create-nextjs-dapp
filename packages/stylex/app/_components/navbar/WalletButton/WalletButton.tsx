@@ -11,9 +11,23 @@ import { colors } from '../../../../styles/theme.stylex';
 import WalletModal from '../WalletModal';
 import { IWalletButton } from './WalletButton.type';
 
+const MAX_MD = '@media (max-width: 900px)';
+const MD_TO_XL = '@media (min-width: 900px) and (max-width: 1536px)';
+const XL = '@media (min-width: 1536px)';
+
 const styles = stylex.create({
-	button: {
-		color: colors.lightBlue
+	buttonWalletConnected: {
+		color: {
+			default: colors.lightBlue,
+			':hover': colors.gray
+		}
+	},
+	icon: {
+		transform: {
+			[MAX_MD]: 'scale(0.7)',
+			[MD_TO_XL]: 'scale(0.8)',
+			[XL]: 'scale(1)'
+		}
 	}
 });
 
@@ -31,8 +45,8 @@ const WalletButton: FC<IWalletButton> = () => {
 			<Button
 				data-testid='connect-wallet-button'
 				onClick={isWalletConnected ? () => setIsWalletModalOpen(true) : () => connectWallet(WALLETS.blocknative)}
-				icon={<MdOutlineAccountBalanceWallet size={28} />}
-				style={styles.button}
+				icon={<MdOutlineAccountBalanceWallet size={28} {...stylex.props(styles.icon)} />}
+				style={isWalletConnected ? styles.buttonWalletConnected : undefined}
 			>
 				{isWalletConnected ? ens?.name || Address.from(address)?.truncate() : 'Connect Wallet'}
 			</Button>

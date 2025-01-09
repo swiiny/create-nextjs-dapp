@@ -48,8 +48,12 @@ const Button: FC<IButton> = ({
 				paddingY={noPaddingResponsive ? '12px' : { xs: '6px', sm: '9px', md: '12px' }}
 				paddingX={noPaddingResponsive ? '36px' : { xs: '18px', sm: '27px', md: '36px' }}
 				display='flex'
-				sx={{ justifyContent: 'center', alignItems: 'center' }}
 				{...gradientContainerProps}
+				sx={
+					gradientContainerProps?.sx
+						? { justifyContent: 'center', alignItems: 'center', ...gradientContainerProps?.sx }
+						: { justifyContent: 'center', alignItems: 'center' }
+				}
 			>
 				{children}
 

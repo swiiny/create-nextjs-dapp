@@ -11,7 +11,7 @@ const boxStyles = {
 	flexDirection: 'column',
 	justifyContent: 'space-evenly',
 	paddingX: { xs: '15px', md: '32px', lg: '64px' },
-	paddingTop: '30px',
+	paddingTop: '32px',
 	height: '100dvh'
 };
 

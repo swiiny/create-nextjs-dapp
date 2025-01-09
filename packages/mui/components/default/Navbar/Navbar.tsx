@@ -14,11 +14,10 @@ const boxStyles = {
 	position: 'fixed',
 	left: '0',
 	right: '0',
-	marginY: '16px',
-	paddingX: '16px'
+	padding: { xs: '0', md: '32px' }
 };
 
-const titleStyles = { display: { xs: 'none', sm: 'flex' }, alignItems: 'center' };
+const titleStyles = { display: { xs: 'none', sm: 'flex' }, alignItems: 'flex-start' };
 
 const gradientContainerProps = { sx: { display: { xs: 'none', md: 'flex' } } };
 

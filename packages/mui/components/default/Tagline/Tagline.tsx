@@ -5,6 +5,10 @@ import { useTheme } from 'styled-components';
 import { ESize } from 'theme/theme.enum';
 import { ITagline } from './Tagline.type';
 
+const textStyles = {
+	marginTop: '12px'
+};
+
 const Tagline: FC<ITagline> = () => {
 	const theme = useTheme();
 
@@ -35,6 +39,7 @@ const Tagline: FC<ITagline> = () => {
 				color={theme.colors.gray}
 				weight={EFontWeight.regular}
 				align={ETextAlign.center}
+				style={textStyles}
 			>
 				No longer waste valuable time building your project structure
 			</Text>

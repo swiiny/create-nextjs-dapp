@@ -1,5 +1,5 @@
-import { ESize } from 'theme/theme.enum';
 import { ReactNode } from 'react';
+import { ESize } from 'theme/theme.enum';
 import { EFontWeight, ETextAlign, ETextType } from './Text.enum';
 
 interface IText {
@@ -10,6 +10,7 @@ interface IText {
 	align?: ETextAlign;
 	size?: ESize.s | ESize.m | ESize.l;
 	color?: string;
+	style?: React.CSSProperties;
 }
 
 export type { IText };
