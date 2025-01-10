@@ -1,10 +1,13 @@
 import { expect, test } from '@playwright/test';
 import { spawn } from 'child_process';
+import dotenv from 'dotenv';
 import { readFileSync, writeFileSync } from 'fs';
 import path from 'path';
 import pixelmatch from 'pixelmatch';
 import { PNG } from 'pngjs';
 import { fileURLToPath } from 'url';
+
+dotenv.config({ path: '.env', override: true });
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -16,6 +19,8 @@ const templates = [
 	{ name: 'Stylex', path: 'packages/stylex', port: 3004 },
 	{ name: 'Tailwind', path: 'packages/tailwind', port: 3005 }
 ];
+
+const isCIEnv = !!process.env.CI;
 
 templates.forEach(({ name, path: templatePath, port }) => {
 	test.describe.parallel(`${name} template`, () => {
@@ -50,9 +55,12 @@ templates.forEach(({ name, path: templatePath, port }) => {
 				__dirname,
 				`../tests/snapshots/actuals/desktop-${formattedName}-template-actual.png`
 			);
+
+			const prefixExpectedSnapshotPath = isCIEnv ? 'gh' : 'local';
+
 			const expectedSnapshotPath = path.resolve(
 				__dirname,
-				`../tests/snapshots/desktop-template-snapshot-expectation.png`
+				`../tests/snapshots/${prefixExpectedSnapshotPath}_desktop-template-snapshot-expectation.png`
 			);
 			const diffScreenshotPath = path.resolve(
 				__dirname,
@@ -68,6 +76,8 @@ templates.forEach(({ name, path: templatePath, port }) => {
 			if (actualImage.width !== expectedImage.width || actualImage.height !== expectedImage.height) {
 				throw new Error(`Image dimensions do not match for ${name}`);
 			}
+
+			console.log('=>>>>>>>>>>>>>>> isCIEnv', isCIEnv);
 
 			const diffImage = new PNG({ width: actualImage.width, height: actualImage.height });
 			const mismatchedPixels = pixelmatch(

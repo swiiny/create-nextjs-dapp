@@ -20,6 +20,7 @@
 	},
 	"dependencies": {
 		"chalk": "^5.4.1",
+		"dotenv": "^16.4.7",
 		"pixelmatch": "^6.0.0",
 		"pngjs": "^7.0.0"
 	},
