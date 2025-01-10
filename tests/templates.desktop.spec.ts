@@ -37,7 +37,7 @@ templates.forEach(({ name, path: templatePath, port }) => {
 			if (serverProcess) serverProcess.kill();
 		});
 
-		test(`renders ${name} template and matches expectation`, async ({ page }) => {
+		test(`renders ${name} template and matches expectation`, async ({ page }, testInfo) => {
 			await page.goto(`http://localhost:${port}`); // Use unique port for each template
 
 			await page.waitForLoadState('networkidle');
@@ -78,6 +78,15 @@ templates.forEach(({ name, path: templatePath, port }) => {
 				actualImage.height,
 				{ threshold: 0.1 }
 			);
+
+			testInfo.attach(`desktop-${formattedName}-template-actual.png`, {
+				path: actualScreenshotPath,
+				contentType: 'image/png'
+			});
+			testInfo.attach(`desktop-${formattedName}-template-diff.png`, {
+				path: diffScreenshotPath,
+				contentType: 'image/png'
+			});
 
 			writeFileSync(diffScreenshotPath, PNG.sync.write(diffImage));
 			expect(mismatchedPixels).toBeLessThanOrEqual(100);
