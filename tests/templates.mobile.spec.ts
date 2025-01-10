@@ -37,31 +37,27 @@ templates.forEach(({ name, path: templatePath, port }) => {
 			if (serverProcess) serverProcess.kill();
 		});
 
-		test(`renders ${name} template and matches expectation`, async ({ page }) => {
-			await page.goto(`http://localhost:${port}`); // Use unique port for each template
-
+		test(`renders ${name} template correctly on mobile`, async ({ page }) => {
+			await page.goto(`http://localhost:${port}`);
 			await page.waitForLoadState('networkidle');
-
 			await page.waitForTimeout(1000);
 
 			const formattedName = name.toLowerCase().replace(/\s/g, '-');
-
 			const actualScreenshotPath = path.resolve(
 				__dirname,
-				`../tests/snapshots/actuals/${formattedName}-template-actual.png`
+				`../tests/snapshots/actuals/mobile-${formattedName}-template-actual.png`
 			);
-			const expectedSnapshotPath = path.resolve(__dirname, `../tests/snapshots/template-snapshot-expectation.png`);
-			const diffScreenshotPath = path.resolve(__dirname, `../tests/snapshots/diffs/${formattedName}-template-diff.png`);
+
+			const expectedSnapshotPath = path.resolve(
+				__dirname,
+				`../tests/snapshots/mobile-template-snapshot-expectation.png`
+			);
 
 			const screenshotBuffer = await page.screenshot();
 			writeFileSync(actualScreenshotPath, screenshotBuffer);
 
 			const actualImage = PNG.sync.read(readFileSync(actualScreenshotPath));
 			const expectedImage = PNG.sync.read(readFileSync(expectedSnapshotPath));
-
-			if (actualImage.width !== expectedImage.width || actualImage.height !== expectedImage.height) {
-				throw new Error(`Image dimensions do not match for ${name}`);
-			}
 
 			const diffImage = new PNG({ width: actualImage.width, height: actualImage.height });
 			const mismatchedPixels = pixelmatch(
@@ -73,7 +69,6 @@ templates.forEach(({ name, path: templatePath, port }) => {
 				{ threshold: 0.1 }
 			);
 
-			writeFileSync(diffScreenshotPath, PNG.sync.write(diffImage));
 			expect(mismatchedPixels).toBeLessThanOrEqual(100);
 		});
 
