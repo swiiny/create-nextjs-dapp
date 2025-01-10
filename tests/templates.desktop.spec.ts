@@ -48,13 +48,16 @@ templates.forEach(({ name, path: templatePath, port }) => {
 
 			const actualScreenshotPath = path.resolve(
 				__dirname,
-				`../tests/snapshots/actuals/${formattedName}-template-actual.png`
+				`../tests/snapshots/actuals/desktop-${formattedName}-template-actual.png`
 			);
 			const expectedSnapshotPath = path.resolve(
 				__dirname,
 				`../tests/snapshots/desktop-template-snapshot-expectation.png`
 			);
-			const diffScreenshotPath = path.resolve(__dirname, `../tests/snapshots/diffs/${formattedName}-template-diff.png`);
+			const diffScreenshotPath = path.resolve(
+				__dirname,
+				`../tests/snapshots/diffs/desktop-${formattedName}-template-diff.png`
+			);
 
 			const screenshotBuffer = await page.screenshot();
 			writeFileSync(actualScreenshotPath, screenshotBuffer);

@@ -33,10 +33,10 @@ const LOGOS = [
 
 const Technologies: FC<ITechnologies> = () => {
 	return (
-		<div className='flex flex-wrap justify-center items-center gap-7 md:gap-10 lg:gap-[50px] h-[49px]'>
+		<div className='flex flex-wrap justify-center items-center gap-7 md:gap-10 lg:gap-[50px] md:h-[49px]'>
 			{LOGOS.map((logo) => (
 				<div
-					className={`relative rounded-[12px] transition-all relative before:absolute before:-top-4 before:-left-5 before:-right-5 before:-bottom-4 before:z-[-1] before:rounded before:transition before:bg-${EColor.black} hover:opacity-100 hover:transform hover:scale-[1.05] h-[49px]`}
+					className={`relative rounded-[12px] transition-all relative before:absolute before:-top-4 before:-left-5 before:-right-5 before:-bottom-4 before:z-[-1] before:rounded before:transition before:bg-${EColor.black} hover:opacity-100 hover:transform hover:scale-[1.05] h-[34px] md:h-[49px]`}
 					key={logo.label}
 				>
 					<Image src={logo.src} alt={logo.label} width={60} height={60} className='w-auto h-[30px] md:h-[45px]' />

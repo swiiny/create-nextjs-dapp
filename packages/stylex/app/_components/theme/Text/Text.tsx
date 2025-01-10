@@ -31,7 +31,7 @@ const styles = stylex.create({
 	},
 	headingOneSmall: {
 		fontSize: {
-			default: 'calc(0.75 * 3rem * 0.7)',
+			default: 'calc(0.75 * 3rem * 0.6)',
 			[MD]: 'calc(0.75 * 3rem * 0.8)',
 			[LG]: 'calc(0.75 * 3rem * 0.9)',
 			[XL]: 'calc(0.75 * 3rem * 1)'
@@ -39,7 +39,7 @@ const styles = stylex.create({
 	},
 	headingOneMedium: {
 		fontSize: {
-			default: 'calc(3rem * 0.7)',
+			default: 'calc(3rem * 0.6)',
 			[MD]: 'calc(3rem * 0.8)',
 			[LG]: 'calc(3rem * 0.9)',
 			[XL]: 'calc(3rem * 1)'
@@ -47,7 +47,7 @@ const styles = stylex.create({
 	},
 	headingOneLarge: {
 		fontSize: {
-			default: 'calc(1.25 * 3rem * 0.7)',
+			default: 'calc(1.25 * 3rem * 0.6)',
 			[MD]: 'calc(1.25 * 3rem * 0.8)',
 			[LG]: 'calc(1.25 * 3rem * 0.9)',
 			[XL]: 'calc(1.25 * 3rem * 1)'
@@ -55,7 +55,7 @@ const styles = stylex.create({
 	},
 	headingTwoSmall: {
 		fontSize: {
-			default: 'calc(0.75 * 2.5rem * 0.7)',
+			default: 'calc(0.75 * 2.5rem * 0.6)',
 			[MD]: 'calc(0.75 * 2.5rem * 0.8)',
 			[LG]: 'calc(0.75 * 2.5rem * 0.9)',
 			[XL]: 'calc(0.75 * 2.5rem * 1)'
@@ -63,7 +63,7 @@ const styles = stylex.create({
 	},
 	headingTwoMedium: {
 		fontSize: {
-			default: 'calc(2.5rem * 0.7)',
+			default: 'calc(2.5rem * 0.6)',
 			[MD]: 'calc(2.5rem * 0.8)',
 			[LG]: 'calc(2.5rem * 0.9)',
 			[XL]: 'calc(2.5rem * 1)'
@@ -71,7 +71,7 @@ const styles = stylex.create({
 	},
 	headingTwoLarge: {
 		fontSize: {
-			default: 'calc(1.25 * 2.5rem * 0.7)',
+			default: 'calc(1.25 * 2.5rem * 0.6)',
 			[MD]: 'calc(1.25 * 2.5rem * 0.8)',
 			[LG]: 'calc(1.25 * 2.5rem * 0.9)',
 			[XL]: 'calc(1.25 * 2.5rem * 1)'
@@ -79,7 +79,7 @@ const styles = stylex.create({
 	},
 	headingThreeSmall: {
 		fontSize: {
-			default: 'calc(0.75 * 2rem * 0.7)',
+			default: 'calc(0.75 * 2rem * 0.6)',
 			[MD]: 'calc(0.75 * 2rem * 0.8)',
 			[LG]: 'calc(0.75 * 2rem * 0.9)',
 			[XL]: 'calc(0.75 * 2rem * 1)'
@@ -87,7 +87,7 @@ const styles = stylex.create({
 	},
 	headingThreeMedium: {
 		fontSize: {
-			default: 'calc(2rem * 0.7)',
+			default: 'calc(2rem * 0.6)',
 			[MD]: 'calc(2rem * 0.8)',
 			[LG]: 'calc(2rem * 0.9)',
 			[XL]: 'calc(2rem * 1)'
@@ -95,7 +95,7 @@ const styles = stylex.create({
 	},
 	headingThreeLarge: {
 		fontSize: {
-			default: 'calc(1.25 * 2rem * 0.7)',
+			default: 'calc(1.25 * 2rem * 0.6)',
 			[MD]: 'calc(1.25 * 2rem * 0.8)',
 			[LG]: 'calc(1.25 * 2rem * 0.9)',
 			[XL]: 'calc(1.25 * 2rem * 1)'
@@ -103,7 +103,7 @@ const styles = stylex.create({
 	},
 	headingFourSmall: {
 		fontSize: {
-			default: 'calc(0.75 * 1.5rem * 0.7)',
+			default: 'calc(0.75 * 1.5rem * 0.6)',
 			[MD]: 'calc(0.75 * 1.5rem * 0.8)',
 			[LG]: 'calc(0.75 * 1.5rem * 0.9)',
 			[XL]: 'calc(0.75 * 1.5rem * 1)'
@@ -111,7 +111,7 @@ const styles = stylex.create({
 	},
 	headingFourMedium: {
 		fontSize: {
-			default: 'calc(1.5rem * 0.7)',
+			default: 'calc(1.5rem * 0.6)',
 			[MD]: 'calc(1.5rem * 0.8)',
 			[LG]: 'calc(1.5rem * 0.9)',
 			[XL]: 'calc(1.5rem * 1)'
@@ -119,7 +119,7 @@ const styles = stylex.create({
 	},
 	headingFourLarge: {
 		fontSize: {
-			default: 'calc(1.25 * 1.5rem * 0.7)',
+			default: 'calc(1.25 * 1.5rem * 0.6)',
 			[MD]: 'calc(1.25 * 1.5rem * 0.8)',
 			[LG]: 'calc(1.25 * 1.5rem * 0.9)',
 			[XL]: 'calc(1.25 * 1.5rem * 1)'
@@ -127,7 +127,7 @@ const styles = stylex.create({
 	},
 	headingFiveSmall: {
 		fontSize: {
-			default: 'calc(0.75 * 1.25rem * 0.7)',
+			default: 'calc(0.75 * 1.25rem * 0.6)',
 			[MD]: 'calc(0.75 * 1.25rem * 0.8)',
 			[LG]: 'calc(0.75 * 1.25rem * 0.9)',
 			[XL]: 'calc(0.75 * 1.25rem * 1)'
@@ -135,7 +135,7 @@ const styles = stylex.create({
 	},
 	headingFiveMedium: {
 		fontSize: {
-			default: 'calc(1.25rem * 0.7)',
+			default: 'calc(1.25rem * 0.6)',
 			[MD]: 'calc(1.25rem * 0.8)',
 			[LG]: 'calc(1.25rem * 0.9)',
 			[XL]: 'calc(1.25rem * 1)'
@@ -143,7 +143,7 @@ const styles = stylex.create({
 	},
 	headingFiveLarge: {
 		fontSize: {
-			default: 'calc(1.25 * 1.25rem * 0.7)',
+			default: 'calc(1.25 * 1.25rem * 0.6)',
 			[MD]: 'calc(1.25 * 1.25rem * 0.8)',
 			[LG]: 'calc(1.25 * 1.25rem * 0.9)',
 			[XL]: 'calc(1.25 * 1.25rem * 1)'
@@ -151,7 +151,7 @@ const styles = stylex.create({
 	},
 	headingSixSmall: {
 		fontSize: {
-			default: 'calc(0.75 * 1rem * 0.7)',
+			default: 'calc(0.75 * 1rem * 0.6)',
 			[MD]: 'calc(0.75 * 1rem * 0.8)',
 			[LG]: 'calc(0.75 * 1rem * 0.9)',
 			[XL]: 'calc(0.75 * 1rem * 1)'
@@ -159,7 +159,7 @@ const styles = stylex.create({
 	},
 	headingSixMedium: {
 		fontSize: {
-			default: 'calc(1rem * 0.7)',
+			default: 'calc(1rem * 0.6)',
 			[MD]: 'calc(1rem * 0.8)',
 			[LG]: 'calc(1rem * 0.9)',
 			[XL]: 'calc(1rem * 1)'
@@ -167,7 +167,7 @@ const styles = stylex.create({
 	},
 	headingSixLarge: {
 		fontSize: {
-			default: 'calc(1.25 * 1rem * 0.7)',
+			default: 'calc(1.25 * 1rem * 0.6)',
 			[MD]: 'calc(1.25 * 1rem * 0.8)',
 			[LG]: 'calc(1.25 * 1rem * 0.9)',
 			[XL]: 'calc(1.25 * 1rem * 1)'
@@ -175,7 +175,7 @@ const styles = stylex.create({
 	},
 	pSmall: {
 		fontSize: {
-			default: 'calc(0.75 * 1rem * 0.7)',
+			default: 'calc(0.75 * 1rem * 0.6)',
 			[MD]: 'calc(0.75 * 1rem * 0.8)',
 			[LG]: 'calc(0.75 * 1rem * 0.9)',
 			[XL]: 'calc(0.75 * 1rem * 1)'
@@ -183,7 +183,7 @@ const styles = stylex.create({
 	},
 	pMedium: {
 		fontSize: {
-			default: 'calc(1rem * 0.7)',
+			default: 'calc(1rem * 0.6)',
 			[MD]: 'calc(1rem * 0.8)',
 			[LG]: 'calc(1rem * 0.9)',
 			[XL]: 'calc(1rem * 1)'
@@ -191,7 +191,7 @@ const styles = stylex.create({
 	},
 	pLarge: {
 		fontSize: {
-			default: 'calc(1.25 * 1rem * 0.7)',
+			default: 'calc(1.25 * 1rem * 0.6)',
 			[MD]: 'calc(1.25 * 1rem * 0.8)',
 			[LG]: 'calc(1.25 * 1rem * 0.9)',
 			[XL]: 'calc(1.25 * 1rem * 1)'

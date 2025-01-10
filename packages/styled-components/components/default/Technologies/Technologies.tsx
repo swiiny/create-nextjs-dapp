@@ -34,7 +34,7 @@ const LOGOS = [
 
 const Technologies: FC<ITechnologies> = () => {
 	return (
-		<StyledTechnologies horizontal={EFlex.center} vertical={EFlex.center} wrapItems gap={30} mdGap={40} lgGap={50}>
+		<StyledTechnologies horizontal={EFlex.center} vertical={EFlex.center} wrapItems gap={28} mdGap={40} lgGap={50}>
 			{LOGOS.map((logo) => (
 				<StyledLogoContainer key={logo.label}>
 					<Image src={logo.src} alt={logo.label} width={60} height={60} />

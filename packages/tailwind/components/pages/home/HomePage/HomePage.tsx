@@ -14,7 +14,7 @@ const HomePage: FC<IHomePage> = () => {
 			/>
 
 			<div>
-				<div className='flex flex-col justify-evenly h-screen pt-24 px-4 md:px-8 md:pt-8 lg:px-16'>
+				<div className='flex flex-col justify-evenly h-screen pt-8 px-[15px] md:px-8 md:pt-8 lg:px-16'>
 					<Technologies />
 
 					<Tagline />

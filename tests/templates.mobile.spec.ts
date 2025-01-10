@@ -53,6 +53,11 @@ templates.forEach(({ name, path: templatePath, port }) => {
 				`../tests/snapshots/mobile-template-snapshot-expectation.png`
 			);
 
+			const diffScreenshotPath = path.resolve(
+				__dirname,
+				`../tests/snapshots/diffs/mobile-${formattedName}-template-diff.png`
+			);
+
 			const screenshotBuffer = await page.screenshot();
 			writeFileSync(actualScreenshotPath, screenshotBuffer);
 
@@ -69,6 +74,7 @@ templates.forEach(({ name, path: templatePath, port }) => {
 				{ threshold: 0.1 }
 			);
 
+			writeFileSync(diffScreenshotPath, PNG.sync.write(diffImage));
 			expect(mismatchedPixels).toBeLessThanOrEqual(100);
 		});
 

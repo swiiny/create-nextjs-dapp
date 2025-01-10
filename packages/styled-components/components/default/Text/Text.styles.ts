@@ -72,7 +72,7 @@ export const StyledText = styled.p<IText>`
 			}
 
 			return css`
-				font-size: calc(${fontSize}rem * 0.7);
+				font-size: calc(${fontSize}rem * 0.6);
 
 				${mq(EMediaQuery.sm, `font-size: calc(${fontSize}rem * 0.7);`)}
 				${mq(EMediaQuery.md, `font-size: calc(${fontSize}rem * 0.8);`)}

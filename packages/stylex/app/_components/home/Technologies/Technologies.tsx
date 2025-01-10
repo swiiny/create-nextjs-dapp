@@ -42,7 +42,7 @@ const styles = stylex.create({
 		justifyContent: 'center',
 		alignItems: 'center',
 		gap: {
-			default: '30px',
+			default: '28px',
 			[MD]: '40px',
 			[LG]: '50px'
 		}

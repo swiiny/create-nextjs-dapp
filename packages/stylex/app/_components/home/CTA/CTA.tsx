@@ -27,7 +27,8 @@ const styles = stylex.create({
 	},
 	button: {
 		marginTop: '32px',
-		color: colors.lightBlue
+		color: colors.lightBlue,
+		padding: '12px 36px'
 	}
 });
 

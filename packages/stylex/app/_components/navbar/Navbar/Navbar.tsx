@@ -44,8 +44,8 @@ const styles = stylex.create({
 	},
 	button: {
 		display: {
-			default: 'initial',
-			'@media (max-width: 600px)': 'none'
+			default: 'inline-flex',
+			'@media (max-width: 900px)': 'none'
 		}
 	},
 	icon: {
@@ -54,6 +54,10 @@ const styles = stylex.create({
 			[MAX_MD]: 'scale(0.7)',
 			[MD_TO_XL]: 'scale(0.8)',
 			[XL]: 'scale(1)'
+		},
+		display: {
+			default: 'initial',
+			'@media (max-width: 900px)': 'none'
 		}
 	}
 });
@@ -66,7 +70,7 @@ const Navbar = () => {
 			</Text>
 
 			<div {...stylex.props(styles.buttonsContainer)}>
-				<Button href={repoUrl} icon={<FaStar size={28} {...stylex.props(styles.icon, styles.button)} />}>
+				<Button href={repoUrl} icon={<FaStar size={28} {...stylex.props(styles.icon)} />} style={styles.button}>
 					Star on Github
 				</Button>
 

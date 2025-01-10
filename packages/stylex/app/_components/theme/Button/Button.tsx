@@ -19,7 +19,7 @@ const styles = stylex.create({
 		cursor: 'pointer',
 		//padding: 0,
 		fontSize: {
-			default: '0.875rem',
+			default: '0.9rem',
 			[SM]: '1rem',
 			[MD]: '1.2rem',
 			[LG]: '1.35rem',
@@ -32,9 +32,6 @@ const styles = stylex.create({
 			default: colors.white,
 			':hover': colors.gray
 		}
-	},
-	link: {
-		display: 'inline-flex'
 	},
 	copyingColor: {
 		color: colors.success
@@ -72,7 +69,7 @@ const styles = stylex.create({
 		transform: 'translateX(0) rotateX(0)'
 	},
 	gradientContainer: {
-		minHeight: '46px',
+		minHeight: '42px',
 		position: 'relative',
 		borderRadius: '13px',
 		background: colors.darkGradient,
@@ -153,7 +150,6 @@ const Button: FC<IButton> = ({ children, onClick, href, valueToCopy, icon, style
 					styles.gradientContainer,
 					styles.shared,
 					!!icon && styles.containerGap,
-					styles.link,
 					style,
 					isCopying && styles.copyingColor
 				)}
