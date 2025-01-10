@@ -15,8 +15,8 @@
 		"share-files": "node scripts/share_files.js",
 		"new-template": "node scripts/new_template.js",
 		"husky": "husky install",
-		"test:desktop:templates": "npx playwright test --config=playwright.desktop.config.ts",
-		"test:mobile:templates": "npx playwright test --config=playwright.mobile.config.ts"
+		"test:desktop:templates": "PLAYWRIGHT_HTML_REPORT=playwright-report-desktop npx playwright test --project chromium_desktop --workers=2",
+		"test:mobile:templates": "PLAYWRIGHT_HTML_REPORT=playwright-report-mobile npx playwright test --project safari_mobile --workers=2"
 	},
 	"dependencies": {
 		"chalk": "^5.4.1",
