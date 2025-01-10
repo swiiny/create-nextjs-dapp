@@ -18,17 +18,17 @@
 		"test:templates": "npx playwright test"
 	},
 	"dependencies": {
-		"chalk": "^5.3.0",
+		"chalk": "^5.4.1",
 		"pixelmatch": "^6.0.0",
 		"pngjs": "^7.0.0"
 	},
 	"devDependencies": {
-		"@commitlint/cli": "^17.8.1",
-		"@commitlint/config-conventional": "^17.8.0",
+		"@commitlint/cli": "^19.6.1",
+		"@commitlint/config-conventional": "^17.8.1",
 		"@playwright/test": "^1.49.1",
 		"@semantic-release/changelog": "^6.0.3",
-		"@semantic-release/github": "^9.2.6",
+		"@semantic-release/github": "^11.0.1",
 		"husky": "^8.0.3",
-		"semantic-release": "^22.0.12"
+		"semantic-release": "^24.2.1"
 	}
 }
