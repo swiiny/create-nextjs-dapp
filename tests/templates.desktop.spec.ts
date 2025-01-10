@@ -15,9 +15,9 @@ const __dirname = path.dirname(__filename);
 const templates = [
 	{ name: 'Base', path: 'packages/base', port: 3001 },
 	{ name: 'MUI', path: 'packages/mui', port: 3002 },
-	{ name: 'Styled Components', path: 'packages/styled-components', port: 3003 },
-	{ name: 'Stylex', path: 'packages/stylex', port: 3004 },
-	{ name: 'Tailwind', path: 'packages/tailwind', port: 3005 }
+	{ name: 'Styled Components', path: 'packages/styled-components', port: 3003 }
+	//{ name: 'Stylex', path: 'packages/stylex', port: 3004 },
+	//{ name: 'Tailwind', path: 'packages/tailwind', port: 3005 }
 ];
 
 const isCIEnv = !!process.env.CI;
