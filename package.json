@@ -16,7 +16,9 @@
 		"new-template": "node scripts/new_template.js",
 		"husky": "husky install",
 		"test:desktop:templates": "PLAYWRIGHT_HTML_REPORT=playwright-report-desktop npx playwright test --project chromium_desktop",
-		"test:mobile:templates": "PLAYWRIGHT_HTML_REPORT=playwright-report-mobile npx playwright test --project safari_mobile"
+		"test:mobile:templates": "PLAYWRIGHT_HTML_REPORT=playwright-report-mobile npx playwright test --project safari_mobile",
+		"test:gh:test:desktop:templates": "act pull_request --job test-desktop-templates -P ubuntu-24.04=ghcr.io/catthehacker/ubuntu:act-24.04 --container-architecture linux/amd64",
+		"test:gh:test:mobile:templates": "act pull_request --job test-mobile-templates -P ubuntu-24.04=ghcr.io/catthehacker/ubuntu:act-24.04 --container-architecture linux/amd64"
 	},
 	"dependencies": {
 		"chalk": "^5.4.1",

@@ -8,7 +8,7 @@ const isCIEnv = !!process.env.CI;
 export default defineConfig({
 	testDir: './tests',
 	snapshotDir: './tests/snapshots',
-	workers: isCIEnv ? 1 : 5,
+	workers: isCIEnv ? 2 : 5,
 	retries: 2,
 	reporter: [
 		['list', {}],
@@ -24,9 +24,8 @@ export default defineConfig({
 			testMatch: '**/*.desktop.spec.ts',
 			use: {
 				headless: true,
-				...devices['Desktop Chrome'],
-				viewport: { width: 1280, height: 720 },
-				permissions: ['clipboard-read', 'clipboard-write']
+				...devices['Desktop Chrome HiDPI'],
+				viewport: { width: 1280, height: 720 }
 			}
 		},
 		{

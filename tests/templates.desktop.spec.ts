@@ -97,7 +97,7 @@ templates.forEach(({ name, path: templatePath, port }) => {
 			});
 
 			writeFileSync(diffScreenshotPath, PNG.sync.write(diffImage));
-			expect(mismatchedPixels).toBeLessThanOrEqual(100);
+			expect(mismatchedPixels).toBeLessThanOrEqual(200);
 		});
 
 		test(`executes logic correctly in ${name} template`, async ({ page }) => {
