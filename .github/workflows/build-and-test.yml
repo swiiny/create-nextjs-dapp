@@ -5,25 +5,16 @@ on:
     branches: [main]
 
 jobs:
-  build-templates:
-    runs-on: ubuntu-latest
+  test-desktop-templates:
+    runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       - name: Install dependencies
         run: npm install
 
       - name: Build all packages
         run: npm run build
-
-  test-desktop-templates:
-    needs: build-templates
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Install dependencies
-        run: npm install
 
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
@@ -39,13 +30,15 @@ jobs:
           retention-days: 10
 
   test-mobile-templates:
-    needs: build-templates
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
 
       - name: Install dependencies
         run: npm install
+
+      - name: Build all packages
+        run: npm run build
 
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
