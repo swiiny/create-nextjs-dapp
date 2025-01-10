@@ -1,0 +1,61 @@
+name: Build all templates
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  build-templates:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build all packages
+        run: npm run build
+
+  test-desktop-templates:
+    needs: build-templates
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps
+
+      - name: Run Playwright Desktop Tests
+        run: npm run test:desktop:templates
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: playwright-report-desktop
+          path: playwright-report-desktop/
+          retention-days: 10
+
+  test-mobile-templates:
+    needs: build-templates
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps
+
+      - name: Run Playwright Mobile Tests
+        run: npm run test:mobile:templates
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: playwright-report-mobile
+          path: playwright-report-mobile/
+          retention-days: 10
