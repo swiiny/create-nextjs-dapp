@@ -47,7 +47,7 @@ templates.forEach(({ name, path: templatePath, port }) => {
 
 			await page.waitForLoadState('networkidle');
 
-			await page.waitForTimeout(1000);
+			await page.waitForTimeout(2000);
 
 			const formattedName = name.toLowerCase().replace(/\s/g, '-');
 
@@ -77,8 +77,6 @@ templates.forEach(({ name, path: templatePath, port }) => {
 				throw new Error(`Image dimensions do not match for ${name}`);
 			}
 
-			console.log('=>>>>>>>>>>>>>>> isCIEnv', isCIEnv);
-
 			const diffImage = new PNG({ width: actualImage.width, height: actualImage.height });
 			const mismatchedPixels = pixelmatch(
 				actualImage.data,
@@ -104,7 +102,7 @@ templates.forEach(({ name, path: templatePath, port }) => {
 
 		test(`executes logic correctly in ${name} template`, async ({ page }) => {
 			await page.goto(`http://localhost:${port}`);
-			await page.waitForTimeout(1000);
+			await page.waitForTimeout(2000);
 
 			await page.click('[data-testid="connect-wallet-button"]');
 			const result = await page.locator('.modal-container-mobile');

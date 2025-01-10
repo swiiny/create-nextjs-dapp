@@ -45,7 +45,7 @@ templates.forEach(({ name, path: templatePath, port }) => {
 		test(`renders ${name} template correctly on mobile`, async ({ page }, testInfo) => {
 			await page.goto(`http://localhost:${port}`);
 			await page.waitForLoadState('networkidle');
-			await page.waitForTimeout(1000);
+			await page.waitForTimeout(2000);
 
 			const formattedName = name.toLowerCase().replace(/\s/g, '-');
 			const actualScreenshotPath = path.resolve(
@@ -98,7 +98,7 @@ templates.forEach(({ name, path: templatePath, port }) => {
 
 		test(`executes logic correctly in ${name} template`, async ({ page }) => {
 			await page.goto(`http://localhost:${port}`);
-			await page.waitForTimeout(1000);
+			await page.waitForTimeout(2000);
 
 			await page.click('[data-testid="connect-wallet-button"]');
 			const result = await page.locator('.modal-container-mobile');
