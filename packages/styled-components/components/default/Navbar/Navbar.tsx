@@ -17,7 +17,7 @@ const Navbar = () => {
 				Create Nextjs Dapp
 			</Text>
 
-			<Flex vertical={EFlex.center}>
+			<Flex vertical={EFlex.center} gap={ESize['2xs']}>
 				<Button
 					href={repoUrl}
 					icon={<FaStar size={28} />}

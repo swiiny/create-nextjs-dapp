@@ -76,11 +76,6 @@ export const StyledButton = styled.button<ISharedButtonProps>`
 		${addMarginStyles(p)}
 		${addFramesStyles(p)}
 	`}
-
-	& + button,
-	& + a {
-		margin-left: 16px;
-	}
 `;
 
 export const StyledLink = styled.a<ISharedButtonProps>`
@@ -93,11 +88,6 @@ export const StyledLink = styled.a<ISharedButtonProps>`
 		${addMarginStyles(p)}
 		${addFramesStyles(p)}
 	`}
-
-	& + button,
-	& + a {
-		margin-left: 16px;
-	}
 `;
 
 export const StyledIconsContainer = styled.div<{ isActive: boolean }>`

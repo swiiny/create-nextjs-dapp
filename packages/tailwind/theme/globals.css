@@ -17,10 +17,12 @@ body {
 	max-width: 1600px;
 
 	background-color: #121314;
+	line-height: initial;
 }
 
 html {
 	height: 100%;
+	line-height: initial;
 }
 
 h1,
@@ -47,9 +49,10 @@ h4,
 h5,
 h6,
 button,
+button span,
+.button span,
 a {
 	font-family: 'Nunito', sans-serif;
-	font-weight: bold;
 }
 
 p,
@@ -57,7 +60,6 @@ span,
 input,
 textarea {
 	font-family: 'Nunito', sans-serif;
-	font-weight: 400;
 }
 
 /* h1 */
@@ -264,7 +266,7 @@ textarea {
 		font-size: 1.6875rem;
 	}
 	.font-h2-medium {
-		font-size: 2.25rem;
+		font-size: 2.7rem;
 	}
 	.font-h2-large {
 		font-size: 2.8125rem;

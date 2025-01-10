@@ -10,7 +10,7 @@ const Tagline: FC<ITagline> = () => {
 			<Text
 				type={ETextType.h1}
 				component={ETextType.h2}
-				weight={EFontWeight.regular}
+				weight={EFontWeight.normal}
 				align={ETextAlign.center}
 				className={'mb-3'}
 			>
@@ -48,7 +48,7 @@ const Tagline: FC<ITagline> = () => {
 				type={ETextType.h2}
 				size={ESize.s}
 				color={EColor.gray}
-				weight={EFontWeight.regular}
+				weight={EFontWeight.normal}
 				align={ETextAlign.center}
 			>
 				No longer waste valuable time building your project structure

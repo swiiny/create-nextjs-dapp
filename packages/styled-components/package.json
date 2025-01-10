@@ -1,6 +1,6 @@
 {
 	"name": "create-nextjs-dapp-styled-components",
-	"version": "1.2.5",
+	"version": "1.2.6",
 	"private": true,
 	"scripts": {
 		"dev": "next dev",

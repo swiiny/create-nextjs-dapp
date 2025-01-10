@@ -26,7 +26,7 @@ const WalletButton: FC<IWalletButton> = () => {
 				icon={
 					<MdOutlineAccountBalanceWallet
 						size={28}
-						className={`text-${isWalletConnected ? EColor.lightBlue : EColor.white}`}
+						className={`text-${isWalletConnected ? EColor.lightBlue : EColor.white} transform scale-[0.7] md:scale-[0.8] xl:scale-[1.0] ml-4`}
 					/>
 				}
 			>
