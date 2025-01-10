@@ -10,7 +10,8 @@ export default defineConfig({
 		['html', { open: 'on-failure' }]
 	],
 	use: {
-		trace: 'retain-on-failure'
+		trace: 'retain-on-failure',
+		deviceScaleFactor: 1
 	},
 	projects: [
 		{

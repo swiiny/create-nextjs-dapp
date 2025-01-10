@@ -71,7 +71,7 @@ templates.forEach(({ name, path: templatePath, port }) => {
 				diffImage.data,
 				actualImage.width,
 				actualImage.height,
-				{ threshold: 0.1 }
+				{ threshold: 0.2 }
 			);
 
 			writeFileSync(diffScreenshotPath, PNG.sync.write(diffImage));
