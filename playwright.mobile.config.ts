@@ -3,7 +3,7 @@ import { defineConfig, devices } from '@playwright/test';
 export default defineConfig({
 	testDir: './tests',
 	snapshotDir: './tests/snapshots',
-	workers: 5, // Adjust based on system capability
+	workers: 2,
 	use: {
 		headless: true,
 		...devices['iPhone 13']
