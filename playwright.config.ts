@@ -1,9 +1,14 @@
 import { defineConfig, devices } from '@playwright/test';
+import dotenv from 'dotenv';
+
+dotenv.config({ path: '.env', override: true });
+
+const isCIEnv = !!process.env.CI;
 
 export default defineConfig({
 	testDir: './tests',
 	snapshotDir: './tests/snapshots',
-	workers: 2,
+	workers: isCIEnv ? 1 : 5,
 	retries: 2,
 	reporter: [
 		['list', {}],

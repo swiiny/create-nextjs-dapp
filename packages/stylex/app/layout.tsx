@@ -32,6 +32,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 	return (
 		<html {...stylex.props(styles.html)} lang='en'>
 			<head>
+				<link
+					rel='preload'
+					href='https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap'
+					as='style'
+				/>
+
 				{/* we can't use next/font as it requires SWC which is replaced by necessary babel config */}
 				<link href='https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap' rel='stylesheet' />
 			</head>

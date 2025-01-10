@@ -4,6 +4,12 @@ export default function CreateNextjsDappDocument() {
 	return (
 		<Html lang='en'>
 			<Head>
+				<link
+					rel='preload'
+					href='https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap'
+					as='style'
+				/>
+
 				<link href='https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap' rel='stylesheet' />
 				<meta name='application-name' content='Create NextJs Dapp' />
 				<meta name='mobile-web-app-capable' content='yes' />
