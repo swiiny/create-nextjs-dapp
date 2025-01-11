@@ -17,7 +17,6 @@ const styles = stylex.create({
 		position: 'relative',
 		backgroundColor: 'none',
 		cursor: 'pointer',
-		//padding: 0,
 		fontSize: {
 			default: '0.9rem',
 			[SM]: '1rem',
@@ -74,7 +73,6 @@ const styles = stylex.create({
 		borderRadius: '13px',
 		background: colors.darkGradient,
 		border: '1px solid ' + colors.darkGray,
-		//borderColor: colors.darkGray,
 		boxShadow: '0px 5px 20px 10px #1E1F2050',
 		display: 'flex',
 		justifyContent: 'center',
