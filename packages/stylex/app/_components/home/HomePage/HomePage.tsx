@@ -16,12 +16,12 @@ const styles = stylex.create({
 		height: '100dvh',
 		paddingTop: spacing.m,
 		paddingLeft: {
-			default: spacing['2xs'],
+			default: '15px',
 			[MD]: spacing.m,
 			[LG]: spacing['2xl']
 		},
 		paddingRight: {
-			default: spacing['2xs'],
+			default: '15px',
 			[MD]: spacing.m,
 			[LG]: spacing['2xl']
 		}

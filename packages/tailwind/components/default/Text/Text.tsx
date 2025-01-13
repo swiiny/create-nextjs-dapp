@@ -23,8 +23,8 @@ const Text: FC<IText> = ({
 				'text',
 				className,
 				{
-					'text-regular': weight === EFontWeight.regular,
-					'text-bold': weight === EFontWeight.bold,
+					'font-normal': weight === EFontWeight.normal,
+					'font-bold': weight === EFontWeight.bold,
 					'text-left': align === ETextAlign.left,
 					'text-center': align === ETextAlign.center,
 					'text-right': align === ETextAlign.right

@@ -10,6 +10,9 @@ const repoUrl = 'https://github.com/swiiny/create-nextjs-dapp';
 
 const SM = '@media (max-width: 899px)';
 const MD = '@media (min-width: 900px)';
+const MAX_MD = '@media (max-width: 900px)';
+const MD_TO_XL = '@media (min-width: 900px) and (max-width: 1536px)';
+const XL = '@media (min-width: 1536px)';
 
 const styles = stylex.create({
 	navbar: {
@@ -41,12 +44,21 @@ const styles = stylex.create({
 	},
 	button: {
 		display: {
-			default: 'initial',
-			'@media (max-width: 600px)': 'none'
+			default: 'inline-flex',
+			'@media (max-width: 900px)': 'none'
 		}
 	},
 	icon: {
-		color: '#e3b341'
+		color: '#e3b341',
+		transform: {
+			[MAX_MD]: 'scale(0.7)',
+			[MD_TO_XL]: 'scale(0.8)',
+			[XL]: 'scale(1)'
+		},
+		display: {
+			default: 'initial',
+			'@media (max-width: 900px)': 'none'
+		}
 	}
 });
 
@@ -58,7 +70,7 @@ const Navbar = () => {
 			</Text>
 
 			<div {...stylex.props(styles.buttonsContainer)}>
-				<Button href={repoUrl} icon={<FaStar size={28} {...stylex.props(styles.icon, styles.button)} />}>
+				<Button href={repoUrl} icon={<FaStar size={28} {...stylex.props(styles.icon)} />} style={styles.button}>
 					Star on Github
 				</Button>
 

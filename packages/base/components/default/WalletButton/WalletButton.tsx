@@ -20,6 +20,7 @@ const WalletButton: FC<IWalletButton> = () => {
 		<>
 			<WalletModal isOpen={isWalletModalOpen} onClose={() => setIsWalletModalOpen(false)} />
 			<Button
+				data-testid='connect-wallet-button'
 				onClick={isWalletConnected ? () => setIsWalletModalOpen(true) : () => connectWallet(WALLETS.blocknative)}
 				color={isWalletConnected ? EColor.lightBlue : EColor.white}
 				iconColor={isWalletConnected ? EColor.lightBlue : EColor.white}

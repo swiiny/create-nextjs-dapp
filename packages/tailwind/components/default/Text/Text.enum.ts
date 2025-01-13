@@ -10,7 +10,7 @@ enum ETextType {
 }
 
 enum EFontWeight {
-	regular = 'regular',
+	normal = 'normal',
 	bold = 'bold'
 }
 
@@ -20,4 +20,4 @@ enum ETextAlign {
 	right = 'right'
 }
 
-export { ETextType, EFontWeight, ETextAlign };
+export { EFontWeight, ETextAlign, ETextType };

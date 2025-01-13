@@ -36,3 +36,9 @@ yarn-error.log*
 *.tsbuildinfo
 
 package-lock.json
+
+
+/test-results
+
+
+playwright-report-*

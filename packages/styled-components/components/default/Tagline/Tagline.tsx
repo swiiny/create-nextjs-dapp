@@ -35,8 +35,7 @@ const Tagline: FC<ITagline> = () => {
 				color={theme.colors.gray}
 				weight={EFontWeight.regular}
 				align={ETextAlign.center}
-				marginTop={ESize.xs}
-				mdMarginTop={ESize.unset}
+				marginTop={ESize['3xs']}
 			>
 				No longer waste valuable time building your project structure
 			</Text>

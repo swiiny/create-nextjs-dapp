@@ -14,7 +14,7 @@ const CTA: FC<ICTA> = () => {
 				type={ETextType.h2}
 				size={ESize.s}
 				color={EColor.gray}
-				weight={EFontWeight.regular}
+				weight={EFontWeight.normal}
 				align={ETextAlign.center}
 				className='flex flex-col items-center justify-center'
 			>

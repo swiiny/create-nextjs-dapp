@@ -12,6 +12,8 @@ const sharedStyle = (p: ISharedButtonProps) => {
 		border: none;
 		background-color: transparent;
 
+		padding: 0;
+
 		cursor: pointer;
 
 		font-size: calc(1.5rem * 0.6);
@@ -33,7 +35,7 @@ const sharedStyle = (p: ISharedButtonProps) => {
 						background: ${p.color};
 						-webkit-background-clip: text;
 						-webkit-text-fill-color: transparent;
-				  `
+					`
 				: `color: ${p.color || p.theme.colors.white};`}
 
 			&:hover {
@@ -103,7 +105,7 @@ export const StyledIconsContainer = styled.div<{ isActive: boolean }>`
 							opacity: 1;
 							transform: translateX(0) rotateX(0);
 						}
-				  `
+					`
 				: css`
 						&:nth-child(1) {
 							opacity: 1;
@@ -113,6 +115,6 @@ export const StyledIconsContainer = styled.div<{ isActive: boolean }>`
 							opacity: 0;
 							transform: translateX(50%) rotateX(-90deg);
 						}
-				  `}
+					`}
 	}
 `;

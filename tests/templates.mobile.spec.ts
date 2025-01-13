@@ -1,0 +1,108 @@
+import { expect, test } from '@playwright/test';
+import { spawn } from 'child_process';
+import dotenv from 'dotenv';
+import { readFileSync, writeFileSync } from 'fs';
+import path from 'path';
+import pixelmatch from 'pixelmatch';
+import { PNG } from 'pngjs';
+import { fileURLToPath } from 'url';
+
+dotenv.config({ path: '.env', override: true });
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const templates = [
+	{ name: 'Base', path: 'packages/base', port: 4001 },
+	{ name: 'MUI', path: 'packages/mui', port: 4002 },
+	{ name: 'Styled Components', path: 'packages/styled-components', port: 4003 },
+	{ name: 'Stylex', path: 'packages/stylex', port: 4004 },
+	{ name: 'Tailwind', path: 'packages/tailwind', port: 4005 }
+];
+
+const isCIEnv = !!process.env.CI;
+
+templates.forEach(({ name, path: templatePath, port }) => {
+	test.describe.parallel(`${name} template`, () => {
+		let serverProcess;
+
+		test.beforeAll(async () => {
+			// Start the template server on a unique port
+			serverProcess = spawn('npm', ['run', 'start', '--', `--port=${port}`], {
+				cwd: path.resolve(__dirname, `../${templatePath}`),
+				shell: true
+			});
+
+			// Wait for the server to start
+			await new Promise((resolve) => setTimeout(resolve, 3000)); // Increase timeout if needed
+		});
+
+		test.afterAll(() => {
+			// Kill the server process
+			if (serverProcess) serverProcess.kill();
+		});
+
+		test(`renders ${name} template correctly on mobile`, async ({ page }, testInfo) => {
+			await page.goto(`http://localhost:${port}`);
+			await page.waitForLoadState('networkidle');
+			await page.waitForTimeout(2000);
+
+			const formattedName = name.toLowerCase().replace(/\s/g, '-');
+			const actualScreenshotPath = path.resolve(
+				__dirname,
+				`../tests/snapshots/actuals/mobile-${formattedName}-template-actual.png`
+			);
+
+			const prefixExpectedSnapshotPath = isCIEnv ? 'gh' : 'local';
+
+			const expectedSnapshotPath = path.resolve(
+				__dirname,
+				`../tests/snapshots/${prefixExpectedSnapshotPath}_mobile-template-snapshot-expectation.png`
+			);
+
+			const diffScreenshotPath = path.resolve(
+				__dirname,
+				`../tests/snapshots/diffs/mobile-${formattedName}-template-diff.png`
+			);
+
+			const screenshotBuffer = await page.screenshot();
+			writeFileSync(actualScreenshotPath, screenshotBuffer);
+
+			const actualImage = PNG.sync.read(readFileSync(actualScreenshotPath));
+			const expectedImage = PNG.sync.read(readFileSync(expectedSnapshotPath));
+
+			const diffImage = new PNG({ width: actualImage.width, height: actualImage.height });
+			const mismatchedPixels = pixelmatch(
+				actualImage.data,
+				expectedImage.data,
+				diffImage.data,
+				actualImage.width,
+				actualImage.height,
+				{ threshold: 0.2 }
+			);
+
+			writeFileSync(diffScreenshotPath, PNG.sync.write(diffImage));
+
+			// Attach screenshots to the report
+			testInfo.attach(`desktop-${formattedName}-template-actual.png`, {
+				path: actualScreenshotPath,
+				contentType: 'image/png'
+			});
+			testInfo.attach(`desktop-${formattedName}-template-diff.png`, {
+				path: diffScreenshotPath,
+				contentType: 'image/png'
+			});
+
+			expect(mismatchedPixels).toBeLessThanOrEqual(100);
+		});
+
+		test(`executes logic correctly in ${name} template`, async ({ page }) => {
+			await page.goto(`http://localhost:${port}`);
+			await page.waitForTimeout(2000);
+
+			await page.click('[data-testid="connect-wallet-button"]');
+			const result = await page.locator('.modal-container-mobile');
+			await expect(result).toBeVisible();
+		});
+	});
+});

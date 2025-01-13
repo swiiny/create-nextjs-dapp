@@ -1,9 +1,9 @@
-import React, { FC } from 'react';
-import { IText } from './Text.type';
-import styles from './Text.module.scss';
-import { ETextType } from './Text.enum';
 import { ESize } from '@theme/theme.enum';
 import classNames from 'classnames';
+import { FC } from 'react';
+import { ETextType } from './Text.enum';
+import styles from './Text.module.scss';
+import { IText } from './Text.type';
 
 const Text: FC<IText> = ({
 	children,
@@ -25,7 +25,8 @@ const Text: FC<IText> = ({
 				[styles[`align`]]: !!align,
 				[styles[`${align}`]]: !!align,
 				[styles[`${size}`]]: !!size,
-				[styles[`${color}`]]: !!color
+				[styles[`${color}`]]: !!color,
+				[styles[`${type}`]]: !!type
 			})}
 			{...otherProps}
 		>

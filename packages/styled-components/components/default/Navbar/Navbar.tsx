@@ -2,6 +2,7 @@ import Button from '@components/default/Button';
 import Text from '@components/default/Text';
 import { ETextType } from '@components/default/Text/Text.enum';
 import Flex from '@components/layout/Flex';
+import { EFlex } from '@components/layout/Flex/Flex.enum';
 import { FaStar } from 'react-icons/fa';
 import { EMediaQuery, ESize } from 'theme/theme.enum';
 import WalletButton from '../WalletButton';
@@ -16,7 +17,7 @@ const Navbar = () => {
 				Create Nextjs Dapp
 			</Text>
 
-			<Flex>
+			<Flex vertical={EFlex.center} gap={ESize['2xs']}>
 				<Button
 					href={repoUrl}
 					icon={<FaStar size={28} />}

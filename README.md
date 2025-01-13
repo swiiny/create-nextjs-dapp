@@ -14,6 +14,7 @@
 - [Quick start](#quick-start)
 - [Technologies](#technologies)
 - [Templates](#templates)
+- [Tests](#tests)
 
 ## Introduction
 
@@ -92,3 +93,99 @@ The Stylex template leverages [Stylex](https://stylexjs.com/) for styling, blend
 The Tailwind template is based on the [Tailwind CSS](https://tailwindcss.com/) framework. It is configured with the [Tailwind CSS](https://tailwindcss.com/docs/installation) library. This template utilizes the utility-first approach to styling, providing a highly customizable and efficient way to build your Dapp.
 
 This template includes a base configuration file (`tailwind.config.js`) to get you started with customizing your styles. You can refer to the [Tailwind CSS documentation](https://tailwindcss.com/docs/configuration) for more information on how to extend and modify the default configuration.
+
+## Tests
+
+The testing setup uses **Playwright** for end-to-end tests and supports both local and CI testing workflows. Below are the details of the test implementation and available commands.
+
+### Test Implementation
+
+The project tests are designed to:
+
+1. Validate that all templates render correctly on both desktop and mobile environments.
+2. Compare snapshots to detect unintended UI changes.
+3. Verify template-specific logic to ensure functionality.
+
+The tests are configured in the `playwright.config.ts` file with the following projects:
+
+- **`chromium_desktop`**: Tests templates on a desktop environment using Chromium.
+- **`safari_mobile`**: Tests templates on a mobile environment using Safari emulation (iPhone 13).
+
+Additionally, the project uses **Act** to simulate GitHub Actions workflows for testing in CI-like environments locally.
+
+---
+
+### Test Commands
+
+Here are the available test commands in `package.json`:
+
+#### **Local Testing**
+
+1. **Run Desktop Template Tests**
+
+   ```bash
+   npm run test:desktop:templates
+   ```
+
+   - Runs all template tests for the desktop environment using Playwright.
+   - Saves the HTML report in `playwright-report-desktop`.
+
+2. **Run Mobile Template Tests**
+
+   ```bash
+   npm run test:mobile:templates
+   ```
+
+   - Runs all template tests for the mobile environment using Playwright.
+   - Saves the HTML report in `playwright-report-mobile`.
+
+#### **GitHub Actions Simulation**
+
+1. **Run Desktop Template Tests in CI-like Environment**
+
+   ```bash
+   npm run test:gh:test:desktop:templates
+   ```
+
+   - Uses Act to simulate the `test-desktop-templates` job from the GitHub Actions workflow.
+   - Runs the tests using the `ubuntu-24.04` environment with `linux/amd64` architecture.
+
+2. **Run Mobile Template Tests in CI-like Environment**
+
+   ```bash
+   npm run test:gh:test:mobile:templates
+   ```
+
+   - Uses Act to simulate the `test-mobile-templates` job from the GitHub Actions workflow.
+   - Runs the tests using the `ubuntu-24.04` environment with `linux/amd64` architecture.
+
+---
+
+### Reports
+
+- Each test generates an HTML report for detailed insights into test results. The report paths are defined by the `PLAYWRIGHT_HTML_REPORT` environment variable:
+
+  - **Desktop Report**: `playwright-report-desktop`
+  - **Mobile Report**: `playwright-report-mobile`
+
+- In CI-like environments, logs and outputs are captured by Act and displayed in the terminal for debugging.
+
+---
+
+### Example Usage
+
+#### Running All Desktop Tests Locally
+
+```bash
+npm run test:desktop:templates
+```
+
+#### Simulating GitHub Actions for Mobile Templates
+
+```bash
+npm run test:gh:test:mobile:templates
+```
+
+---
+
+This setup ensures consistency and reliability across different environments, enabling you to test templates effectively during local development and CI workflows.

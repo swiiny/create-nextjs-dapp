@@ -27,9 +27,9 @@
 		}
 	}
 
-	@include unify-parent('h1') {
+	@include unify-parent('.h1') {
 		&.small {
-			font-size: calc(0.75 * 3rem * 0.7);
+			font-size: calc(0.75 * 3rem * 0.6);
 
 			@include md() {
 				font-size: calc(0.75 * 3rem * 0.8);
@@ -43,7 +43,7 @@
 		}
 
 		&.medium {
-			font-size: calc(3rem * 0.7);
+			font-size: calc(3rem * 0.6);
 
 			@include md() {
 				font-size: calc(3rem * 0.8);
@@ -57,7 +57,7 @@
 		}
 
 		&.large {
-			font-size: calc(1.25 * 3rem * 0.7);
+			font-size: calc(1.25 * 3rem * 0.6);
 
 			@include md() {
 				font-size: calc(1.25 * 3rem * 0.8);
@@ -71,9 +71,9 @@
 		}
 	}
 
-	@include unify-parent('h2') {
+	@include unify-parent('.h2') {
 		&.small {
-			font-size: calc(0.75 * 2.5rem * 0.7);
+			font-size: calc(0.75 * 2.5rem * 0.6);
 
 			@include md() {
 				font-size: calc(0.75 * 2.5rem * 0.8);
@@ -87,7 +87,7 @@
 		}
 
 		&.medium {
-			font-size: calc(2.5rem * 0.7);
+			font-size: calc(2.5rem * 0.6);
 
 			@include md() {
 				font-size: calc(2.5rem * 0.8);
@@ -101,7 +101,7 @@
 		}
 
 		&.large {
-			font-size: calc(1.25 * 2.5rem * 0.7);
+			font-size: calc(1.25 * 2.5rem * 0.6);
 
 			@include md() {
 				font-size: calc(1.25 * 2.5rem * 0.8);
@@ -115,9 +115,9 @@
 		}
 	}
 
-	@include unify-parent('h3') {
+	@include unify-parent('.h3') {
 		&.small {
-			font-size: calc(0.75 * 2rem * 0.7);
+			font-size: calc(0.75 * 2rem * 0.6);
 
 			@include md() {
 				font-size: calc(0.75 * 2rem * 0.8);
@@ -131,7 +131,7 @@
 		}
 
 		&.medium {
-			font-size: calc(2rem * 0.7);
+			font-size: calc(2rem * 0.6);
 
 			@include md() {
 				font-size: calc(2rem * 0.8);
@@ -145,7 +145,7 @@
 		}
 
 		&.large {
-			font-size: calc(1.25 * 2rem * 0.7);
+			font-size: calc(1.25 * 2rem * 0.6);
 
 			@include md() {
 				font-size: calc(1.25 * 2rem * 0.8);
@@ -158,9 +158,9 @@
 			}
 		}
 	}
-	@include unify-parent('h4') {
+	@include unify-parent('.h4') {
 		&.small {
-			font-size: calc(0.75 * 1.5rem * 0.7);
+			font-size: calc(0.75 * 1.5rem * 0.6);
 
 			@include md() {
 				font-size: calc(0.75 * 1.5rem * 0.8);
@@ -174,7 +174,7 @@
 		}
 
 		&.medium {
-			font-size: calc(1.5rem * 0.7);
+			font-size: calc(1.5rem * 0.6);
 
 			@include md() {
 				font-size: calc(1.5rem * 0.8);
@@ -188,7 +188,7 @@
 		}
 
 		&.large {
-			font-size: calc(1.25 * 1.5rem * 0.7);
+			font-size: calc(1.25 * 1.5rem * 0.6);
 
 			@include md() {
 				font-size: calc(1.25 * 1.5rem * 0.8);
@@ -201,9 +201,9 @@
 			}
 		}
 	}
-	@include unify-parent('h5') {
+	@include unify-parent('.h5') {
 		&.small {
-			font-size: calc(0.75 * 1.25rem * 0.7);
+			font-size: calc(0.75 * 1.25rem * 0.6);
 			@include md() {
 				font-size: calc(0.75 * 1.25rem * 0.8);
 			}
@@ -216,7 +216,7 @@
 		}
 
 		&.medium {
-			font-size: calc(1.25rem * 0.7);
+			font-size: calc(1.25rem * 0.6);
 
 			@include md() {
 				font-size: calc(1.25rem * 0.8);
@@ -230,7 +230,7 @@
 		}
 
 		&.large {
-			font-size: calc(1.25 * 1.25rem * 0.7);
+			font-size: calc(1.25 * 1.25rem * 0.6);
 
 			@include md() {
 				font-size: calc(1.25 * 1.25rem * 0.8);
@@ -243,9 +243,9 @@
 			}
 		}
 	}
-	@include unify-parents(('h6', 'p')) {
+	@include unify-parents(('.h6', 'p')) {
 		&.small {
-			font-size: calc(0.75 * 1rem * 0.7);
+			font-size: calc(0.75 * 1rem * 0.6);
 
 			@include md() {
 				font-size: calc(0.75 * 1rem * 0.8);
@@ -259,7 +259,7 @@
 		}
 
 		&.medium {
-			font-size: calc(1rem * 0.7);
+			font-size: calc(1rem * 0.6);
 
 			@include md() {
 				font-size: calc(1rem * 0.8);
@@ -273,7 +273,7 @@
 		}
 
 		&.large {
-			font-size: calc(1.25 * 1rem * 0.7);
+			font-size: calc(1.25 * 1rem * 0.6);
 
 			@include md() {
 				font-size: calc(1.25 * 1rem * 0.8);

@@ -14,7 +14,8 @@ const Button: FC<IButton> = ({
 	color = EColor.white,
 	icon,
 	gradientContainerProps,
-	customClasses = ''
+	customClasses = '',
+	...otherProps
 }) => {
 	const [isCopying, setIsCopying] = useState(false);
 
@@ -46,7 +47,7 @@ const Button: FC<IButton> = ({
 		return (
 			<GradientContainer
 				component={EHtmlTag.span}
-				className={`flex items-center justify-center transition-all ${
+				className={`flex items-center justify-center transition-all font-bold ${
 					noPaddingResponsive
 						? 'py-[12px] px-[36px]'
 						: 'py-[6px] px-[18px] sm:py-[9px] sm:px-[27px] md:py-[12px] md:px-[36px]'
@@ -83,7 +84,7 @@ const Button: FC<IButton> = ({
 						</div>
 					</>
 				) : icon ? (
-					<div className={`flex items-center justify-center transition-all ml-4`}>{icon}</div>
+					icon
 				) : (
 					<></>
 				)}
@@ -97,7 +98,7 @@ const Button: FC<IButton> = ({
 				href={href}
 				target='_blank'
 				rel='noopener noreferrer'
-				className={`relative transition-all border-none bg-transparent cursor-pointer transition-all ml-4 hover:transform-gpu hover:scale-[1.02] inline-block text-[0.9rem] sm:text-[1.05rem] md:text-[1.2rem] lg:text-[1.35rem] xl:text-[1.5rem] ${customClasses} ${textColor}`}
+				className={`relative button transition-all border-none bg-transparent cursor-pointer transition-all hover:transform-gpu hover:scale-[1.02] inline-block text-[0.9rem] sm:text-[1.05rem] md:text-[1.2rem] lg:text-[1.35rem] xl:text-[1.5rem] ${customClasses} ${textColor}`}
 			>
 				{content}
 			</a>
@@ -106,8 +107,9 @@ const Button: FC<IButton> = ({
 
 	return (
 		<button
-			className={`relative transition-all border-none bg-transparent cursor-pointer transition-all ml-4 hover:transform-gpu hover:scale-[1.02] text-[0.9rem] sm:text-[1.05rem] md:text-[1.2rem] lg:text-[1.35rem] xl:text-[1.5rem] ${textColor} ${customClasses}`}
+			className={`relative border-none transition-all bg-transparent cursor-pointer transition-all hover:transform-gpu hover:scale-[1.02] text-[0.9rem] sm:text-[1.05rem] md:text-[1.2rem] lg:text-[1.35rem] xl:text-[1.5rem] ${textColor} ${customClasses}`}
 			onClick={() => handleClick()}
+			{...otherProps}
 		>
 			{content}
 		</button>
