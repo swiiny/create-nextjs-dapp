@@ -1,3 +1,11 @@
+## [1.6.3](https://github.com/swiiny/create-nextjs-dapp/compare/v1.6.2...v1.6.3) (2025-01-13)
+
+
+### Bug Fixes
+
+* all tests are passing ([e4e6fc4](https://github.com/swiiny/create-nextjs-dapp/commit/e4e6fc40f0680f3595f2208a7f59d131347afd2f))
+* fix templates styles to match snapshot expectations (tailwind is not yet fixed) ([2fa0f0d](https://github.com/swiiny/create-nextjs-dapp/commit/2fa0f0d4a294258aa2c9a2ce694eba1e621450fd))
+
 ## [1.6.2](https://github.com/swiiny/create-nextjs-dapp/compare/v1.6.1...v1.6.2) (2024-10-16)
 
 
